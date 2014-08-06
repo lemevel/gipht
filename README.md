@@ -10,16 +10,14 @@ UW-Madison researchers have developed an algorithm for interpreting an interfero
  
 APPLICATIONS:
 
-    InSAR for monitoring hazardous natural phenomena, e.g., landslides
-    InSAR for monitoring subsidence due to extraction, e.g., oil, gas, water
+InSAR for monitoring hazardous natural phenomena, e.g., landslides
+InSAR for monitoring subsidence due to extraction, e.g., oil, gas, water
 
 KEY BENEFITS:
 
-    Validated on real (noisy) data in a peer-reviewed publication
-    Provides a more direct path to a quantitative interpretation than existing methods
-    Provides a realistic assessment of uncertainty, unlike existing methods
-    Potentially applicable to other phase data, e.g., pattern recognition in color images
-     
+Validated on real (noisy) data in a peer-reviewed publication
+Provides a more direct path to a quantitative interpretation than existing methods
+Provides a realistic assessment of uncertainty, unlike existing methods
 
 PUBLICATIONS:
 
