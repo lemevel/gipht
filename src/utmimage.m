@@ -9,6 +9,9 @@ function istat = utmimage(pixarr,xutmmin,xutmmax,yutmmin,yutmmax,...
 % 2011-NOV-21 - swap order of ymin ymax for MATLAB release 2011b
 % 2012-OCT-25 - add datelabel argument
 
+% initialize to return an error
+istat = -1;
+
 if nargin < 8 || exist('climit','var') == 0 || exist('dotx','var') == 0 || exist('doty','var') == 0
    climit  = [-0.5 0.5];
    dotx = 0;
@@ -111,11 +114,17 @@ elseif nlevels > 2
    image([xutmmin xutmmax],[yutmmax yutmmin],pixarr);
    %image([xutmmin xutmmax],[yutmmin yutmmax],pixarr);axis xy;
 else
-%      fprintf(1,'%s scaling\n',mfilename);
-%      imagesc([xutmmin xutmmax],[yutmmax yutmmin],pixarr);        
-%       fprintf(1,'%s scaling with climit %f %f\n',mfilename,min(climit),max(climit));
-     imagesc([xutmmin xutmmax],[yutmmax yutmmin],pixarr,climit);        
-    %imagesc([xutmmin xutmmax],[yutmmin yutmmax],pixarr,climit); axis xy;      
+    %      fprintf(1,'%s scaling\n',mfilename);
+    %      imagesc([xutmmin xutmmax],[yutmmax yutmmin],pixarr);
+    %       fprintf(1,'%s scaling with climit %f %f\n',mfilename,min(climit),max(climit));
+    try
+        imagesc([xutmmin xutmmax],[yutmmax yutmmin],pixarr,climit);
+        %imagesc([xutmmin xutmmax],[yutmmin yutmmax],pixarr,climit); axis xy;
+    catch
+        warning('imagesc failed');
+        istat = -1;
+        return
+    end
 end
 
 % %equalize histogram

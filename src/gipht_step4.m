@@ -119,7 +119,12 @@ for i = 1:np
         % sort in order of increasing x to connect lines
         %[dumb,isort] = sort(xt);
         % draw an envelope
-        isort = convhull(xt,yt);
+        try
+            isort = convhull(xt,yt);
+        catch
+            warning('convhull failed');
+            isort = 1:numel(xt);
+        end
         xt = xt(isort);
         yt = yt(isort);
         plot(xt,yt,'k-','LineWidth',1);
@@ -184,7 +189,13 @@ for i = 1:np
         % sort in order of increasing x to connect lines
         %[dumb,isort] = sort(xt);
         % draw an envelope
-        isort = convhull(xt,yt);
+        try
+            isort = convhull(xt,yt);
+        catch
+            warning('convhull failed');
+            isort = 1:numel(xt);
+        end
+
         xt = xt(isort);
         yt = yt(isort);
         plot(xt,yt,'k-','LineWidth',1);

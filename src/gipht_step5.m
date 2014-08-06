@@ -1036,22 +1036,24 @@ for i = 1:np
         %         qnames{iq} = sprintf('Pair_%05d_DisZatCen_m_MOD__',i);
         
         %   2012-10-25 values in meters
-        if isfinite(icentroid) == 1 && isfinite(jcentroid) == 1
-            iq = iq+1;
-            q0(iq)     = NaN;
-            q1(iq)     = umx(icentroid,jcentroid);
-            qsig(iq)   = NaN;
-            qnames{iq} = sprintf('Pair_%05d_ModDisXCentroid_m',i);
-            iq = iq+1;
-            q0(iq)     = NaN;
-            q1(iq)     = umy(icentroid,jcentroid);
-            qsig(iq)   = NaN;
-            qnames{iq} = sprintf('Pair_%05d_ModDisYCentroid_m',i);
-            iq = iq+1;
-            q0(iq)     = NaN;
-            q1(iq)     = umz(icentroid,jcentroid);
-            qsig(iq)   = NaN;
-            qnames{iq} = sprintf('Pair_%05d_ModDisZCentroid_m',i);
+        if numel(icentroid) == 1 && numel(jcentroid) == 1
+            if isfinite(icentroid) == 1 && isfinite(jcentroid) == 1
+                iq = iq+1;
+                q0(iq)     = NaN;
+                q1(iq)     = umx(icentroid,jcentroid);
+                qsig(iq)   = NaN;
+                qnames{iq} = sprintf('Pair_%05d_ModDisXCentroid_m',i);
+                iq = iq+1;
+                q0(iq)     = NaN;
+                q1(iq)     = umy(icentroid,jcentroid);
+                qsig(iq)   = NaN;
+                qnames{iq} = sprintf('Pair_%05d_ModDisYCentroid_m',i);
+                iq = iq+1;
+                q0(iq)     = NaN;
+                q1(iq)     = umz(icentroid,jcentroid);
+                qsig(iq)   = NaN;
+                qnames{iq} = sprintf('Pair_%05d_ModDisZCentroid_m',i);
+            end
         end
     end
     
