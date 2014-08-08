@@ -1,0 +1,134 @@
+   228	13:40	which git
+   229	13:40	git
+   241	12:25	git help
+   245	12:26	git --global user.name "Kurt Feigl"
+   246	12:26	git config --global user.name "Kurt Feigl"
+   247	12:26	git config --global user.email "feigl@wisc.edu"
+   248	12:27	git config --global colour.ui "auto"
+   254	12:28	git init
+   257	12:29	git status
+   258	12:30	git add hello_hybrid.c
+   259	12:31	git status
+   260	12:31	git commit "first version of hello"
+   261	12:32	git commit -m "first version of hello"
+   262	12:32	git status
+   263	12:34	git log
+   264	12:35	git log --stat
+   266	12:38	git status
+   267	12:39	git diff
+   268	12:40	git add hello_hybrid.c
+   269	12:40	git status
+   270	12:41	git commit -m "added world"
+   271	12:41	git status
+   272	12:41	git log -status
+   273	12:41	git log --stat
+   275	12:48	git diff
+   279	12:50	git commit -m "refactored initialization"
+   280	12:51	git add hello_hybrid.c
+   281	12:51	git commit -m "refactored initialization"
+   282	12:54	git diff HEAD~1
+   283	12:54	git diff HEAD~2
+   284	12:57	git checkout HEAD~2
+   285	12:58	git checkout master
+   286	13:01	git checkout master
+   287	13:01	git checkout HEAD~1
+   288	13:03	git tag -a paper-submitted -m "paper submitted to Journal"
+   290	13:09	git checkout hello_hybrid.c
+   292	13:18	git remote add origin https://github.com/feigl/mpiopenmpiexamples.git
+   293	13:18	git remote -v
+   294	13:19	git push -u origin master
+   303	13:26	git remote -v
+   304	13:26	git remote rm origin
+   305	13:26	git remote -v
+   306	13:27	git remote add origin git@github.com:feigl/mpiopenmpiexamples.git
+   307	13:27	git push -u origin master
+   308	13:29	git push -u origin master
+   309	13:36	git push -u origin master
+   310	13:37	git add *.f90 *.cmd
+   311	13:37	git commit -m "add other files"
+   312	13:39	git push origin master
+   317	13:39	git pull origin master
+   321	13:41	git clone git@github.com:feigl/mpiopenmpiexamples.git
+   335	13:42	git status
+   340	13:44	git add hello_hybrid.c
+   341	13:44	git commit -m "
+   342	13:44	git commit -m "change world to people
+   343	13:44	git commit -m "change world to people"
+   344	13:44	git push origin master
+   346	13:45	git diff
+   347	13:46	git add hello_hybrid.c
+   348	13:46	git commit -m "change world to universe"
+   349	13:46	git push origin master
+   350	13:47	git pull origin master
+   351	13:58	git checkout -b test-num_thread
+   352	13:58	git diff master
+   353	14:03	git checkout -b rename-mp master
+   354	14:03	git branch
+   366	17:53	git init
+   367	17:53	git add README.md
+   368	17:53	git commit -m "first commit"touch README.md
+   369	17:53	git init
+   370	17:53	git add README.md
+   373	17:54	git add *.m
+   374	17:54	git status
+   375	17:55	git commit -m "Added .m file in src folder from v. 2.8 on Kurt's Mac"
+   376	17:56	git remote add origin git@github.com:feigl/gipht.git
+   377	17:56	git push origin master
+   379	18:16	git tag v2.8
+   380	18:16	git push origin master
+   391	18:22	git add *.m
+   392	18:22	git commit -m "remove obsolete files"
+   394	18:33	git push origin master
+   401	18:34	git add *.m
+   402	18:35	git commit -m "Added .m files in extern folder from v. 2.8 on Kurt's Mac"
+   403	18:35	git remote add origin git@github.com:feigl/gipht.git
+   404	18:35	git push origin master
+   409	18:36	git add 0LICENSE.TXT
+   419	18:41	git add README.md
+   421	18:42	git add 0LICENSE.TXT
+   422	18:43	git commit -m "Add README.md and LICENSE.TXT"
+   423	18:44	git remote add git@github.com:feigl/gipht.git
+   424	18:44	git remote add master git@github.com:feigl/gipht.git
+   425	18:44	git status
+   427	18:45	git add *.c
+   428	18:45	git commit -m "Add .c files"
+   429	18:45	git remote add master git@github.com:feigl/gipht.git
+   431	18:47	git push git@github.com:feigl/gipht.git
+   432	18:50	git remote add master git@github.com:feigl/gipht.git
+   433	18:50	git push origin master
+   434	18:51	git status
+   435	18:51	git commit -a
+   436	18:52	git commit -a -m "deleted obsolete files"
+   437	18:52	git push
+   438	18:53	git pull
+   439	18:53	git pull origin master
+   440	18:53	git push
+   443	18:54	git add *.m
+   444	18:54	git commit -m "added extern"
+   445	18:55	git add *.c *.h
+   448	18:55	git push
+   453	18:56	git push
+   454	18:56	git help
+   455	18:56	git help push
+   457	18:57	git push origin master
+   460	19:03	git add README.md
+   461	19:04	git commit -m "Add language from WARF for README.md"
+   462	19:04	git push
+   463	19:08	git add README.md
+   464	19:08	git commit -m "Add more language from WARF for README.md"
+   465	19:08	git push
+   466	19:11	git add README.md
+   467	19:11	git commit -m "Remove formatting from README.md"
+   468	19:11	git push
+   470	19:11	history | grep git
+   471	19:12	history | grep git > git_history.txt
+   498	12:58	git add *.h
+   499	12:58	git commit -m "Add .h files"
+   500	12:59	git push
+   509	17:00	git branch
+   514	17:01	git diff
+   516	17:02	git checkout -b KFv2.9
+   517	17:04	git commit -a -m "minor and incomplete repairs in San Diego"
+   518	17:05	git push origin KFv2.9
+   520	17:10	history | grep git
+   521	17:11	history | grep git > git_history.txt
