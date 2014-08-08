@@ -6,8 +6,8 @@ xpts=DST.x;
 ypts=DST.y;
 zpts=DST.z;
 
-% verbose = 0;
-verbose = 1;
+ verbose = 0;
+%verbose = 1;
 
 %[pnames32, pnames, values, dims, descrs] = get_comsol_parameters(PST.datafilename)
 
