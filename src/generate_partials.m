@@ -17,42 +17,44 @@ DST.phamod = rng0;
 
 
 % Jacobian matrix is partial derivative of observable with respect to parameter
-dDdP = zeros(ndata,mparams);
+dDdP = zeros(ndata,mparam);
 %fprintf(1,'ID, name, min, max, mean of partial derivative, delta (radians)\n');
 
 %ptlcol = zeros(ndata,1);
 
-% count free parameters
-ifree = find(abs(PST.ub-PST.lb) > 0.);
+% count free parameters by considering difference between bounds
+db = PST.ub-PST.lb;
+ifree = find(abs(db) > 0.);
+mfree = numel(ifree)
 
-mfree = 0;
-parfor j=ifree
-    fprintf(1,'--- Calculating partial derivatives for parameter %5d %s %12.4e\n',j,char(pnames{j}),PST.scale(j));
-    mfree = mfree+1;
+parfor j=1:mparam
+    % set all elements to zero
+    ptlcol = zeros(ndata,1);
+
+    if db(j) > 0.
+    fprintf(1,'--- Calculating partial derivatives for parameter %5d (of %5d) %s %12.4e\n',j,mfree,char(pnames{j}),PST.scale(j));
     
     % half a step down (left) in parameter
     PSTP1 = PST;
     PSTP1.p1(j) = PSTP1.p1(j) - 1.0d0 * PST.scale(j)/2.0;
     PSTP1.flag{j} = 'F#';
     rng1 = feval(fitfun,DST,PSTP1,TST);
-
+    
     % half a step up (right) in parameter
     PSTP2 = PST;
     PSTP2.p1(j) = PSTP2.p1(j) + 1.0d0 * PST.scale(j)/2.0;
     PSTP2.flag{j} = 'F#';
     rng2 = feval(fitfun,DST,PSTP2,TST);
-
+    
     % partial derivative is difference (right minus left)
     der1 = colvec((rng2 - rng1) / PST.scale(j));
     %der1 = colvec((rng2 - rng1) / db / 2.0);
-        
+    
     % find valid elements
     iok1 = find(isfinite(der1)==1);  % finite value
     iok2 = find(abs(der1)>0.0);      % non-zero
     iok  = intersect(iok1,iok2);     % both of above
     
-    % set all elements to zero
-    ptlcol = zeros(ndata,1);
     
     % overwrite with valid elements
     ptlcol(iok) = der1(iok);
@@ -69,6 +71,7 @@ parfor j=ifree
     %         ,nanmin(ptlcol),nanmax(ptlcol),nanmean(ptlcol));
     %
     
+    end
     % return partial derivative wrt 1 parameter as 1 column in TSTP structure
     dDdP(:,j) = ptlcol;
 end
