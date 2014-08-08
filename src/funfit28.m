@@ -149,8 +149,8 @@ if (nin == 1 || nin == 2) && nout == 2 && isstruct(varargin{1}) == 0
     if numel(strfind(lower(char(datafilename)),'.mph')) > 0
         % data file exists
         if fexist(char(datafilename)) == 1
-            j=j+1;pnames{j} = sprintf('CS Easting in m                '); pscl(j)=1.0e3;
-            j=j+1;pnames{j} = sprintf('CS Northing in m               '); pscl(j)=1.0e3;
+            j=j+1;pnames{j} = sprintf('CS Origin Easting in m          '); pscl(j)=1.0e3;
+            j=j+1;pnames{j} = sprintf('CS Origin Northing in m         '); pscl(j)=1.0e3;
             
             mphname = char(datafilename);
             [pnames32, pnamesCS, values, dims, descrs] = get_comsol_parameters(mphname);
@@ -797,7 +797,7 @@ elseif nin == 3 ...
             % only run comsol solution if one of the the parameters has
             % changed
             if nreset > 0
-                cs_times = execute_comsol(PST.datafilename);
+                cs_stat = execute_comsol(PST.datafilename);
             end
             [cs_times,xpts,ypts,zpts,ucs,vcs,wcs] = get_comsol_displacements(PST,DST,TST);
             

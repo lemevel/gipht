@@ -1,15 +1,6 @@
 function cost1 = funcostrarc(p,fitfun,DST,PST,TST)
-%function cost1 = funcostrarc(p,fitfun,xyzm,tepochs,bpest,dops,DD,unitv,xd,yd,ippix1,ifast,partials)
-%function cost1 = funcostrarc(p,fitfun,varargin)
-%function cost1 = funcostrarc(p,fitfun,xyzm,tepochs,bpest,dops,DD,unitv,xd,yd,ippix1)
-% cost  function for phase model
-%   p   == parameter
-%   xyzm == distance in m  
-%   xd == observed (wrapped) phase in radians [-pi, +pi]
-%   yd == dummy, for historical reasons
-% 2010-JAN-11
-%
-% for use with ANNEAL
+%function cost1 = funcostrarc(p,fitfun,DST,PST,TST)
+% cost function for phase model is mean of dev = arc(obs,mod)
 
 nargchk(5, 5, nargin);
 
@@ -26,11 +17,16 @@ PST.p1 = p;
 costs = funcostsrarc(fitfun,DST,PST,TST);
 %size(costs)
 
+% 20140807 prune out NaN
+iok = isfinite(costs);
+costs = costs(iok);
+
 % number of elements
 n=numel(costs);
 
 % average cost is L1 norm in radians
 cost1=sum(colvec(costs))/n; 
+
 % convert to cycles
 cost1 = cost1/2.0/pi;
 

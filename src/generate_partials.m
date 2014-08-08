@@ -33,7 +33,7 @@ for j=1:mparam
     ptlcol = zeros(ndata,1);
 
     if db(j) > 0.
-    fprintf(1,'--- Calculating partial derivatives for parameter %5d (of %5d) %s %12.4e\n',j,mfree,char(pnames{j}),PST.scale(j));
+    fprintf(1,'--- Calculating partial derivatives for parameter %5d (of %5d) %s %12.4e\n',j,mparam,char(pnames{j}),PST.scale(j));
     
     % half a step down (left) in parameter
     PSTP1 = PST;
@@ -52,18 +52,30 @@ for j=1:mparam
     %der1 = colvec((rng2 - rng1) / db / 2.0);
     
     % find valid elements
-    iok1 = find(isfinite(der1)==1);  % finite value
-    iok2 = find(abs(der1)>0.0);      % non-zero
-    iok  = intersect(iok1,iok2);     % both of above
+%     iok1 = find(isfinite(der1)==1);  % finite value
+%     iok2 = find(abs(der1)>0.0);      % non-zero
+%     iok  = intersect(iok1,iok2);     % both of above
+    
+    iok = 1:ndata;
     
     
     % overwrite with valid elements
     ptlcol(iok) = der1(iok);
     
+    figure;hold on;
+    set(gcf,'DefaultTextInterpreter','none');
+    plot(rng1,'b');
+    plot(rng2,'r');
+    plot(der1,'k-');
+    xlabel('index');
+    ylabel('partial derivative');
+    legend('rng1','rng2','der1');
+    title(sprintf('parameter %d %s\n',j,char(pnames{j})));
+    
     % count bad elements
-    nbad = ndata - numel(iok1);
+    nbad = ndata - numel(iok);
     if nbad ~= 0
-        warning(sprintf('nbad is %d. Replacing partial derivatives with zero.\n',nbad));
+        warning(sprintf('Replaced %d partial derivatives with zero.\n',nbad));
     end
     
     

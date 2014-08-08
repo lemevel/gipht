@@ -6,7 +6,8 @@ xpts=DST.x;
 ypts=DST.y;
 zpts=DST.z;
 
-verbose = 0;
+% verbose = 0;
+verbose = 1;
 
 %[pnames32, pnames, values, dims, descrs] = get_comsol_parameters(PST.datafilename)
 
@@ -18,10 +19,10 @@ model = mphload(PST.datafilename);
 info1 = mphsolinfo(model);
 info2 = mphsolutioninfo(model);
 
-% if verbose == 1
-%     info1
-%     info2
-% end
+if verbose == 1
+    info1
+    info2
+end
 
 % Comsol evaluation solution_epochs in seconds
 solution_epochs = info1.solvals;
@@ -71,8 +72,23 @@ pts_coords=zeros(3,numel(DST.x));
 
 % pts_coords(1,:)=DST.x-PST.xcen; % x coordinates in Comsol frame in meters
 % pts_coords(2,:)=DST.y-PST.ycen; % y coordinates in Comsol frame in meters
-xcen = PST.p0(get_parameter_index('CS_Easting_in_m_________________',PST.names));
-ycen = PST.p0(get_parameter_index('CS_Northing_in_m________________',PST.names));
+% xcen = PST.p0(get_parameter_index('CS_Easting_in_m_________________',PST.names))
+% ycen = PST.p0(get_parameter_index('CS_Northing_in_m________________',PST.names))
+% F#  95 CS_Origin_Easting_in_m__________        0.0        NaN        0.0        NaN     NaN        0.0
+% F#  96 CS_Origin_Northing_in_m_________        0.0        NaN        0.0        NaN     NaN        0.0
+
+ix = get_parameter_index('CS_Origin_Easting_in_m__________',PST.names);
+if ix > 0
+    xcen = PST.p0(ix);
+else
+    error('Cannot find CS_Origin_Easting_in_m__________ in parameter list\n');
+end
+iy = get_parameter_index('CS_Origin_Northing_in_m_________',PST.names);
+if iy > 0
+    ycen = PST.p0(iy);
+else
+    error('Cannot find CS_Origin_Northing_in_m_________ in parameter list\n');
+end
 pts_coords(1,:)=DST.x-xcen;
 pts_coords(2,:)=DST.y-ycen;
 %pts_coords(3,:)=DST.z; % top of model is the topographic surface (DEM values)
@@ -99,8 +115,7 @@ if numel(solution_epochs) > 1
     %differential displacements
     dupts=upts2-upts1;
     dvpts=vpts2-vpts1;
-    dwpts=wpts2-wpts1;
-    
+    dwpts=wpts2-wpts1;    
 else
     % differential displacement at observation points - for elastic case
 %     dupts = colvec(mphinterp(model,{'u'},'coord',pts_coords,'ext',1.0)); % easting component
@@ -108,8 +123,7 @@ else
 %     dwpts = colvec(mphinterp(model,{'w'},'coord',pts_coords,'ext',1.0)); % vertical component
     dupts = colvec(mphinterp(model,{'u'},'coord',pts_coords)); % easting component
     dvpts = colvec(mphinterp(model,{'v'},'coord',pts_coords)); % northing component
-    dwpts = colvec(mphinterp(model,{'w'},'coord',pts_coords)); % vertical component
-    
+    dwpts = colvec(mphinterp(model,{'w'},'coord',pts_coords)); % vertical component    
 end
 
 if verbose == 1
