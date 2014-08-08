@@ -27,7 +27,8 @@ db = PST.ub-PST.lb;
 ifree = find(abs(db) > 0.);
 mfree = numel(ifree)
 
-parfor j=1:mparam
+%parfor j=1:mparam % does not work if calling comsol
+for j=1:mparam
     % set all elements to zero
     ptlcol = zeros(ndata,1);
 
