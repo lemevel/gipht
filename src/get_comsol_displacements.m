@@ -1,7 +1,6 @@
 function [solution_epochs,xpts,ypts,zpts,dupts,dvpts,dwpts] = get_comsol_displacements(PST,DST,TST)
-% Run COMSOL
-% Helene 21 Nov 2013
-% Kurt 2014-MAY-14
+%function [solution_epochs,xpts,ypts,zpts,dupts,dvpts,dwpts] = get_comsol_displacements(PST,DST,TST)
+% Kurt 2014-08-08
 xpts=DST.x;
 ypts=DST.y;
 zpts=DST.z;
