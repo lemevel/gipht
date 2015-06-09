@@ -29,7 +29,7 @@ for ic=1:numel(values)  % loop over indices to comsol parameters
         
         
         if (abs(p1) > 0)
-            if abs(PST.p1(ip)-values(ic)) > 0
+            if abs(PST.p1(ip)-values(ic)) > eps*abs(values(ic))
                 %if verbose == 1
                     fprintf(1,'    Re-setting %d %-8s %-32s from %12.4e to %12.4e %s\n',ip,pnamesCS{ic},PST.names{ip},values(ic),PST.p1(ip),descrs{ic});
                 %end
@@ -67,7 +67,10 @@ if verbose == 1;
 end
 tstart = tic;
 %mphsave(model,sprintf('%s.mph',mphname));
-mphsave(model,mphname);
+%mphsave(model,mphname);
+
+% 20140829 need to instance it 
+model.save(mphname);
 
 if verbose == 1
     fprintf(1,'Finished task in %.1f seconds\n',toc(tstart));

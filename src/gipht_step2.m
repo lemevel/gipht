@@ -216,6 +216,8 @@ else
     error('numel(pindex) NE numel(tepochs)');
 end
 
+
+
 % count number of degrees of freedom
 if (numel(ub) == numel(lb)) && (numel(p0) == numel(ub))
     mparam = numel(p0);
@@ -329,7 +331,14 @@ PST00 = build_pst(fitfun,mparam,zeros(size(p0)),zeros(size(p0)),zeros(size(p0)).
 % call fitting function first time to initialize
 % temporary storage structure TST
 ierr = check_struct(DST);
+clear rng
+clear TST
+fprintf(1,'Calling fitting function for first time to initialize.\n');
 [rng,TST] = feval(fitfun,DST,PST);
+% 20150519 Try to avoid using feval
+%fhandle = @fitfun;
+% fhandle = @funfit28
+% [rng,TST] = fhandle(DST,PST);
 DST.phamod = rng;
 
 % % evaluate fitting function at initial estimate of parameter vector
@@ -337,7 +346,12 @@ PST0 = PST;
 PST0.p1=PST0.p0;
 
 % evaluate function at initial estimate
-mdl0 = feval(fitfun,DST,PST0,TST);
+clear mdl0;
+fprintf(1,'Calling fitting function for second time\n');
+ mdl0 = feval(fitfun,DST,PST0,TST);
+% 20150519 Try to avoid using feval
+% fhandle = @fitfun;
+% mdl0 = fhandle(DST,PST0,TST);
 DST.phamod = colvec(mdl0);
 % 
 % % make a 3-D plot using initial estimate
@@ -447,7 +461,9 @@ switch ianneal
         p00 = zeros(size(p0)); % null model
         
         %cost00  = feval(objfun,p00,fitfun,DST,PST,TST); % cost of null model
+        fprintf(1,'Starting to calculate cost of null    estimate\n');
         cost00  = feval(objfun,p00,'funnull',DST,PST,TST); % cost of null model
+        fprintf(1,'Starting to calculate cost of initial estimate\n');
         cost0   = feval(objfun,p0, fitfun,DST,PST,TST); % cost of initial model
         msig = nan(size(p0)); % uncertainty of model parameters
         istatcode = 0;
@@ -661,7 +677,7 @@ end
 % xlabel('pixel index');ylabel('phase (cycle)');legend('residual');
 % feval(printfun,sprintf('%s_Taylor1Check',runname));
 
-
+clear h;
 save;
 
 fprintf(1,'\n\n----------------   %s ended normally at %s ----------\n',upper(mfilename),datestr(now,31));

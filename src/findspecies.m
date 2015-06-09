@@ -132,13 +132,30 @@ nrows = nm(1);
 %  	   basis for the nullspace of A with orthonormal columns and, for
 %  	   badly conditioned problems, even a possibly different dimension.)
 %if verLessThan('matlab', '7.9.0.529')
-if verLessThan('matlab', '7.10')
-    warning('Using old version of null')
-    N = null(DD);
-else
-    % rational null space
-    N = null(DD,'r');
-end
+% if verLessThan('matlab', '7.10')
+%     warning('Using old version of null')
+%     N = null(DD);
+% else
+%     % rational null space
+%     N = null(DD,'r');
+% end
+
+% Matlab version 8.5.0.197613 (R2015a)
+% 
+% null	Nullspace of a matrix
+% N = null(A) uses the pivoting LU factorization computed by
+% PLU and the resulting reduced row echelon form computed by REF to
+% find a matrix N whose columns are a basis for the nullspace of A.
+% The number of columns of N is the nullity of A.
+% If A has independent columns, then N is empty, N = [];
+% 
+% (This supersedes the MATLAB function null(A) which computes a
+%     basis for the nullspace of A with orthonormal columns and, for
+%         badly conditioned problems, even a possibly different dimension.)
+%         
+
+N = null(DD);
+
   
 [nrnull,ncnull] = size(N);
 if ncnull ~= nspecies | nrnull ~= me 

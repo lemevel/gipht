@@ -1,0 +1,47 @@
+Copyright (c) 2011 Kurt L. Feigl & Peter E. Sobol
+University of Wisconsin-Madison
+All rights reserved
+
+Part of General Inversion of Phase Technique (GIPhT)
+
+Copyright (c) Kurt Feigl, Cliff Thurber  All rights reserved.
+U.S. Patent No. 7,446,705.
+
+Use of this computer program [GIPhT] is governed by a license agreement
+between You and the Wisconsin Alumni Research Foundation (the
+'Agreement'). Unauthorized use, reproduction, or distribution of this
+program or any portion of it may result in severe civil and criminal
+penalties, and will be prosecuted to the maximum extent possible under
+the law. By using this program, you agree to be bound by the terms of the
+Agreement.
+
+Succesfully opened input phase file pha_11176_21540_ort.pha
+nx=N(cols)     =       1420
+ny=N(rows)     =       1230
+Mininum misfit circular mean deviation  =         16
+Maximum number of pixels in patch  =       1000
+N(pixels in)   =    1746600
+N(null in)     =     578542
+Padding ends of rows from 1420 to 2048
+Padding ends of cols from 1230 to 2048
+N(levels)      =         11
+N(maxpatch)    =    4194304
+N(null grx)    =    1645768
+N(null gry)    =    1645816
+N(null out)    =    1645559
+N(null patches)=          0
+N(patches)     =       4893
+N(OK patches)  =       4893
+N(pixels out)  =    1746600
+Change         =        3.4 percent
+Compression    =        3.4 percent
+Reduction      =       96.6 percent
+pha2qls version 2.5b of 2012-OCT-06 
+i1thresh, minpix, maxcmd: 32,16,16
+Opened: qha_11176_21540_ort.pha for output
+Opened: grx_11176_21540_ort.i2
+Opened: gry_11176_21540_ort.i2
+Opened for QLS output: pha_11176_21540_ort.qls
+Writing gradient-X file grx_11176_21540_ort.i2
+writing gradient-y file gry_11176_21540_ort.i2
+writing quadtree phase file qha_11176_21540_ort.pha

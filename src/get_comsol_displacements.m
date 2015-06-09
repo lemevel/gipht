@@ -5,7 +5,7 @@ xpts=DST.x;
 ypts=DST.y;
 zpts=DST.z;
 
- verbose = 0;
+verbose = 0;
 %verbose = 1;
 
 %[pnames32, pnames, values, dims, descrs] = get_comsol_parameters(PST.datafilename)
@@ -88,6 +88,14 @@ if iy > 0
 else
     error('Cannot find CS_Origin_Northing_in_m_________ in parameter list\n');
 end
+
+if abs(xcen) < 1.0
+    error(sprintf('xcen is small.'));
+end
+if abs(ycen) < 1.0
+    error(sprintf('ycen is small.'));
+end
+
 pts_coords(1,:)=DST.x-xcen;
 pts_coords(2,:)=DST.y-ycen;
 %pts_coords(3,:)=DST.z; % top of model is the topographic surface (DEM values)
@@ -99,17 +107,24 @@ Ema=min(min(pts_coords(1,:)));
 
 if numel(solution_epochs) > 1
     % for time-dependent viscoelastic solutions, we need interpolation in time
+    % get absolute epochs in years
+    t0 = PST.p0(get_parameter_index('Reference_Epoch_in_years________',PST.names));
+    t1 = PST.p0(get_parameter_index('time_fn_@_epoch_001_in_years____',PST.names));
+    t2 = PST.p0(get_parameter_index('time_fn_@_epoch_002_in_years____',PST.names));
+    
+    % convert to relative time in seconds 
+    % with respect to initial conditions
     secperyr = 365.25 * 3600 * 24;
-    t1 = secperyr * PST.p0(get_parameter_index('time_fn_@_epoch_001_in_years____',PST.names));
-    t2 = secperyr * PST.p0(get_parameter_index('time_fn_@_epoch_002_in_years____',PST.names));
+    dt1 = (t1 - t0) * secperyr;
+    dt2 = (t2 - t0) * secperyr;
     % displacement at master epoch at observation points
-    upts1 = colvec(mphinterp(model,{'u'},'coord',pts_coords,'t',t1)); % easting component
-    vpts1 = colvec(mphinterp(model,{'v'},'coord',pts_coords,'t',t1)); % northing component
-    wpts1 = colvec(mphinterp(model,{'w'},'coord',pts_coords,'t',t1)); % vertical component
+    upts1 = colvec(mphinterp(model,{'u'},'coord',pts_coords,'t',dt1)); % easting component
+    vpts1 = colvec(mphinterp(model,{'v'},'coord',pts_coords,'t',dt1)); % northing component
+    wpts1 = colvec(mphinterp(model,{'w'},'coord',pts_coords,'t',dt1)); % vertical component
     % displacement at slave epoch at observation points
-    upts2 = colvec(mphinterp(model,{'u'},'coord',pts_coords,'t',t2)); % easting component
-    vpts2 = colvec(mphinterp(model,{'v'},'coord',pts_coords,'t',t2)); % northing component
-    wpts2 = colvec(mphinterp(model,{'w'},'coord',pts_coords,'t',t2)); % vertical component
+    upts2 = colvec(mphinterp(model,{'u'},'coord',pts_coords,'t',dt2)); % easting component
+    vpts2 = colvec(mphinterp(model,{'v'},'coord',pts_coords,'t',dt2)); % northing component
+    wpts2 = colvec(mphinterp(model,{'w'},'coord',pts_coords,'t',dt2)); % vertical component
     
     %differential displacements
     dupts=upts2-upts1;

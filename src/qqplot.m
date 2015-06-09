@@ -217,6 +217,9 @@ evals2 = diff(evals2);
 %     fprintf(1,'%3d %12.4f %12.4f %12.4f %12.4f %12.4f %12.4f\n',i,zvals(i),zvals(i+1),cvals(i),ovals(i),evals1(i),evals2(i));
 % end
 
+titlestr = sprintf('%s distribution H = %d (n = %d) P = %g phat %g %g %g '...
+    ,dist,chi2gof_h,numel(data),chi2gof_p,phat(1:m));
+
 % draw QQ-plot
 figure;
 set(gca,'FontName','Helvetica','Fontsize',12,'FontWeight','bold');
@@ -235,12 +238,10 @@ plot(xqm,Y+DELTA,'k--');
 xlabel(sprintf('expected values'));
 ylabel(sprintf('observed values'));
 
-title(sprintf('QQ plot for %s distribution H = %d P = %g phat %g %g %g '...
-    ,dist,chi2gof_h,chi2gof_p,phat(1:m)));
+title(strcat('QQ plot for ',titlestr));
 h(1) = gcf;
 
 % draw histogram
-
 figure;hold on;
 set(gca,'FontName','Helvetica','Fontsize',12,'FontWeight','bold');
 for i=1:numel(zvals)-1
@@ -252,9 +253,8 @@ bar(cvals,ovals,barwidth); % is incorrect because bins have different widths
 %plot(cvals,ovals,'bs-');
 plot(cvals,evals1,'ro-','MarkerSize',6,'LineWidth',1,'MarkerFaceColor','r','MarkerEdgeColor','k');
 %plot(cvals,evals2,'b*-','MarkerSize',5,'LineWidth',1,'MarkerFaceColor','b','MarkerEdgeColor','k');
+title(strcat('histogram ',titlestr));
 
-title(sprintf('Histogram for %s distribution H = %d P = %g phat %g %g %g '...
-    ,dist,chi2gof_h,chi2gof_p,phat(1:m)));
 xlabel('Value');
 ylabel('Number of occurrences');
 h(2) = gcf;
@@ -270,8 +270,7 @@ axis([0 1 0 1]);
 axis square;
 hold on;
 plot([0 1],[0 1],'b:');
-title(sprintf('QQ plot for %s distribution H = %d P = %g phat %g %g %g '...
-    ,dist,chi2gof_h,chi2gof_p,phat(1:m)));
+title(titlestr);
 ylabel('Observed frequency');
 
 subplot(2,1,2);

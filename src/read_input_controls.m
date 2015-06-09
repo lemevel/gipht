@@ -401,22 +401,39 @@ if  ~ismember(orbopt,[0,1]);
     error(sprintf('ERROR: orbopt has invalid value of %f in %s\n',orbopt,fname));
 end
 
-if nprocessors > 0
-    if numel(which('matlabpool')) > 0
-        matlabpoolsize = matlabpool('size');
-        if matlabpoolsize > 0
-           try 
-               matlabpool close force
-           catch
-               warning('issues with matlab pool');
-           end
-        else
-            warning('matlabpoolsize is %d\n',matlabpoolsize);
+% if nprocessors > 0
+%     if numel(which('matlabpool')) > 0
+%         matlabpoolsize = matlabpool('size');
+%         if matlabpoolsize > 0
+%            try 
+%                matlabpool close force
+%            catch
+%                warning('issues with matlab pool');
+%            end
+%         else
+%             warning('matlabpoolsize is %d\n',matlabpoolsize);
+%         end
+%     else
+%         error(sprintf('Request is for nprocessors = %d BUT matlab distributed tool kit not installed.\n',nprocessors));
+%     end
+% end
+% 
+% In Matlab version 8.5.0.197613 (R2015a)
+%  matlabpool has been removed. Use PARPOOL instead.
+
+if nprocessors > 0 
+    if numel(which('parpool')) > 0
+        current_parpool = gcp('nocreate');
+        if numel(current_parpool) > 0
+            warning('Deleting current pool...');
+            delete(gcp);
         end
+        current_parpool= parpool([1,nprocessors]);
     else
         error(sprintf('Request is for nprocessors = %d BUT matlab distributed tool kit not installed.\n',nprocessors));
     end
 end
+
 if mpercy < 0.001 || mpercy > 1.000
     error(sprintf('ERROR: mpercy has invalid value of %f in %s\n',mpercy,fname));
 end

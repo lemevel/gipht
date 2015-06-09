@@ -1,0 +1,78 @@
+
+
+----------------   GIPHT_STEP1 begins at 2015-04-19 12:43:22 ----------
+read_input_controls begin reading input control file named gipht.in...
+    1 demdescfile  subregion_dem_descriptor.dat % for small subregion only
+    2 xcenter  506875       % Correct UTM easting in meters
+    3 ycenter  3800986      % Correct UTM northing in meters
+    4 demdescfile  gipht_subregion121x81.dat 
+    5 ilist  file_names_SIMUTEST.dat % list of interferograms for small subregion only using simulated phase 
+    6 halfwidth  60           % half the east-west width of the sampled region in pixels
+    7 halfheight  40	        % half the north-south height of the sampled region in pixels
+    8 pselect  7        % select pixels of gradient using quadtree
+    9 pixinpatch  4        % mininum number of valid (nonzero) pixels in a patch
+   10 ithresh     24        % minimum misfit (circular mean deviation) to mean ( 1 DN is 1 / 256 pixel)
+   11 maxcmd      8        % minimum misfit (circular mean deviation) to ramp ( 1 DN is 1 / 256 pixel)
+   12 unitv_east    0.263325742220766  % Eastward component
+   13 unitv_north   -0.056051009264550  % Northward component
+   14 unitv_up    0.963077275115714  % Upward component (must be positive)
+   15 anneal  0  %     0 to skip Simulated Annealing
+   16 txtinname  mogiF1.gin    % Mogi model for discrimination
+   17 objfun  funcostrarc     % Objective Function mininum angle,  assumes zero mean, using arc function in radians 
+   18 fitfun  funfit28 % same as funseparable27 but calls COMSOL if datafilename includes "mph"
+   19 figopt   010 % good for short course
+   20 printfun  printpdf  % print all plots to Portable Document Files files (compact)
+             xcenter = 506875.000000
+             ycenter = 3800986.000000
+           halfwidth = 60.000000
+          halfheight = 40.000000
+             pselect = 7.000000
+          unitv_east = 0.263326
+         unitv_north = -0.056051
+            unitv_up = 0.963077
+             ithresh = 24.000000
+              anneal = 0.000000
+          pixinpatch = 4.000000
+              maxcmd = 8.000000
+              figopt = 00000010
+              objfun = funcostrarc
+              fitfun = funfit28
+           txtinname = mogiF1.gin
+         demdescfile = subregion_dem_descriptor.dat
+         demdescfile = gipht_subregion121x81.dat
+               ilist = file_names_SIMUTEST.dat
+            printfun = printpdf
+WARNING: No orbit file named in gipht.in. Assuming constant look vector.
+mogiF1.gin
+gipht_subregion121x81.dat
+file_names_SIMUTEST.dat
+cmds = 
+    'funfit28'    'printpdf'    'funcostrarc'
+Using "exist" command to search for function named funfit28
+Found function named funfit28 2
+Using "exist" command to search for function named printpdf
+Found function named printpdf 2
+Using "exist" command to search for function named funcostrarc
+Found function named funcostrarc 2
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parpool', '/Applications/MATLAB_R2015a.app/toolbox/distcomp/cluster/parpool.m', 103)" style="font-weight:bold">parpool</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2015a.app/toolbox/distcomp/cluster/parpool.m',103,0)">line 103</a>)
+Found an interactive session. You cannot have multiple interactive sessions open
+simultaneously. To terminate the existing session, use 'delete(gcp)'.
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('read_input_controls', '/Users/feigl/gipht/src/read_input_controls.m', 435)" style="font-weight:bold">read_input_controls</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/read_input_controls.m',435,0)">line 435</a>)
+            current_parpool= parpool([1,nprocessors]);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht_step1', '/Users/feigl/gipht/src/gipht_step1.m', 14)" style="font-weight:bold">gipht_step1</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht_step1.m',14,0)">line 14</a>)
+[xcenter, ycenter, halfwidth, halfheight, npix, pselect, tquake...
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht', '/Users/feigl/gipht/src/gipht.m', 125)" style="font-weight:bold">gipht</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht.m',125,0)">line 125</a>)
+gipht_step1; % read in phase files, select pixels} 
+delete(gcp)
+Parallel pool using the 'local' profile is shutting down.
+open gipht.in
+gipht
+
+
+----------------   GIPHT Development version 2.8 of 06-Aug-2014 12:53:06 ----------
+
+
+----------------   GIPHT begins at 2015-04-19 12:44:09 ----------
+runname =
+20150419_124409

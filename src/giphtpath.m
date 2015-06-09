@@ -1,7 +1,7 @@
 function giphtpath
 % set path for GIPHT
 home = getenv('HOME');
-giphtv = 'GIPhT2.8';
+giphtv = 'gipht';
 gipht_home = strcat(home,filesep,giphtv)
 if exist(gipht_home,'dir') == 7
     fprintf(1,'Setting environment variable GIPHT_HOME  to %s\n',gipht_home);

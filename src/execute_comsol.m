@@ -23,7 +23,10 @@ model.sol('sol1').runAll;
 %    model.sol('sol1').updateSolution; % no need to remesh
 
 %mphsave(model,sprintf('%s.mph',mphname));
-mphsave(model,mphname);
+%mphsave(model,mphname);
+
+% 20140829 need to instance it 
+model.save(mphname);
 
 if verbose == 1
     fprintf(1,'Finished calculating %s in %.f seconds\n',mphname,toc(tic1));

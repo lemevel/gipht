@@ -130,19 +130,19 @@ else
         talk=OPTIONS(7);
     end
     if numel(OPTIONS) >= 8
-        if OPTIONS(8) > 1
-            if talk
-                fprintf(1,'Checking that matlabpool is open with %d processors....\n',OPTIONS(8));
-            end
-            %matlabpool('open',OPTIONS(8))
-            if matlabpool('size') == OPTIONS(8)
-                if talk
-                    fprintf(1,'Success.\n');
-                end
-            else
-                error(sprintf('Distproc failure.\n'));
-            end
-        end
+%         if OPTIONS(8) > 1
+%             if talk
+%                 fprintf(1,'Checking that matlabpool is open with %d processors....\n',OPTIONS(8));
+%             end
+%             %matlabpool('open',OPTIONS(8))
+%             if matlabpool('size') == OPTIONS(8)
+%                 if talk
+%                     fprintf(1,'Success.\n');
+%                 end
+%             else
+%                 error(sprintf('Distproc failure.\n'));
+%             end
+%         end
     end
     if numel(OPTIONS) >= 9
         if OPTIONS(9) == 1

@@ -1,0 +1,282 @@
+#! /usr/bin/python
+
+# Import numpy and plotting tools
+import arcpy
+import subprocess
+import arcgisscripting
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from itertools import groupby
+import csv
+import time
+from datetime import datetime, timedelta
+from win32com.client import Dispatch
+import MySQLdb
+from matplotlib.backends.backend_pdf import PdfPages
+
+# User input for name of piezo
+var_input = arcpy.GetParameterAsText(0)
+pumpname = arcpy.GetParameterAsText(1)
+show_plot = arcpy.GetParameterAsText(2)
+save_txt = arcpy.GetParameterAsText(3)
+method = 'MySQL'
+user = arcpy.GetParameterAsText(4)
+password = arcpy.GetParameterAsText(5)
+method1 = arcpy.GetParameterAsText(6)
+default_logic = arcpy.GetParameterAsText(7)
+lowdate = arcpy.GetParameterAsText(8)
+highdate = arcpy.GetParameterAsText(9)
+path_to_adobe = arcpy.GetParameterAsText(10)
+default_folder_to_save = arcpy.GetParameterAsText(11)
+
+try:
+
+        # Set up directory in python
+        import os
+        os.chdir(default_folder_to_save)
+
+        # Import csv files.  First, define a converter that changes the various text strings to nan.  If I missed one, just add another line.
+        def converter(x):
+                if x == 'NA':
+                        return np.nan
+                elif x == 'Out of Serv':
+                        return np.nan
+                elif x == 'No Data':
+                        return np.nan
+                elif x == 'I/O Timeout':
+                        return np.nan
+                elif x == 'Bad':
+                        return np.nan
+                elif x == 'Not Connect':
+                        return np.nan
+                elif x == '':
+                        return np.nan
+                else:
+                        return float(x)
+
+        # Now import the files
+
+        db = MySQLdb.connect(host = "kucslcd175", port = 3306, user = user, passwd = password, db = "piezo")
+        cursor = db.cursor()
+        cursor.execute("SELECT HOLEID as Pump, date_format(rtimestamp,'%m/%d/%Y') as Date, gpm as Flow from test_flowrates")
+        piezo_sql = cursor.fetchall()
+        fp = open('flowrates.csv', 'w')
+        file = csv.writer(fp)
+        file.writerows(piezo_sql)
+        fp.close()
+        Date, Flow = np.loadtxt('flowrates.csv',delimiter = ",", usecols = (1,2), unpack = True, skiprows = 1, converters = {1: mdates.strpdate2num('%m/%d/%Y'), 2:converter})
+        Pump = np.genfromtxt('flowrates.csv', dtype = 'str', delimiter = ',', usecols = (0,), skiprows = 1, unpack = True)
+        os.remove('flowrates.csv')
+
+        # Create file for one of the pumps
+        findpump = Pump == pumpname
+        flowdate = Date[findpump]
+        flowvalue = Flow[findpump]
+
+        if default_logic != "Yes":
+                method1 = "No"
+        if pumpname == "NOSS":
+                method1 = "No"
+                
+        present = datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d')
+
+        # Find max date for updating purposes
+        maxflowdate_3 = np.max(flowdate)
+        maxflowdate_2 = mdates.num2date(maxflowdate_3)
+        maxflowdate = maxflowdate_2.strftime('%m-%d-%Y')
+
+        if maxflowdate == present:
+                method1 = "No"
+               
+        if method1 == "Yes":
+                if maxflowdate < datetime.fromtimestamp(time.time()).strftime('%m-%d-%Y'):
+                        # Define PI tag based on user input:
+                        if pumpname == "Carr Fork":
+                                PI_tag = "FI 170170"
+                        if pumpname == "NOSS":
+                                PI_tag = "FI 170202"
+                        # Script for sampling data from PI Processbook
+                        tdMax = timedelta(minutes = 5)
+                        pisdk = Dispatch('PISDK.PISDK')
+                        myServer = pisdk.Servers('kucpi')
+                        con =Dispatch('PISDKDlg.Connections')
+                        con.Login(myServer,'pidemo','',1,0)
+                        piTimeStart = Dispatch('PITimeServer.PITimeFormat')
+                        piTimeEnd = Dispatch('PITimeServer.PITimeFormat')
+                        piTimeStart.InputString = maxflowdate
+                        piTimeEnd.InputString = present
+                        sampleAsynchStatus = Dispatch('PISDKCommon.PIAsynchStatus')
+                        samplePoint = myServer.PIPoints[PI_tag]
+                        sampleValues = samplePoint.Data.Summaries2(piTimeStart,piTimeEnd,'24h',5,0,sampleAsynchStatus)
+                        t0 = datetime.now()
+                        while True:
+                                try:
+                                        valsum = sampleValues("Average").Value # retrieve the value
+                                        break  # it will get out of infinite loop when there is no error
+                                except:  # it failed because server needs more time
+                                        td = datetime.now() - t0
+                                        if td > tdMax:
+                                            print "It is taking so long to get PI data ! Exiting now ...."
+                                            exit(1)
+                                        time.sleep(3)
+
+                        # Save sampled data        
+                        f = open('osisofttest.txt', 'w')
+                        for i in range(1,valsum.Count+1):
+                            print >> f, valsum(i).timestamp, valsum(i).Value
+                        f.close()
+
+                        # Tricky stuff to get data in the right format.  It's kind of a mess, but it works.
+                        flowdate2, flowvalue1 = np.loadtxt('osisofttest.txt',delimiter = " ",unpack = True)
+                        fpz = open('osisofttest2.csv', 'w')
+                        pumpname_c = pumpname + ','
+                        flowdate4 = list(['NAN']*len(flowdate2))
+                        for i in range(len(flowdate2)):
+                                flowdate4[i] = datetime.fromtimestamp(flowdate2[i]).strftime('%Y-%m-%d') + ','
+                        for i in range(len(flowdate2)):
+                                if flowvalue1[i] != 'NAN':
+                                        print >> fpz, pumpname_c, flowdate4[i], flowvalue1[i]
+                        fpz.close()
+                        flowdate1 = np.loadtxt('osisofttest2.csv', delimiter = ', ', usecols = (1,), converters = {1: mdates.strpdate2num('%Y-%m-%d')})
+
+                        # Update MySQL table
+
+                        db = MySQLdb.connect(host = "kucslcd175", port = 3306, user = user, passwd = password, db = "piezo")
+                        cursor = db.cursor()
+                        mysql_filename = default_folder_to_save + '/' + 'osisofttest2.csv'
+                        cursor.execute("load data local infile %s into table test_flowrates fields terminated by ', '", (mysql_filename))
+                        db.commit()
+                        cursor.close()
+
+                        os.remove('osisofttest2.csv')
+                        os.remove('osisofttest.txt')
+                      
+
+                        # Combine the two datasets
+                        flowdate = np.concatenate((flowdate, flowdate1))
+                        flowvalue = np.concatenate((flowvalue, flowvalue1))
+
+        # Import piezo data
+
+        if method == "MySQL":
+                db = MySQLdb.connect(host = "kucslcd175", port = 3306, user = user, passwd = password, db = "piezo")
+                cursor = db.cursor()
+                cursor.execute("SELECT date_format(p.rtimestamp,'%%m/%%d/%%Y') as Piezo_Date, p.id as Piezo_ID,avg(p.offset_elev) as Daily_Elevation FROM pzvalues AS p INNER JOIN maxwlbyloctab AS m ON p.id = m.id WHERE p.id = %s and p.flag='val' group by p.id,DATE_FORMAT(p.rtimestamp,'%%d/%%m/%%Y')", (var_input))
+                piezo_sql = cursor.fetchall()
+                fp = open('temp_piezo.csv', 'w')
+                file = csv.writer(fp)
+                file.writerows(piezo_sql)
+                fp.close()
+                piezo_date, piezo_elev = np.loadtxt('temp_piezo.csv',delimiter = ",",unpack = True, usecols = (0,2), skiprows = 1, converters = {0: mdates.strpdate2num('%m/%d/%Y')})
+                piezo_ID = np.genfromtxt('temp_piezo.csv', dtype = 'str', delimiter = ',', usecols = (1,), skiprows = 1, unpack = True)
+                pdate_unsorted = piezo_date
+                phead_unsorted = piezo_elev
+                os.remove('temp_piezo.csv')
+
+        # Combine date and head columns
+        pd_f = np.column_stack((pdate_unsorted,phead_unsorted))
+
+        # Sort the piezo data by date
+        pd_f_sorted = sorted(pd_f, key = lambda pd_f: pd_f[0])
+        def column(matrix, i):
+            return [row[i] for row in matrix]
+        pdate = column(pd_f_sorted, 0)
+        phead = column(pd_f_sorted, 1)
+
+        # Find max and min dates
+        maxdate = np.max(pdate)
+        mindate = np.min(pdate)
+        maxhead = np.max(phead)
+        minhead = np.min(phead)
+
+        # Assign null values for missing data
+        min_date = mindate.astype(int)
+        max_date = maxdate.astype(int)
+        p_daterange = range(min_date, max_date + 1)
+        phead_daterange = np.empty((len(p_daterange),1))
+        phead_daterange[:] = np.NAN
+        pdate = np.asarray(pdate)
+        pdate = pdate.astype(int)
+        matchdates = [np.nonzero(p_daterange == pdate[x])[0][0] for x in range (len(pdate))]
+        for x in range(len(pdate)):
+                phead_daterange[matchdates[x]] = phead[x]
+        max_head = np.max(phead)
+
+        # Plot head vs flow
+        headrange = maxhead-minhead
+        flowrange = np.max(flowvalue) - np.min(flowvalue)
+        roundedmin = round(minhead + (50/flowrange)*headrange)
+        diff = (minhead + (50/flowrange)*headrange) - roundedmin
+        present1 = datetime.fromtimestamp(time.time()).strftime('%m_%d_%Y %H%M')
+        pp = PdfPages('temp'+present1+'.pdf')
+        fig = plt.figure()
+        ax1 = fig.add_subplot(111)
+        lns1 = ax1.plot_date(flowdate, flowvalue, 'bo', markersize = 4, label = (pumpname + " Flow, gpm"))
+        plt.grid()
+        plt.ylim(-50,3500)
+        plt.yticks(np.arange(0,3500,500))
+        plt.ylabel(pumpname + " Flow, gpm")
+        plt.xlabel("Time")
+        ax2 = ax1.twinx()
+        lns2 = ax2.plot_date(p_daterange, phead_daterange, 'r-', label = "Piezometric Head, ft")
+        if default_logic == "Yes":
+                plt.xlim(mindate,maxdate)
+                daylength = maxdate - mindate
+                lowdate = mindate
+                highdate = maxdate
+        if default_logic == "No (specify dates below)":
+                lowdate_1 = mdates.date2num(datetime.strptime(lowdate, '%m/%d/%Y %I:%M:%S %p'))
+                highdate_1 = mdates.date2num(datetime.strptime(highdate, '%m/%d/%Y %I:%M:%S %p'))
+                plt.xlim(lowdate_1, highdate_1)
+                daylength = highdate_1-lowdate_1
+                lowdate = lowdate_1
+                highdate = highdate_1
+        if daylength < (365*3):
+                ax2.xaxis.set_major_formatter(mdates.DateFormatter('%b\n %Y'))
+        plt.ylabel("Piezometric Head, ft")
+        lns = lns1 + lns2
+        labs = [l.get_label() for l in lns]
+        plt.legend(lns, labs, numpoints = 1, loc = "upper left")
+        plt.title(var_input)
+        pp.savefig()
+
+        pp.close()
+
+	# View plot in Adobe Acrobat if the user desires
+
+        if show_plot == "Yes":
+                # Open adobe to show the pdf
+                subprocess.Popen([path_to_adobe, 'temp'+present1+'.pdf'])  
+
+	# Save in a format easy to read in Aqtesolv, if user desires	
+
+        if save_txt == "Yes":
+                phead_daterange = list(['NAN']*len(p_daterange))
+                for x in range(len(pdate)):
+                        phead_daterange[matchdates[x]] = phead[x]
+                pump_begindate = flowdate >= lowdate
+                pump_rightrangedate1 = flowdate[pump_begindate]
+                pump_enddate = pump_rightrangedate1 <= highdate
+                pump_rightrangedate = pump_rightrangedate1[pump_enddate]
+                pump_rightrangeflow1 = flowvalue[pump_begindate]
+                pump_rightrangeflow = pump_rightrangeflow1[pump_enddate]
+                pmpfile = open(pumpname+'_'+var_input+'_aqtesolv.txt', 'w')
+                for i in range(len(pump_rightrangedate)):
+                        print >> pmpfile, (pump_rightrangedate[i]- pump_rightrangedate[0]), pump_rightrangeflow[i]
+                pmpfile.close()
+                p_drawdown = list(['NAN']*len(p_daterange))
+                p_drawdown[0] = 0
+                for i in range(1,len(p_daterange)):
+                        if phead_daterange[i] != 'NAN':
+                                if phead_daterange[i-1] != 'NAN':
+                                        p_drawdown[i] = (max_head - int(phead_daterange[i]))
+                pzfile = open(var_input + '_aqtesolv.txt', 'w')
+                for i in range(len(p_daterange)):
+                        print >> pzfile, (p_daterange[i]-p_daterange[0]), p_drawdown[i]
+                pzfile.close()
+                
+except Exception as e:
+        print e.message
+        arcpy.AddError(e.message)
+           

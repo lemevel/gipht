@@ -33,6 +33,9 @@ function varargout = funfit28(varargin)
 % 2012-JUN-25 return displacement vector, too
 % 2012-NOV-26 call comsol
 % 2014-MAY-14 abandon Abaqus, use general 3-D Comsol
+% 2015-APR-19 replace Cervelli disloc routine with Beauducel okada85
+
+% fprintf(1,'Entering fitting function fitfun = %s\n',mfilename);
 
 % number of arguments entered as input
 nin = nargin;
@@ -68,6 +71,7 @@ if (nin == 1 || nin == 2) && nout == 2 && isstruct(varargin{1}) == 0
     j=j+1;pnames{j} = sprintf('Mogi1 Easting in m             '); pscl(j)=1.0E3;
     j=j+1;pnames{j} = sprintf('Mogi1 Northing in m            '); pscl(j)=1.0E3;
     j=j+1;pnames{j} = sprintf('Mogi1 Depth in m               '); pscl(j)=1.0E4;
+    j=j+1;pnames{j} = sprintf('Mogi1 Depth in m               '); pscl(j)=1.0E4;
     j=j+1;pnames{j} = sprintf('Mogi1 Volume Increase in m3    '); pscl(j)=1.0E6;
     j=j+1;pnames{j} = sprintf('Mogi2 Easting in m             '); pscl(j)=1.0E3;
     j=j+1;pnames{j} = sprintf('Mogi2 Northing in m            '); pscl(j)=1.0E3;
@@ -75,23 +79,37 @@ if (nin == 1 || nin == 2) && nout == 2 && isstruct(varargin{1}) == 0
     j=j+1;pnames{j} = sprintf('Mogi2 Volume Increase in m3    '); pscl(j)=1.0E6;
     j=j+1;pnames{j} = sprintf('Okada1 Length in m             '); pscl(j)=1.0E3;
     j=j+1;pnames{j} = sprintf('Okada1 Width in m              '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada1 Depth in m              '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada1 Negative Dip in deg     '); pscl(j)=1.0;
-    j=j+1;pnames{j} = sprintf('Okada1 Strike CCW from N in deg'); pscl(j)=1.0;
-    j=j+1;pnames{j} = sprintf('Okada1 Easting in m            '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada1 Northing in m           '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada1 RL Strike Slip in m     '); pscl(j)=1.0E-3;
-    j=j+1;pnames{j} = sprintf('Okada1 Downdip Slip in m       '); pscl(j)=1.0E-3;
+%     j=j+1;pnames{j} = sprintf('Okada1 Depth in m              '); pscl(j)=1.0E3;
+    j=j+1;pnames{j} = sprintf('Okada1 Centroid Depth in m     '); pscl(j)=1.0E3;
+%     j=j+1;pnames{j} = sprintf('Okada1 Negative Dip in deg     '); pscl(j)=1.0;
+    j=j+1;pnames{j} = sprintf('Okada1 Dip in deg              '); pscl(j)=1.0;
+%   j=j+1;pnames{j} = sprintf('Okada1 Strike CCW from N in deg'); pscl(j)=1.0;
+    j=j+1;pnames{j} = sprintf('Okada1 Strike CW from N in deg '); pscl(j)=1.0;
+%     j=j+1;pnames{j} = sprintf('Okada1 Easting in m            '); pscl(j)=1.0E3;
+%     j=j+1;pnames{j} = sprintf('Okada1 Northing in m           '); pscl(j)=1.0E3;
+    j=j+1;pnames{j} = sprintf('Okada1 Centroid Easting in m   '); pscl(j)=1.0E3;
+    j=j+1;pnames{j} = sprintf('Okada1 Centroid Northing in m  '); pscl(j)=1.0E3;
+%     j=j+1;pnames{j} = sprintf('Okada1 RL Strike Slip in m     '); pscl(j)=1.0E-3;
+%     j=j+1;pnames{j} = sprintf('Okada1 Downdip Slip in m       '); pscl(j)=1.0E-3;
+    j=j+1;pnames{j} = sprintf('Okada1 Coplanar slip in m      '); pscl(j)=1.0E-3;
+    j=j+1;pnames{j} = sprintf('Okada1 Rake in deg CCW         '); pscl(j)=1.0E-3;
     j=j+1;pnames{j} = sprintf('Okada1 Tensile Opening in m    '); pscl(j)=1.0E-3;
     j=j+1;pnames{j} = sprintf('Okada2 Length in m             '); pscl(j)=1.0E3;
     j=j+1;pnames{j} = sprintf('Okada2 Width in m              '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada2 Depth in m              '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada2 Negative Dip in deg     '); pscl(j)=1.0;
-    j=j+1;pnames{j} = sprintf('Okada2 Strike CCW from N in deg'); pscl(j)=1.0;
-    j=j+1;pnames{j} = sprintf('Okada2 Easting in m            '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada2 Northing in m           '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada2 RL Strike Slip in m     '); pscl(j)=1.0E-3;
-    j=j+1;pnames{j} = sprintf('Okada2 Downdip Slip in m       '); pscl(j)=1.0E-3;
+%   j=j+1;pnames{j} = sprintf('Okada2 Depth in m              '); pscl(j)=1.0E3;
+    j=j+1;pnames{j} = sprintf('Okada2 Centroid Depth in m     '); pscl(j)=1.0E3;
+%   j=j+1;pnames{j} = sprintf('Okada2 Negative Dip in deg     '); pscl(j)=1.0;
+    j=j+1;pnames{j} = sprintf('Okada2 Dip in deg              '); pscl(j)=1.0;
+%   j=j+1;pnames{j} = sprintf('Okada2 Strike CCW from N in deg'); pscl(j)=1.0;
+    j=j+1;pnames{j} = sprintf('Okada2 Strike CW from N in deg '); pscl(j)=1.0;
+%     j=j+1;pnames{j} = sprintf('Okada2 Easting in m            '); pscl(j)=1.0E3;
+%     j=j+1;pnames{j} = sprintf('Okada2 Northing in m           '); pscl(j)=1.0E3;
+    j=j+1;pnames{j} = sprintf('Okada2 Centroid Easting in m   '); pscl(j)=1.0E3;
+    j=j+1;pnames{j} = sprintf('Okada2 Centroid Northing in m  '); pscl(j)=1.0E3;
+%     j=j+1;pnames{j} = sprintf('Okada2 RL Strike Slip in m     '); pscl(j)=1.0E-3;
+%     j=j+1;pnames{j} = sprintf('Okada2 Downdip Slip in m       '); pscl(j)=1.0E-3;
+    j=j+1;pnames{j} = sprintf('Okada2 Coplanar slip in m      '); pscl(j)=1.0E-3;
+    j=j+1;pnames{j} = sprintf('Okada2 Rake in deg CCW         '); pscl(j)=1.0E-3;
     j=j+1;pnames{j} = sprintf('Okada2 Tensile Opening in m    '); pscl(j)=1.0E-3;
     j=j+1;pnames{j} = sprintf('YangPS Easting in m            '); pscl(j)=1.0E3;
     j=j+1;pnames{j} = sprintf('YangPS Northing in m           '); pscl(j)=1.0E3;
@@ -128,13 +146,20 @@ if (nin == 1 || nin == 2) && nout == 2 && isstruct(varargin{1}) == 0
     j=j+1;pnames{j} = sprintf('Poisson Ratio dimless drained  '); pscl(j)=1.0E-3;
     j=j+1;pnames{j} = sprintf('Okada3 Length in m             '); pscl(j)=1.0E3;
     j=j+1;pnames{j} = sprintf('Okada3 Width in m              '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada3 Depth in m              '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada3 Negative Dip in deg     '); pscl(j)=1.0;
-    j=j+1;pnames{j} = sprintf('Okada3 Strike CCW from N in deg'); pscl(j)=1.0;
-    j=j+1;pnames{j} = sprintf('Okada3 Easting in m            '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada3 Northing in m           '); pscl(j)=1.0E3;
-    j=j+1;pnames{j} = sprintf('Okada3 RL Strike Slip in m     '); pscl(j)=1.0E-3;
-    j=j+1;pnames{j} = sprintf('Okada3 Downdip Slip in m       '); pscl(j)=1.0E-3;
+%    j=j+1;pnames{j} = sprintf('Okada3 Depth in m              '); pscl(j)=1.0E3;
+    j=j+1;pnames{j} = sprintf('Okada3 Centroid Depth in m     '); pscl(j)=1.0E3;
+%     j=j+1;pnames{j} = sprintf('Okada3 Negative Dip in deg     '); pscl(j)=1.0;
+    j=j+1;pnames{j} = sprintf('Okada3 Dip in deg              '); pscl(j)=1.0;
+%   j=j+1;pnames{j} = sprintf('Okada3 Strike CCW from N in deg'); pscl(j)=1.0;
+    j=j+1;pnames{j} = sprintf('Okada3 Strike CW from N in deg '); pscl(j)=1.0;
+%     j=j+1;pnames{j} = sprintf('Okada3 Easting in m            '); pscl(j)=1.0E3;
+%     j=j+1;pnames{j} = sprintf('Okada3 Northing in m           '); pscl(j)=1.0E3;
+    j=j+1;pnames{j} = sprintf('Okada3 Centroid Easting in m   '); pscl(j)=1.0E3;
+    j=j+1;pnames{j} = sprintf('Okada3 Centroid Northing in m  '); pscl(j)=1.0E3;
+%     j=j+1;pnames{j} = sprintf('Okada3 RL Strike Slip in m     '); pscl(j)=1.0E-3;
+%     j=j+1;pnames{j} = sprintf('Okada3 Downdip Slip in m       '); pscl(j)=1.0E-3;
+    j=j+1;pnames{j} = sprintf('Okada3 Coplanar slip in m      '); pscl(j)=1.0E-3;
+    j=j+1;pnames{j} = sprintf('Okada3 Rake in deg CCW         '); pscl(j)=1.0E-3;
     j=j+1;pnames{j} = sprintf('Okada3 Tensile Opening in m    '); pscl(j)=1.0E-3;
      % Added 2013-06-23
     j=j+1;pnames{j} = sprintf('Rad Vel Center Easting in m    '); pscl(j)=1.0e6;
@@ -221,7 +246,10 @@ elseif nin == 2 && nout == 2 && isstruct(varargin{1}) == 1 && isstruct(varargin{
     DD  = zeros(ndata,me);
     DDM = zeros(ndata,me); % for master
     DDS = zeros(ndata,me); % for slave
+    
+%     fprintf(1,'Starting to build DD matrices for master and slave\nLine: ');
     for i = 1:ndata
+       %fprintf(1,'%d ',i);
         % Row corresponding to this pair
         DD( i,DST.kmast(i)) = -1; % subtract master
        %DDS(i,DST.kmast(i)) = -1; % subtract master 20130629 - BUG
@@ -230,6 +258,8 @@ elseif nin == 2 && nout == 2 && isstruct(varargin{1}) == 1 && isstruct(varargin{
         DDS(i,DST.kslav(i)) = +1; % from slave
         %DD(i,:)
     end
+%     fprintf(1,'\nDone building DD matrices for master and slave\n');
+
 %     disp 'First row of DD matrix';
 %     DD(1,:)
 %     disp 'First row of DDM matrix';
@@ -247,6 +277,8 @@ elseif nin == 2 && nout == 2 && isstruct(varargin{1}) == 1 && isstruct(varargin{
     %     zmean = mean(DST.z);
     
     % assume that we have only one type of data
+    %fprintf(1,'Starting to check data types\n');
+
     idatatype1 = DST.idatatype(1);
     for i=1:ndata
         if DST.idatatype(i) ~= idatatype1
@@ -254,6 +286,7 @@ elseif nin == 2 && nout == 2 && isstruct(varargin{1}) == 1 && isstruct(varargin{
                 ,i,idatatype1,DST.idatatype(i));
         end
     end
+%     fprintf(1,'Done checking data types\n');
     %rng = zeros(1,ndata);
     
     % constant for scaling baseline
@@ -302,6 +335,8 @@ elseif nin == 2 && nout == 2 && isstruct(varargin{1}) == 1 && isstruct(varargin{
         end
     end
     
+%     fprintf(1,'Starting to build TST structure\n');
+
     % construct temporary storage structure
     TST.idatatype1 = idatatype1;
     %TST.idatatype  = idatatype;
@@ -326,10 +361,12 @@ elseif nin == 2 && nout == 2 && isstruct(varargin{1}) == 1 && isstruct(varargin{
     TST.p0         = PST.p0;
     TST.p1         = PST.p1;
 
+%     fprintf(1,'Done building TST structure\n');
+
     
     % pass storage back to calling routine for future use
-    varargout(1) = {rng};
-    varargout(2) = {TST};
+     varargout(1) = {rng};
+     varargout(2) = {TST};
     return
     % --------------------- EVALUATE THE FITTING FUNCTION -------------
     % call looks like this:
@@ -342,7 +379,12 @@ elseif nin == 3 ...
         && isstruct(varargin{1}) == 1 ...
         && isstruct(varargin{2}) == 1 ...
         && isstruct(varargin{3}) == 1
+
     
+        %fprintf(1,'Evaluating fitting function fitfun = %s\n',mfilename);
+
+%         fprintf(1,'Reading varargin\n');
+
     % disp DD1; size(DD)
     % data structure
     DST = varargin{1};
@@ -350,7 +392,9 @@ elseif nin == 3 ...
     PST = varargin{2};
     % temporary storage structure
     TST = varargin{3};
-    
+
+%     fprintf(1,'Unpacking TST\n');
+
     % unpack storage structure - must match above
     idatatype1 = TST.idatatype1;
     %idatatype  = TST.idatatype;
@@ -372,6 +416,8 @@ elseif nin == 3 ...
     kRad_Vel   = TST.kRad_Vel;
     kPinel     = TST.kPinel;
     
+%     fprintf(1,'Unpacking parameter vector\n');
+
     % get values of parameters
     p = colvec(PST.p1);
     pt =p( 0*me+1: 0*me+me); % epoch
@@ -544,39 +590,44 @@ elseif nin == 3 ...
     %                  upper   neg-
     %                  edge    ative
     
+%     fprintf(1,'Starting okada section\n');
+%     save('fitfun28.mat');return
+    
     % Call disloc only if slip is  non-zero
     % call the function if volume is not zero
     switch idatatype1
         case 0  % observable is phase
-            kp = 9;
+            kp = 10;
             % coseismic
             if  sum(abs(pg(kp+7:kp+9))) > 1.e-3
-                uokada1 = disloc(pg(kp:kp+9),[DST.x';DST.y'],nu);
+%                 uokada1 = disloc(pg(kp:kp+9),[DST.x';DST.y'],nu);
+                uokada1 = okada85_wrapper(pg(kp:kp+9),[DST.x';DST.y'],nu);
             else
                 uokada1 = zeros(3,ndata);
             end
             kp = 19;
             % coseismic
             if  sum(abs(pg(kp+7:kp+9))) > 1.e-3
-                uokada2 = disloc(pg(kp:kp+9),[DST.x';DST.y'],nu);
+                %uokada2 = disloc(pg(kp:kp+9),[DST.x';DST.y'],nu);
+                uokada2 = okada85_wrapper(pg(kp:kp+9),[DST.x';DST.y'],nu);
             else
                 uokada2 = zeros(3,ndata);
             end
             kp = 57;
             % poroelastic
             if  sum(abs(pg(kp+7:kp+9))) > 1.e-3
-                uokada3 = disloc(pg(kp:kp+9),[DST.x';DST.y'],nu2 ) ...
-                    -     disloc(pg(kp:kp+9),[DST.x';DST.y'],nu  );
+                uokada3 = okada85_wrapper(pg(kp:kp+9),[DST.x';DST.y'],nu2 ) ...
+                    -     okada85_wrapper(pg(kp:kp+9),[DST.x';DST.y'],nu  );
             else
                 uokada3 = zeros(3,ndata);
             end
             
         case -1  % observable is gradient
-            kp = 9;
+            kp = 10;
             % coseismic
             if  sum(abs(pg(kp+7:kp+9))) > 1.e-3
-                tl = disloc(pg(kp:kp+9),[DST.x'-DST.dx';DST.y'],nu);
-                tr = disloc(pg(kp:kp+9),[DST.x'+DST.dx';DST.y'],nu);
+                tl = okada85_wrapper(pg(kp:kp+9),[DST.x'-DST.dx';DST.y'],nu);
+                tr = okada85_wrapper(pg(kp:kp+9),[DST.x'+DST.dx';DST.y'],nu);
                 uokada1 = (tr - tl)/2.0;
             else
                 uokada1 = zeros(3,ndata);
@@ -584,8 +635,8 @@ elseif nin == 3 ...
             kp = 19;
             % coseismic
             if  sum(abs(pg(kp+7:kp+9))) > 1.e-3
-                tl = disloc(pg(kp:kp+9),[DST.x'-DST.dx';DST.y'],nu);
-                tr = disloc(pg(kp:kp+9),[DST.x'+DST.dx';DST.y'],nu);
+                tl = okada85_wrapper(pg(kp:kp+9),[DST.x'-DST.dx';DST.y'],nu);
+                tr = okada85_wrapper(pg(kp:kp+9),[DST.x'+DST.dx';DST.y'],nu);
                 uokada2 = (tr - tl)/2.0;
             else
                 uokada2 = zeros(3,ndata);
@@ -593,10 +644,10 @@ elseif nin == 3 ...
             kp = 57;
             % poroelastic
             if  sum(abs(pg(kp+7:kp+9))) > 1.e-3
-                tl      = disloc(pg(kp:kp+9),[DST.x'-DST.dx';DST.y'],nu2 ) ...
-                    -     disloc(pg(kp:kp+9),[DST.x'-DST.dx';DST.y'],nu  );
-                tr      = disloc(pg(kp:kp+9),[DST.x'+DST.dx';DST.y'],nu2 ) ...
-                    -     disloc(pg(kp:kp+9),[DST.x'+DST.dx';DST.y'],nu  );
+                tl      = okada85_wrapper(pg(kp:kp+9),[DST.x'-DST.dx';DST.y'],nu2 ) ...
+                    -     okada85_wrapper(pg(kp:kp+9),[DST.x'-DST.dx';DST.y'],nu  );
+                tr      = okada85_wrapper(pg(kp:kp+9),[DST.x'+DST.dx';DST.y'],nu2 ) ...
+                    -     okada85_wrapper(pg(kp:kp+9),[DST.x'+DST.dx';DST.y'],nu  );
                 uokada3 = (tr - tl)/2.0;
             else
                 uokada3 = zeros(3,ndata);
@@ -785,6 +836,7 @@ elseif nin == 3 ...
         rRad_Vel = zeros(ndata,1);
     end
     
+%     fprintf(1,'Done with analytic solutions.\n');
     % COMSOL selection
     if numel(strfind(lower(char(PST.datafilename)),'.mph')) > 0
         % data file exists
@@ -811,12 +863,14 @@ elseif nin == 3 ...
         UCS = zeros(ndata,1);
     end
     
+%     fprintf(1,'Summing vectors\n');
+
     % ************************************
     % DONE WITH INDIVIDUAL PARTS OF DISPLACEMENT FIELD
     % ************************************
     % sum all RATES for separable part
     u = umogi1 + umogi2 + uokada1 + uokada2 + uokada3 + uYangPS + upinel + uSunDisk1 + uSunDisk2;
-    %disp 'u'; size u
+%     disp 'u'; size u
     
     % position-dependent field of range change rate values in m/yr
     gmod = -1.0* (colvec(u(1,:)).*DST.uvx ...
@@ -853,6 +907,8 @@ elseif nin == 3 ...
 %         fprintf(1,'%5d %12.6f\n',i,pt(i));
 %     end
     
+
+%     fprintf(1,'Done calculating. Returning...\n');
     % return the modeled values
     switch nout
         case 1

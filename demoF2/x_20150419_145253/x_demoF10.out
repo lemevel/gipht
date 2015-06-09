@@ -1,0 +1,124 @@
+x_20150419_145253/x_demoF10.out x_20150419_145253/x Development version 2.8 of 06-Aug-2014 12:53:06
+Species A:     1     2
+Species A Member  1 Pair   1 M   1001 S   1002                                              ../IN/psp_5565_10575_ort_121x81.pha
+Species A Member  2 Pair   1 M   1001 S   1002                                              ../IN/psp_5565_10575_ort_121x81.pha
+
+Total Average Cost of null    model = 0.2525 cycles per datum for       1023 observations in data set for inversion
+Total Average Cost of initial model = 0.2366 cycles per datum for       1023 observations in data set for inversion
+Total Average Cost of final   model = 0.2366 cycles per datum for       1023 observations in data set for inversion
+Cost  of null  model   = 0.2525125 cycles per datum for   1023 observations in inverted data set x_20150419_145253/x
+Cost  of initl model   = 0.2365818 cycles per datum for   1023 observations in inverted data set x_20150419_145253/x
+Cost  of final model   = 0.2365818 cycles per datum for   1023 observations in inverted data set x_20150419_145253/x
+Cost  improvement      = 0.0000000 cycles per datum for   1023 observations in inverted data set x_20150419_145253/x
+I          Name     P0(pre-fit)              P1(post-fit)     Adjust.   Sigma[0] Significance PlusMinusBound
+F#   1 time_fn_@_epoch_001_in_years____  1992.6011  1992.6011     0.0000        NaN     NaN     0.0000
+F#   2 time_fn_@_epoch_002_in_years____  1993.5589  1993.5589     0.0000        NaN     NaN     0.0000
+F#   3 E_grad__@_epoch_001_dimless_____  -3.00e-06  -3.00e-06   0.00e+00        NaN     NaN   0.00e+00
+F#   4 E_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#   5 N_grad__@_epoch_001_dimless_____  -5.50e-06  -5.50e-06   0.00e+00        NaN     NaN   0.00e+00
+F#   6 N_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#   7 U_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#   8 U_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#   9 OrbitHoriz_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  10 OrbitHoriz_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  11 OrbitAlong_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  12 OrbitAlong_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  13 OrbitVerti_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  14 OrbitVerti_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  15 OrbitVelH__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  16 OrbitVelH__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  17 OrbitVelA__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  18 OrbitVelA__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  19 OrbitVelV__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  20 OrbitVelV__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  21 Offset__@_epoch_001_in_cycles___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  22 Offset__@_epoch_002_in_cycles___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   5.00e-01
+F#  23 Mogi1_Easting_in_m______________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  24 Mogi1_Northing_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  25 Mogi1_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  26 Mogi1_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  27 Mogi1_Volume_Increase_in_m3_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  28 Mogi2_Easting_in_m______________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  29 Mogi2_Northing_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  30 Mogi2_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  31 Mogi2_Volume_Increase_in_m3_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  32 Okada1_Length_in_m______________  2340.0000  2340.0000     0.0000        NaN     NaN   500.0000
+F#  33 Okada1_Width_in_m_______________  2780.0000  2780.0000     0.0000        NaN     NaN   500.0000
+F#  34 Okada1_Centroid_Depth_in_m______  3000.0000  3000.0000     0.0000        NaN     NaN  1000.0000
+F#  35 Okada1_Dip_in_deg_______________    50.0000    50.0000     0.0000        NaN     NaN    10.0000
+F#  36 Okada1_Strike_CCW_from_N_in_deg_   282.0000   282.0000     0.0000        NaN     NaN    15.0000
+F#  37 Okada1_Easting_in_m_____________   507200.0   507200.0        0.0        NaN     NaN      300.0
+F#  38 Okada1_Northing_in_m____________  3802200.0  3802200.0        0.0        NaN     NaN      300.0
+F#  39 Okada1_RL_Strike_Slip_in_m______  -1.99e-02  -1.99e-02   0.00e+00        NaN     NaN   2.00e-02
+F#  40 Okada1_Downdip_Slip_in_m________    -0.5630    -0.5630     0.0000        NaN     NaN     0.0500
+F#  41 Okada1_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  42 Okada2_Length_in_m______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  43 Okada2_Width_in_m_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  44 Okada2_Centroid_Depth_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  45 Okada2_Dip_in_deg_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  46 Okada2_Strike_CCW_from_N_in_deg_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  47 Okada2_Easting_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  48 Okada2_Northing_in_m____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  49 Okada2_RL_Strike_Slip_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  50 Okada2_Downdip_Slip_in_m________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  51 Okada2_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  52 YangPS_Easting_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  53 YangPS_Northing_in_m____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  54 YangPS_Depth_in_m_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  55 YangPS_Excess_Pressure_in_Pa____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  56 YangPS_semimajor_axis_a__m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  57 YangPS_semiminor_axis_b_in_m____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  58 YangPS_Azimuth_deg_CCW_from_N___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  59 YangPS_Plunge_in_degrees________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  60 YangPS_Empty1___________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  61 YangPS_Empty2___________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  62 Poisson_Ratio_dimless___________     0.2500     0.2500     0.0000        NaN     NaN     0.0000
+F#  63 Shear_Modulus_in_Pa_____________   3.00e+10   3.00e+10   0.00e+00        NaN     NaN   0.00e+00
+F#  64 Reference_Epoch_in_years________  1992.9235  1992.9235     0.0000        NaN     NaN     0.0000
+F#  65 Young_s_Modulus_in_Pa_for_Pinel_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  66 Density_of_load_in_kg_per_m3____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  67 Grav_Acc_in_m_per_s_per_s_______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  68 Poisson_Ratio_dimless_for_Pinel_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  69 SunDisk1_Easting_in_m___________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  70 SunDisk1_Northing_in_m__________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  71 SunDisk1_Depth_in_m_____________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  72 SunDisk1_Excess_Pressure_in_Pa__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  73 SunDisk1_Radius_a_in_m__________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  74 SunDisk2_Easting_in_m___________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  75 SunDisk2_Northing_in_m__________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  76 SunDisk2_Depth_in_m_____________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  77 SunDisk2_Excess_Pressure_in_Pa__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  78 SunDisk2_Radius_a_in_m__________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  79 Poisson_Ratio_dimless_drained___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  80 Okada3_Length_in_m______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  81 Okada3_Width_in_m_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  82 Okada3_Centroid_Depth_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  83 Okada3_Dip_in_deg_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  84 Okada3_Strike_CCW_from_N_in_deg_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  85 Okada3_Easting_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  86 Okada3_Northing_in_m____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  87 Okada3_RL_Strike_Slip_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  88 Okada3_Downdip_Slip_in_m________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  89 Okada3_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  90 Rad_Vel_Center_Easting_in_m_____        0.0        0.0        0.0        NaN     NaN        0.0
+F#  91 Rad_Vel_Center_Northing_in_m____        0.0        0.0        0.0        NaN     NaN        0.0
+F#  92 Rad_Vel_Evel_in_m_per_yr________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  93 Rad_Vel_Nvel_in_m_per_yr________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  94 Rad_Vel_Uvel_in_m_per_yr________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  95 Rad_Vel_dVdR_in_inverse_yr______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+D#  96 Total_Net_Volume_Increase_in_m3_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN        NaN
+D#  97 Okada1_Centroid_Easting_in_m____   507014.2   507014.2        0.0        NaN     NaN        NaN
+D#  98 Okada1_Centroid_Northing_in_m___  3801326.0  3801326.0        0.0        NaN     NaN        NaN
+D#  99 Okada1_Centroid_latitude__in_deg    34.3532    34.3532     0.0000        NaN     NaN        NaN
+D# 100 Okada1_Centroid_longitude_in_deg     3.0763     3.0763     0.0000        NaN     NaN        NaN
+D# 101 Okada1_Convt_strike_in_deg_CW_N_   282.0000   282.0000     0.0000        NaN     NaN        NaN
+D# 102 Derived_Okada1_rake_in_deg_CCW__   177.9756   177.9756     0.0000        NaN     NaN        NaN
+D# 103 Derived_Okada1_potency_in_m3____   3.66e+06   3.66e+06   0.00e+00        NaN     NaN        NaN
+D# 104 Derived_Okada1_moment_in_Nm_____   1.10e+17   1.10e+17   0.00e+00        NaN     NaN        NaN
+D# 105 Derived_Okada1_Mw_______________     5.3308     5.3308     0.0000        NaN     NaN        NaN
+D# 106 Pair_00001_MiniRange_m_MOD______  -3.39e-02  -3.39e-02   0.00e+00   1.43e-02     NaN        NaN
+D# 107 Pair_00001_MaxiRange_m_MOD______   3.39e-02   3.39e-02   0.00e+00   1.43e-02     NaN        NaN
+__________________________________________________________
+Parameter                         Estimate     Uncertainty
+__________________________________________________________
+__________________________________________________________

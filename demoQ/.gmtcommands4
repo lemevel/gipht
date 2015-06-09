@@ -1,0 +1,23 @@
+# GMT common arguments shelf
+-Bf0.2a0.2:Phase:/::
+-JX06/06
+-R-24/24/-24/24
+-X3
+-x7
+-Y5
+-y0
+-jX06/06
+EOF
+3
+-x7
+-Y5
+-y0
+-jX06/06
+EOF
+F
+
+-x7
+-Y5
+-y0
+-jX12/12
+EOF

@@ -756,8 +756,10 @@ for i = 1:np
     %     colorbar;title(sprintf('Pair %#3d DEV1 in cycles',i));axis equal; axis tight;axis ij;xlabel('Pixel Index');ylabel('Pixel Index');
     
     % get centroid of Okada source
-    xcentroid = q1(get_parameter_index('Okada1_Centroid_Easting_in_m____',qnames));
-    ycentroid = q1(get_parameter_index('Okada1_Centroid_Northing_in_m___',qnames));
+%     xcentroid = q1(get_parameter_index('Okada1_Centroid_Easting_in_m____',qnames));
+%     ycentroid = q1(get_parameter_index('Okada1_Centroid_Northing_in_m___',qnames));
+    xcentroid = p1(get_parameter_index('Okada1_Centroid_Easting_in_m____',qnames));
+    ycentroid = p1(get_parameter_index('Okada1_Centroid_Northing_in_m___',qnames));
     icentroid = NaN;
     jcentroid = NaN;
     if isfinite(xcentroid) == 1
@@ -1120,45 +1122,45 @@ for i = 1:np
         fprintf(fidtxtout,outfmt,qflags{j},j+mparam,qnames{j}, q0(j),q1(j),adj,qsig(j),sadj,(uqb(j)-lqb(j))/2.0);
     end
     
-    % print corners of Okada models
-    iii=get_parameter_index('Okada1_Length_in_m______________',pnames);
-    if p0(iii) > 0
-        fprintf(1,'Initial UTM coordinates of 4 corners, upper center, and Centroid of Okada1\n');
-        for iiii=[1 2 3 4 7 10]
-            fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},Xcorners10(iiii),Ycorners10(iiii),Hcorners10(iiii));
-        end
-        fprintf(1,'Final   UTM coordinates of 4 corners, upper center, and Centroid of Okada1\n');
-        for iiii=[1 2 3 4 7 10]
-            fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},Xcorners11(iiii),Ycorners11(iiii),Hcorners11(iiii));
-        end
-        fprintf(1,'Initial Lon Lat of 4 corners, upper center, Centroid of Okada1\n');
-        for iiii=[1 2 3 4 7 10]
-            fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},LonCorners10(iiii),LatCorners10(iiii),Hcorners10(iiii));
-        end
-        fprintf(1,'Final   Lon Lat of 4 corners, upper center, Centroid of Okada1\n');
-        for iiii=[1 2 3 4 7 10]
-            fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},LonCorners11(iiii),LatCorners11(iiii),Hcorners11(iiii));
-        end
-    end
-    iii=get_parameter_index('Okada2_Length_in_m______________',pnames);
-    if p0(iii) > 0
-        fprintf(1,'Initial UTM coordinates of 4 corners, upper center, and Centroid of Okada2\n');
-        for iiii=[1 2 3 4 7 10]
-            fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},Xcorners20(iiii),Ycorners20(iiii),Hcorners20(iiii));
-        end
-        fprintf(1,'Final   UTM coordinates of 4 corners, upper center, and Centroid of Okada2\n');
-        for iiii=[1 2 3 4 7 10]
-            fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},Xcorners21(iiii),Ycorners21(iiii),Hcorners21(iiii));
-        end
-        fprintf(1,'Initial Lon Lat of 4 corners, upper center, Centroid of Okada2\n');
-        for iiii=[1 2 3 4 7 10]
-            fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},LonCorners20(iiii),LatCorners20(iiii),Hcorners20(iiii));
-        end
-        fprintf(1,'Final   Lon Lat of 4 corners, upper center, Centroid of Okada2\n');
-        for iiii=[1 2 3 4 7 10]
-            fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},LonCorners21(iiii),LatCorners21(iiii),Hcorners21(iiii));
-        end
-    end
+%     % print corners of Okada models
+%     iii=get_parameter_index('Okada1_Length_in_m______________',pnames);
+%     if p0(iii) > 0
+%         fprintf(1,'Initial UTM coordinates of 4 corners, upper center, and Centroid of Okada1\n');
+%         for iiii=[1 2 3 4 7 10]
+%             fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},Xcorners10(iiii),Ycorners10(iiii),Hcorners10(iiii));
+%         end
+%         fprintf(1,'Final   UTM coordinates of 4 corners, upper center, and Centroid of Okada1\n');
+%         for iiii=[1 2 3 4 7 10]
+%             fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},Xcorners11(iiii),Ycorners11(iiii),Hcorners11(iiii));
+%         end
+%         fprintf(1,'Initial Lon Lat of 4 corners, upper center, Centroid of Okada1\n');
+%         for iiii=[1 2 3 4 7 10]
+%             fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},LonCorners10(iiii),LatCorners10(iiii),Hcorners10(iiii));
+%         end
+%         fprintf(1,'Final   Lon Lat of 4 corners, upper center, Centroid of Okada1\n');
+%         for iiii=[1 2 3 4 7 10]
+%             fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},LonCorners11(iiii),LatCorners11(iiii),Hcorners11(iiii));
+%         end
+%     end
+%     iii=get_parameter_index('Okada2_Length_in_m______________',pnames);
+%     if p0(iii) > 0
+%         fprintf(1,'Initial UTM coordinates of 4 corners, upper center, and Centroid of Okada2\n');
+%         for iiii=[1 2 3 4 7 10]
+%             fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},Xcorners20(iiii),Ycorners20(iiii),Hcorners20(iiii));
+%         end
+%         fprintf(1,'Final   UTM coordinates of 4 corners, upper center, and Centroid of Okada2\n');
+%         for iiii=[1 2 3 4 7 10]
+%             fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},Xcorners21(iiii),Ycorners21(iiii),Hcorners21(iiii));
+%         end
+%         fprintf(1,'Initial Lon Lat of 4 corners, upper center, Centroid of Okada2\n');
+%         for iiii=[1 2 3 4 7 10]
+%             fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},LonCorners20(iiii),LatCorners20(iiii),Hcorners20(iiii));
+%         end
+%         fprintf(1,'Final   Lon Lat of 4 corners, upper center, Centroid of Okada2\n');
+%         for iiii=[1 2 3 4 7 10]
+%             fprintf(1,'%s %12.4f %12.4f %12.4f\n',Ncorners{iiii},LonCorners21(iiii),LatCorners21(iiii),Hcorners21(iiii));
+%         end
+%     end
     
     
     % do not open too many windows

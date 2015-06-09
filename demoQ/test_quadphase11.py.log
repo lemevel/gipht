@@ -1,0 +1,6 @@
+../src/pha2qls.maci64 pha_11176_21540_ort.pha  1420 1230 -P qha_11176_21540_ort.pha -X grx_11176_21540_ort.i2 -Y gry_11176_21540_ort.i2 -L 16 -M 8 -N 4
+../src/pha2qls.maci64 pha_11176_21540_ort.pha 1420 1230  -P qha_11176_21540_ort.pha -X grx_11176_21540_ort.i2 -Y gry_11176_21540_ort.i2 -L 16 -M 8 -N 4
+../src/pha2qls.maci64 junk.txt 1420 1230 -P junk.txt -X grx_11176_21540_ort.i2 -Y gry_11176_21540_ort.i2 -L 16 -M 8 -N 4
+../src/pha2qls.maci64 junk.txt 1420 1230 -P junk.txt -X grx_11176_21540_ort.i2 -Y gry_11176_21540_ort.i2 -L 16 -M 8 -N 4
+../src/pha2qls.maci64 pha_11176_21540_ort.pha 1420 1230 -P qha_11176_21540_ort.qha -X grx_11176_21540_ort.i2 -Y gry_11176_21540_ort.i2 -L 16 -M 8 -N 4
+../src/pha2qls.maci64 pha_11176_21540_ort.pha 1420 1230 -P qha_11176_21540_ort.pha -X grx_11176_21540_ort.i2 -Y gry_11176_21540_ort.i2 -L 16 -M 8 -N 4

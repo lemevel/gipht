@@ -1,0 +1,185 @@
+
+
+----------------   GIPHT_STEP1 begins at 2015-04-19 17:52:42 ----------
+read_input_controls begin reading input control file named gipht.in...
+    1 demdescfile  subregion_dem_descriptor.dat % for small subregion only
+    2 xcenter  506875       % Correct UTM easting in meters
+    3 ycenter  3800986      % Correct UTM northing in meters
+    4 demdescfile  gipht_subregion121x81.dat 
+    5 ilist  file_names_SIMUTEST.dat % list of interferograms for small subregion only using simulated phase 
+    6 halfwidth  60           % half the east-west width of the sampled region in pixels
+    7 halfheight  40	        % half the north-south height of the sampled region in pixels
+    8 pselect  5        % select pixels of phase   using quadtree
+    9 pixinpatch  4        % mininum number of valid (nonzero) pixels in a patch
+   10 ithresh     24        % minimum misfit (circular mean deviation) to mean ( 1 DN is 1 / 256 pixel)
+   11 maxcmd      8        % minimum misfit (circular mean deviation) to ramp ( 1 DN is 1 / 256 pixel)
+   12 unitv_east    0.263325742220766  % Eastward component
+   13 unitv_north   -0.056051009264550  % Northward component
+   14 unitv_up    0.963077275115714  % Upward component (must be positive)
+   15 anneal  0  %     0 to skip Simulated Annealing
+   16 txtinname  demoF10.gin    % same as above but using centroid depth and positive depth
+   17 objfun  funcostrarc     % Objective Function mininum angle,  assumes zero mean, using arc function in radians 
+   18 fitfun  funfit28 % same as funseparable27 but calls COMSOL if datafilename includes "mph"
+   19 nprocessors  0     % number of processors to use in Distributed Computing Toolbox 
+   20 figopt   010 % good for short course
+   21 printfun  printpdf  % print all plots to Portable Document Files files (compact)
+             xcenter = 506875.000000
+             ycenter = 3800986.000000
+           halfwidth = 60.000000
+          halfheight = 40.000000
+             pselect = 5.000000
+          unitv_east = 0.263326
+         unitv_north = -0.056051
+            unitv_up = 0.963077
+             ithresh = 24.000000
+              anneal = 0.000000
+          pixinpatch = 4.000000
+         nprocessors = 0.000000
+              maxcmd = 8.000000
+              figopt = 00000010
+              objfun = funcostrarc
+              fitfun = funfit28
+           txtinname = demoF10.gin
+         demdescfile = subregion_dem_descriptor.dat
+         demdescfile = gipht_subregion121x81.dat
+               ilist = file_names_SIMUTEST.dat
+            printfun = printpdf
+WARNING: No orbit file named in gipht.in. Assuming constant look vector.
+demoF10.gin
+gipht_subregion121x81.dat
+file_names_SIMUTEST.dat
+cmds = 
+    'funfit28'    'printpdf'    'funcostrarc'
+Using "exist" command to search for function named funfit28
+Found function named funfit28 2
+Using "exist" command to search for function named printpdf
+Found function named printpdf 2
+Using "exist" command to search for function named funcostrarc
+Found function named funcostrarc 2
+read_input_controls completed reading input controls.
+Scale factor for phase in DN per cycle:
+DNPC =
+   6.283185307179586
+Name of list of phase files
+read_file_names begins ...
+Read    1 pairs of phase files 
+Number of interferogram files (pairs) to adjust
+np =
+     1
+Number of distinct epochs overall
+me =
+     2
+Number of species overall
+mfam =
+     1
+Species A:     1     2
+Species A Member  1 Pair   1 M   1001 S   1002                                              ../IN/psp_5565_10575_ort_121x81.pha
+Species A Member  2 Pair   1 M   1001 S   1002                                              ../IN/psp_5565_10575_ort_121x81.pha
+adjustbp begins ...
+Length of data vector, including constraints
+md =
+     1     2
+Dimensons of design matrix, including constraints
+nmdd2 =
+     2     2
+Rank defiency, including constraints
+rd =
+     0
+Begin least squares adjustment...
+index orbnum date     species yr Dopp/PRF
+    1    1001 PAIR001-MAST A  1992.6011     0.0000
+    2    1002 PAIR001-SLAV A  1993.5589  1000.0000
+plotbp begins at 2015-04-19 17:52:43
+titl1 =
+Selected pairs
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-04-19 17:52:43
+read_dem_descriptor begins ...
+DEM Descriptor calls for extraction
+Reached end of DEM descriptor file
+l1 =
+     1
+ml =
+    81
+nl =
+    81
+c1 =
+     1
+mc =
+   121
+nc =
+   121
+number of columns in each interferogram
+ncols =
+   121
+number of lines in each interferogram 
+nrows =
+    81
+Maximum number of pixels to be selected for inversion = 9801
+Location                  X            Y
+DEM pixel 1         502426      3804714
+DEM extract 1       502426      3804714
+DEM extract N       511399      3797165
+Center              506875      3800986
+icenter = 41 jcenter = 61
+Subregion contains NRSUB = 81 rows and NCSUB = 121 columns
+dlon =
+     8.063739958661387e-04
+dlat =
+    -8.405146675798392e-04
+Opened 100m_121x81.i2. Read 2 x 81 rows x 121 columns = 19602 bytes WITHOUT FLIPPING as int16 
+I2DEM has 81 rows and 121 columns
+jzl2 =
+    81
+jzc2 =
+   121
+Nrows, Ncols of Extracted Region in DEM.
+ans =
+    81   121
+Selecting pixels using pha2qls resampling.
+Extrema of coordinates of images (extracted area)
+    Location            X            Y
+        Min        502500      3797165
+         Max       511399      3804621
+       Diff          8899         7456
+      Center       506875      3800986
+Extrema of coordinates of subregion
+    Location   Easting(m)  Northing(m)
+     Min           502500      3797165
+     Max           511399      3804621
+     Diff            8899         7456
+     Center        506875      3800986
+     Center1       506875      3800986
+     Center2       506950      3800893
+     Center3       506950      3800893
+    Max-Cen          4524         3635
+    Cen -Min         4375         3821
+    Max-Cen3         4450         3728
+    Cen3-Min         4450         3728
+write_dem_descriptor begins ...
+Reached end of DEM descriptor file
+Wrote DEM descriptor for subregion to file named gipht_subregion.dat
+Opened ../IN/psp_5565_10575_ort_121x81.pha
+Reshaping to 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+Read 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+Opened ../IN/qsp_5565_10575_ort_121x81.pha
+Reshaping to 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+Read 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+Opened ../IN/grx_5565_10575_ort_121x81.i2. Read 2 x 81 rows x 121 columns = 19602 bytes WITHOUT FLIPPING as int16 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('read_i2', '/Users/feigl/gipht/src/read_i2.m', 21)" style="font-weight:bold">read_i2</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/read_i2.m',21,0)">line 21</a>)
+Cannot open file                                               ../IN/gry_5565_10575_ort_121x81.i2
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht_step1', '/Users/feigl/gipht/src/gipht_step1.m', 1041)" style="font-weight:bold">gipht_step1</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht_step1.m',1041,0)">line 1041</a>)
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht', '/Users/feigl/gipht/src/gipht.m', 125)" style="font-weight:bold">gipht</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht.m',125,0)">line 125</a>)
+
+} 
+An error was encountered while saving the command history
+java.io.FileNotFoundException: /Users/feigl/.matlab/R2015a/History.xml (Too many open files)
+	at java.io.RandomAccessFile.open(Native Method)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:241)
+	at com.mathworks.mde.cmdhist.AltHistoryCollection$CommandSaver.run(AltHistoryCollection.java:1211)
+	at java.lang.Thread.run(Thread.java:745)
+The desktop configuration was not saved successfully
+exit

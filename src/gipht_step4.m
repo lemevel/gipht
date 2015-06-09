@@ -411,7 +411,9 @@ for i = 1:np
     end
 end
 
-%clear phao imA imB imC imD imE imF imG imH;
+clear phao imA imB imC imD imE imF imG imH;
+clear h;
+
 save('step4.mat');
 save('qsave.mat','iq','iq1','iq2','qflags','qnames','q0','q1','qsig');
 

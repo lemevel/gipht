@@ -59,24 +59,24 @@ end
 fprintf(fidtxtout,'%s %s %s\n',txtoutname,runname,versionstr);
 %fprintf(fidtxtout,'%80s\n',splashtext);
 
-% deal with parallel processing if requested
-if nprocessors > 1
-    if numel(which('matlabpool')) > 0
-        %         fprintf(1,'Closing any lingering workers in matlab pool.\n');
-        %         matlabpool close force
-        fprintf(1,'Attempting to open matlabpool with %d processors\n',nprocessors);
-        matlabpool('open',nprocessors)
-        if matlabpool('size') == nprocessors
-            fprintf(1,'Opened matlabpool with %d processors\n',nprocessors);
-        else
-            warning('Could not open matlab pool for distributed computing');
-            nprocessors = 1;
-        end
-    else
-        warning(sprintf('Request is for nprocessors = %d BUT matlab distributed tool kit not installed.\n',nprocessors));
-        nprocessors = 1;
-    end
-end
+% % deal with parallel processing if requested
+% if nprocessors > 1
+%     if numel(which('matlabpool')) > 0
+%         %         fprintf(1,'Closing any lingering workers in matlab pool.\n');
+%         %         matlabpool close force
+%         fprintf(1,'Attempting to open matlabpool with %d processors\n',nprocessors);
+%         matlabpool('open',nprocessors)
+%         if matlabpool('size') == nprocessors
+%             fprintf(1,'Opened matlabpool with %d processors\n',nprocessors);
+%         else
+%             warning('Could not open matlab pool for distributed computing');
+%             nprocessors = 1;
+%         end
+%     else
+%         warning(sprintf('Request is for nprocessors = %d BUT matlab distributed tool kit not installed.\n',nprocessors));
+%         nprocessors = 1;
+%     end
+% end
 
 % directory to look for orbit files
 if numel(orbfile) > 0
@@ -1784,7 +1784,7 @@ check_struct(DST,1); % print min, max, values
 clear inan imout iok i2dem isort phaimg phao rng xyzm;
 clear qgx qgy qi1 qi2 qim qim2 qj1 qj2 qjm qjm2 qqp qqq qsp qkw qlist;
 clear qi12 qiim qj12 qjjm;
-
+clear h;
 save;
 
 fprintf(1,'\n\n----------------   %s ended normally at %s ----------\n',upper(mfilename),datestr(now,31));

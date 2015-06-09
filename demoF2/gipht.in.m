@@ -1,0 +1,107 @@
+% gipht.in
+% Variables to control how GIPhT 
+%
+% This file is for SAR data for the M5 Fawnskin EQ, California 4Dec1992
+%
+% parameter name must start in column 1 with the parameter value the second word
+% parameter names must be lower case
+
+
+% % USE THESE VALUES FOR FULL LANDERS INTERFEROGRAM IN GEOGRAPHIC LAT/LON COORDINATES
+% % File describing Digital Elevation Model (contains metadata)
+  demdescfile = dem_descriptor.dat 
+  ilist = interferograms.lst % list of interferograms
+% % COORDINATES: These values should be specified in the same system as the DEM,
+% % as described in the dem_descriptor.dat file above
+% xcenter  = -116.91   % Geographic Longitude in decimal degrees (positive East) 
+% ycenter  = 34.36     % Geographic Latitude in decimal degrees (positive North)
+
+% USE THESE VALUES FOR SAMLL 121x81 SUBREGION AROUND FAWNSKIN
+%demdescfile = subregion_dem_descriptor.dat % for small subregion only
+xcenter = 506875       % Correct UTM easting in meters
+ycenter = 3800986      % Correct UTM northing in meters
+%ilist = file_names.dat          % list of interferograms for small subregion only using observed
+%demdescfile = SIMUTEST4x_20120103_113833/gipht_subregion.dat % for small subregion only
+%demdescfile = gipht_subregionSIMUTEST_120x80.dat
+demdescfile = gipht_subregion121x81.dat 
+ilist = file_names_SIMUTEST.dat % list of interferograms for small subregion only using simulated phase 
+
+% %DIMENSIONS            %
+ halfwidth = 60           % half the east-west width of the sampled region in pixels
+ halfheight = 40	        % half the north-south height of the sampled region in pixels
+
+
+% SELECTING THE DATA
+%pselect = 0	            % Select ALL pixels from subregion
+%pselect = 1	            % Randomly select pixels from subregion
+%npix = 100	            % number of pixels to include in inversion - not enough to consistently get same answer
+%npix = 1000	            % number of pixels to include in inversion - not enough to consistently get same answer
+%npix = 2000	            % number of pixels to include in inversion - not enough to consistently get same answer
+%npix = 9800	            % number of pixels to include in inversion - all pixels 81 * 121 is 9801
+%npix = 9801            % select all pixels, systematically, not randomly
+
+%pselect     = 5        % select pixels of phase   using quadtree
+ pselect     = 7        % select pixels of gradient using quadtree
+ pixinpatch  = 4        % mininum number of valid (nonzero) pixels in a patch
+ ithresh =    24        % minimum misfit (circular mean deviation) to mean ( 1 DN is 1 / 256 pixel)
+ maxcmd  =     8        % minimum misfit (circular mean deviation) to ramp ( 1 DN is 1 / 256 pixel)
+
+
+% UNIT VECTOR FROM TARGET TO SATELLITE
+% assumed constant over scene
+unitv_east   =   0.263325742220766  % Eastward component
+unitv_north  =  -0.056051009264550  % Northward component
+unitv_up     =   0.963077275115714  % Upward component (must be positive)
+			
+% CHOOSE ALGORITHM FOR INVERSION
+  anneal = 0  %     0 to skip Simulated Annealing
+% anneal = 1  %     1 to run Simulated Annealing [DEFAULT]
+% anneal = 2  %     2 to run S.A. with recording 
+% anneal = 3  %     3 to using SIMANN
+% anneal = 5  %     use Matlab FMINCON
+
+% nsaruns = 3 % number of runs through Simulated Annealing
+
+%txtinname = demoF2.gin   % 1 Okada source for Fawnksin in new (plusminus) format for Fawnksin for use with pselect set to 7
+%txtinname = demoF3.gin   % 1 Okada source for Fawnksin in new (plusminus) format for Fawnksin - no gradients
+%txtinname = demoF4.gin   % 1 Okada source for Fawnksin in new (plusminus) format for Fawnksin - includes gradients
+%txtinname = demoF5.gin    % same as above, but updated X,Y
+%txtinname = demoF6.gin    % same as above, but looser bounds for use with pselect 7, used to make goodmodel psp_goodmodel_121x81.pha
+%txtinname = demoF7.gin    % same as above, but with all parameters fixed
+%txtinname = demoF8.gin    % same as above, but with moderately loose bounds
+ txtinname = demoF9.gin    % same as above, but with X,Y bounded to +/- 500 m
+%txtinname = mogiF1.gin    % Mogi model for discrimination
+
+objfun = funcostrarc   % mininum angle,  assumes zero mean, using arc function in radians 
+%fitfun = funseparable18a % 2 Mogi + 2 Okada + 1 Pinel including new TST structure
+%fitfun = funseparable20 % 2 Mogi + 2 Okada + 1 Pinel including new TST structure
+%fitfun = funseparable21 % same as above, but add Sun and Okada3
+%fitfun = funseparable23 % same as above, but use Central Differences
+ fitfun = funseparable23b % same as above, but return vector displacement
+
+% nprocessors = 4     % number of processors to use in Distributed Computing Toolbox 
+% nsaruns = 3 % number of runs through Simulated Annealing
+
+% flag that tells the algorithm whether to try improve the solution:
+%saopt6 = 0 % do not try to improve (default)
+%saopt6 = 1 % try the Nelder-Mead simplex method using
+%            %'fminsearch' function in MATLAB optimization toolbox
+%saopt6 = 2 % try the Constrained optimization method using
+%            % 'fmincon' function with in MATLAB optimization toolbox
+%            % and 'interior-point' algorithm
+%saopt6 = 3 % evaluate paramater uncertainties using Bootstrap analysis 
+
+
+
+% How handle values for multi-panel plots
+%figopt % xx1 propagate nulls from quadtree, paint missing data black
+%figopt % x1x calculate modeled values at all pixel locations
+%figopt % 1xx request grids and profiles of vector components of displacement
+%figopt = 000 % none of the above
+%figopt = 111 % do all of the above
+ figopt = 110 % best-looking plots without black
+
+% How to record plots
+%printfun = printnull % do not print plots to any files (fast)
+%printfun = printps   % print all plots to PostScript files (portable, but large)
+ printfun = printpdf  % print all plots to PostScript files (compact)

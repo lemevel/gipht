@@ -1,0 +1,7 @@
+
+Thu Aug  7 21:02:54 CDT 2014
+
+   124  21:01   git clone -b KFv2.9 git@github.com:feigl/gipht.git
+   125  21:02   cd gipht/
+   126  21:02   git status
+

@@ -1,0 +1,1072 @@
+
+
+----------------   GIPHT_STEP1 begins at 2015-04-19 15:14:44 ----------
+read_input_controls begin reading input control file named gipht.in...
+    1 demdescfile  subregion_dem_descriptor.dat % for small subregion only
+    2 xcenter  506875       % Correct UTM easting in meters
+    3 ycenter  3800986      % Correct UTM northing in meters
+    4 demdescfile  gipht_subregion121x81.dat 
+    5 ilist  file_names_SIMUTEST.dat % list of interferograms for small subregion only using simulated phase 
+    6 halfwidth  60           % half the east-west width of the sampled region in pixels
+    7 halfheight  40	        % half the north-south height of the sampled region in pixels
+    8 pselect  5        % select pixels of phase   using quadtree
+    9 pixinpatch  4        % mininum number of valid (nonzero) pixels in a patch
+   10 ithresh     24        % minimum misfit (circular mean deviation) to mean ( 1 DN is 1 / 256 pixel)
+   11 maxcmd      8        % minimum misfit (circular mean deviation) to ramp ( 1 DN is 1 / 256 pixel)
+   12 unitv_east    0.263325742220766  % Eastward component
+   13 unitv_north   -0.056051009264550  % Northward component
+   14 unitv_up    0.963077275115714  % Upward component (must be positive)
+   15 anneal  0  %     0 to skip Simulated Annealing
+   16 txtinname  demoF10.gin    % same as above but using centroid depth and positive depth
+   17 objfun  funcostrarc     % Objective Function mininum angle,  assumes zero mean, using arc function in radians 
+   18 fitfun  funfit28 % same as funseparable27 but calls COMSOL if datafilename includes "mph"
+   19 nprocessors  0     % number of processors to use in Distributed Computing Toolbox 
+   20 figopt   010 % good for short course
+   21 printfun  printpdf  % print all plots to Portable Document Files files (compact)
+             xcenter = 506875.000000
+             ycenter = 3800986.000000
+           halfwidth = 60.000000
+          halfheight = 40.000000
+             pselect = 5.000000
+          unitv_east = 0.263326
+         unitv_north = -0.056051
+            unitv_up = 0.963077
+             ithresh = 24.000000
+              anneal = 0.000000
+          pixinpatch = 4.000000
+         nprocessors = 0.000000
+              maxcmd = 8.000000
+              figopt = 00000010
+              objfun = funcostrarc
+              fitfun = funfit28
+           txtinname = demoF10.gin
+         demdescfile = subregion_dem_descriptor.dat
+         demdescfile = gipht_subregion121x81.dat
+               ilist = file_names_SIMUTEST.dat
+            printfun = printpdf
+WARNING: No orbit file named in gipht.in. Assuming constant look vector.
+demoF10.gin
+gipht_subregion121x81.dat
+file_names_SIMUTEST.dat
+cmds = 
+    'funfit28'    'printpdf'    'funcostrarc'
+Using "exist" command to search for function named funfit28
+Found function named funfit28 2
+Using "exist" command to search for function named printpdf
+Found function named printpdf 2
+Using "exist" command to search for function named funcostrarc
+Found function named funcostrarc 2
+read_input_controls completed reading input controls.
+Scale factor for phase in DN per cycle:
+DNPC =
+   6.283185307179586
+Name of list of phase files
+read_file_names begins ...
+Read    1 pairs of phase files 
+Number of interferogram files (pairs) to adjust
+np =
+     1
+Number of distinct epochs overall
+me =
+     2
+Number of species overall
+mfam =
+     1
+Species A:     1     2
+Species A Member  1 Pair   1 M   1001 S   1002                                              ../IN/psp_5565_10575_ort_121x81.pha
+Species A Member  2 Pair   1 M   1001 S   1002                                              ../IN/psp_5565_10575_ort_121x81.pha
+adjustbp begins ...
+Length of data vector, including constraints
+md =
+     1     2
+Dimensons of design matrix, including constraints
+nmdd2 =
+     2     2
+Rank defiency, including constraints
+rd =
+     0
+Begin least squares adjustment...
+index orbnum date     species yr Dopp/PRF
+    1    1001 PAIR001-MAST A  1992.6011     0.0000
+    2    1002 PAIR001-SLAV A  1993.5589  1000.0000
+plotbp begins at 2015-04-19 15:14:45
+titl1 =
+Selected pairs
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-04-19 15:14:45
+read_dem_descriptor begins ...
+DEM Descriptor calls for extraction
+Reached end of DEM descriptor file
+l1 =
+     1
+ml =
+    81
+nl =
+    81
+c1 =
+     1
+mc =
+   121
+nc =
+   121
+number of columns in each interferogram
+ncols =
+   121
+number of lines in each interferogram 
+nrows =
+    81
+Maximum number of pixels to be selected for inversion = 9801
+Location                  X            Y
+DEM pixel 1         502426      3804714
+DEM extract 1       502426      3804714
+DEM extract N       511399      3797165
+Center              506875      3800986
+icenter = 41 jcenter = 61
+Subregion contains NRSUB = 81 rows and NCSUB = 121 columns
+dlon =
+     8.063739958661387e-04
+dlat =
+    -8.405146675798392e-04
+Opened 100m_121x81.i2. Read 2 x 81 rows x 121 columns = 19602 bytes WITHOUT FLIPPING as int16 
+I2DEM has 81 rows and 121 columns
+jzl2 =
+    81
+jzc2 =
+   121
+Nrows, Ncols of Extracted Region in DEM.
+ans =
+    81   121
+Selecting pixels using pha2qls resampling.
+Extrema of coordinates of images (extracted area)
+    Location            X            Y
+        Min        502500      3797165
+         Max       511399      3804621
+       Diff          8899         7456
+      Center       506875      3800986
+Extrema of coordinates of subregion
+    Location   Easting(m)  Northing(m)
+     Min           502500      3797165
+     Max           511399      3804621
+     Diff            8899         7456
+     Center        506875      3800986
+     Center1       506875      3800986
+     Center2       506950      3800893
+     Center3       506950      3800893
+    Max-Cen          4524         3635
+    Cen -Min         4375         3821
+    Max-Cen3         4450         3728
+    Cen3-Min         4450         3728
+write_dem_descriptor begins ...
+Reached end of DEM descriptor file
+Wrote DEM descriptor for subregion to file named gipht_subregion.dat
+Opened ../IN/psp_5565_10575_ort_121x81.pha
+Reshaping to 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+Read 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+Opened ../IN/qsp_5565_10575_ort_121x81.pha
+Reshaping to 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+Read 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+Opened ../IN/grx_5565_10575_ort_121x81.i2. Read 2 x 81 rows x 121 columns = 19602 bytes WITHOUT FLIPPING as int16 
+Opened ../IN/gry_5565_10575_ort_121x81.i2. Read 2 x 81 rows x 121 columns = 19602 bytes WITHOUT FLIPPING as int16 
+Opened ../IN/psp_5565_10575_ort_121x81.qls. Read 2 x 1029 rows x 6 columns = 12348 bytes WITHOUT FLIPPING as int16 
+zstr =
+cycles
+Number of good pixels in this pair: 1023
+Number of observations so far: 1023
+Minimal values in meters         for xyzm   502648.5  3797164.8      100.0 
+Maximal values in meters         for xyzm   511399.4  3804434.4      100.0 
+Minimal values in degrees for lon, lat           4.8       34.3        
+Maximal values in degrees for lon, lat           4.9       34.4        
+Assuming constant unit vector [E,N,U]     0.2633    -0.0561     0.9631
+Saving orbit information for future use in file named orbits.mat
+Successfully read the following phase files:                                             ../IN/psp_5565_10575_ort_121x81.pha
+Number of pairs with data
+np =
+     1
+Number of data
+ndata =
+        1023
+Number of data
+ndata1 =
+        1023
+ncols =
+    48
+Wrote meta data for 1023 pixels to file dst_sample.dst
+Field    nr nc n(NaN) min max mean std
+  1                    i  1023     1        0   1.000000e+00   1.023000e+03   5.120000e+02   2.954590e+02
+  2            idatatype  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+  3                    k  1023     1        0   1.000000e+00   1.000000e+00   1.000000e+00   0.000000e+00
+  4                kmast  1023     1        0   1.000000e+00   1.000000e+00   1.000000e+00   0.000000e+00
+  5                kslav  1023     1        0   2.000000e+00   2.000000e+00   2.000000e+00   0.000000e+00
+  6               phaobs  1023     1        0  -3.141593e+00   3.117049e+00  -1.564750e-01   1.816308e+00
+  7               phamod  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+  8                tmast  1023     1        0   1.992601e+03   1.992601e+03   1.992601e+03   3.844495e-11
+  9                tslav  1023     1        0   1.993559e+03   1.993559e+03   1.993559e+03   1.706137e-11
+ 10                    x  1023     1        0   5.026485e+05   5.113994e+05   5.072460e+05   2.512173e+03
+ 11                    y  1023     1        0   3.797165e+06   3.804434e+06   3.801576e+06   2.013268e+03
+ 12                    z  1023     1        0   1.000000e+02   1.000000e+02   1.000000e+02   0.000000e+00
+ 13                  uvx  1023     1        0   2.633257e-01   2.633257e-01   2.633257e-01   1.666149e-15
+ 14                  uvy  1023     1        0  -5.605101e-02  -5.605101e-02  -5.605101e-02   8.330745e-17
+ 15                  uvz  1023     1        0   9.630773e-01   9.630773e-01   9.630773e-01   2.032702e-14
+ 16               mpercy  1023     1        0   2.840000e-02   2.840000e-02   2.840000e-02   5.172004e-16
+ 17                bmast  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 18                bslav  1023     1        0   1.000000e+03   1.000000e+03   1.000000e+03   0.000000e+00
+ 19                dmast  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 20                dslav  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 21                   x0  1023     1        0  -4.597485e+03   4.153395e+03  -7.377522e-10   2.512173e+03
+ 22                   y0  1023     1        0  -4.411284e+03   2.858316e+03  -9.486199e-10   2.013268e+03
+ 23                   z0  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 24                   dx  1023     1        0   7.416000e+01   7.416000e+01   7.416000e+01   1.933622e-12
+ 25                   dy  1023     1        0  -9.320000e+01  -9.320000e+01  -9.320000e+01   1.734572e-12
+ 26                   dz  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 27                alond  1023     1        0   4.832970e+00   4.929253e+00   4.883684e+00   2.728454e-02
+ 28                alatd  1023     1        0   3.430066e+01   3.436740e+01   3.434102e+01   1.816872e-02
+ 29                orbm1  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 30                orbm2  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 31                orbm3  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 32                orbm4  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 33                orbm5  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 34                orbm6  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 35                orbs1  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 36                orbs2  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 37                orbs3  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 38                orbs4  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 39                orbs5  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 40                orbs6  1023     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 41                   mx  1023     1     1023            NaN            NaN            NaN            NaN
+ 42                   my  1023     1     1023            NaN            NaN            NaN            NaN
+ 43                   mz  1023     1     1023            NaN            NaN            NaN            NaN
+ 44                 qii1  1023     1        0   1.000000e+00   1.190000e+02   6.296481e+01   3.387173e+01
+ 45                 qii2  1023     1        0   2.000000e+00   1.200000e+02   6.402346e+01   3.387937e+01
+ 46                 qjj1  1023     1        0   1.000000e+00   7.900000e+01   3.163930e+01   2.162322e+01
+ 47                 qjj2  1023     1        0   2.000000e+00   8.000000e+01   3.269795e+01   2.158154e+01
+ 48               phasig  1023     1        0   1.250000e-01   5.000000e-01   4.930352e-01   4.171590e-02
+
+Saving to: /Users/feigl/gipht/demoF2/matlab.mat
+
+
+
+----------------   GIPHT_STEP1 ended normally at 2015-04-19 15:14:50 ----------
+
+
+----------------   GIPHT_STEP2 begins at 2015-04-19 15:14:51 ----------
+
+Loading from: matlab.mat
+
+ndata =
+        1023
+ndata1 =
+        1023
+Naming parameters in fitting function fitfun = funfit28
+Number of parameters
+mparam =
+    95
+Opened file named demoF10.gin to read initial estimates of parameters.
+
+ Done reading parameters
+Fixing bounds to initial estimate on E_grad__@_epoch_001_dimless_____           -3e-06           -3e-06           -3e-06
+Fixing bounds to initial estimate on N_grad__@_epoch_001_dimless_____         -5.5e-06         -5.5e-06         -5.5e-06
+Fixing bounds to initial estimate on U_grad__@_epoch_001_dimless_____                0                0                0
+Fixing bounds to initial estimate on OrbitHoriz_@_epoch_001_in_m_____                0                0                0
+Fixing bounds to initial estimate on OrbitAlong_@_epoch_001_in_m_____                0                0                0
+Fixing bounds to initial estimate on OrbitVerti_@_epoch_001_in_m_____                0                0                0
+Fixing bounds to initial estimate on OrbitVelH__@_epoch_001_m_per_s__                0                0                0
+Fixing bounds to initial estimate on OrbitVelA__@_epoch_001_m_per_s__                0                0                0
+Fixing bounds to initial estimate on OrbitVelV__@_epoch_001_m_per_s__                0                0                0
+Fixing bounds to initial estimate on Offset__@_epoch_001_in_cycles___                0                0                0
+Updating                       bounds on E_grad__@_epoch_002_dimless_____                0                0                0
+Updating                       bounds on N_grad__@_epoch_002_dimless_____                0                0                0
+Updating                       bounds on U_grad__@_epoch_002_dimless_____                0                0                0
+Updating                       bounds on OrbitHoriz_@_epoch_002_in_m_____                0                0                0
+Updating                       bounds on OrbitAlong_@_epoch_002_in_m_____                0                0                0
+Updating                       bounds on OrbitVerti_@_epoch_002_in_m_____                0                0                0
+Updating                       bounds on OrbitVelH__@_epoch_002_m_per_s__                0                0                0
+Updating                       bounds on OrbitVelA__@_epoch_002_m_per_s__                0                0                0
+Updating                       bounds on OrbitVelV__@_epoch_002_m_per_s__                0                0                0
+Updating                       bounds on Offset__@_epoch_002_in_cycles___                0             -0.5              0.5
+I          Name     P0(pre-fit)              P1(post-fit)     Adjust.   Sigma[0] Significance PlusMinusBound
+F#   1 time_fn_@_epoch_001_in_years____  1992.6011        NaN     0.0000        NaN     NaN     0.0000
+F#   2 time_fn_@_epoch_002_in_years____  1993.5589        NaN     0.0000        NaN     NaN     0.0000
+E#   3 E_grad__@_epoch_001_dimless_____  -3.00e-06        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#   4 E_grad__@_epoch_002_dimless_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+E#   5 N_grad__@_epoch_001_dimless_____  -5.50e-06        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#   6 N_grad__@_epoch_002_dimless_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#   7 U_grad__@_epoch_001_dimless_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#   8 U_grad__@_epoch_002_dimless_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#   9 OrbitHoriz_@_epoch_001_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  10 OrbitHoriz_@_epoch_002_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  11 OrbitAlong_@_epoch_001_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  12 OrbitAlong_@_epoch_002_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  13 OrbitVerti_@_epoch_001_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  14 OrbitVerti_@_epoch_002_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  15 OrbitVelH__@_epoch_001_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  16 OrbitVelH__@_epoch_002_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  17 OrbitVelA__@_epoch_001_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  18 OrbitVelA__@_epoch_002_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  19 OrbitVelV__@_epoch_001_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  20 OrbitVelV__@_epoch_002_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  21 Offset__@_epoch_001_in_cycles___   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+E#  22 Offset__@_epoch_002_in_cycles___   0.00e+00        NaN   0.00e+00        NaN     NaN   5.00e-01
+F#  23 Mogi1_Easting_in_m______________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  24 Mogi1_Northing_in_m_____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  25 Mogi1_Depth_in_m________________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  26 Mogi1_Depth_in_m________________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  27 Mogi1_Volume_Increase_in_m3_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  28 Mogi2_Easting_in_m______________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  29 Mogi2_Northing_in_m_____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  30 Mogi2_Depth_in_m________________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  31 Mogi2_Volume_Increase_in_m3_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+E#  32 Okada1_Length_in_m______________  2340.0000        NaN     0.0000        NaN     NaN   500.0000
+E#  33 Okada1_Width_in_m_______________  2780.0000        NaN     0.0000        NaN     NaN   500.0000
+E#  34 Okada1_Centroid_Depth_in_m______  3000.0000        NaN     0.0000        NaN     NaN  1000.0000
+E#  35 Okada1_Dip_in_deg_______________    50.0000        NaN     0.0000        NaN     NaN    10.0000
+E#  36 Okada1_Strike_CCW_from_N_in_deg_   282.0000        NaN     0.0000        NaN     NaN    15.0000
+E#  37 Okada1_Easting_in_m_____________   507200.0        NaN        0.0        NaN     NaN      300.0
+E#  38 Okada1_Northing_in_m____________  3802200.0        NaN        0.0        NaN     NaN      300.0
+E#  39 Okada1_RL_Strike_Slip_in_m______  -1.99e-02        NaN   0.00e+00        NaN     NaN   2.00e-02
+E#  40 Okada1_Downdip_Slip_in_m________    -0.5630        NaN     0.0000        NaN     NaN     0.0500
+F#  41 Okada1_Tensile_Opening_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  42 Okada2_Length_in_m______________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  43 Okada2_Width_in_m_______________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  44 Okada2_Centroid_Depth_in_m______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  45 Okada2_Dip_in_deg_______________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  46 Okada2_Strike_CCW_from_N_in_deg_   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  47 Okada2_Easting_in_m_____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  48 Okada2_Northing_in_m____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  49 Okada2_RL_Strike_Slip_in_m______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  50 Okada2_Downdip_Slip_in_m________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  51 Okada2_Tensile_Opening_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  52 YangPS_Easting_in_m_____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  53 YangPS_Northing_in_m____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  54 YangPS_Depth_in_m_______________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  55 YangPS_Excess_Pressure_in_Pa____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  56 YangPS_semimajor_axis_a__m______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  57 YangPS_semiminor_axis_b_in_m____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  58 YangPS_Azimuth_deg_CCW_from_N___   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  59 YangPS_Plunge_in_degrees________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  60 YangPS_Empty1___________________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  61 YangPS_Empty2___________________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  62 Poisson_Ratio_dimless___________     0.2500        NaN     0.0000        NaN     NaN     0.0000
+F#  63 Shear_Modulus_in_Pa_____________   3.00e+10        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  64 Reference_Epoch_in_years________  1992.9235        NaN     0.0000        NaN     NaN     0.0000
+F#  65 Young_s_Modulus_in_Pa_for_Pinel_   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  66 Density_of_load_in_kg_per_m3____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  67 Grav_Acc_in_m_per_s_per_s_______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  68 Poisson_Ratio_dimless_for_Pinel_   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  69 SunDisk1_Easting_in_m___________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  70 SunDisk1_Northing_in_m__________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  71 SunDisk1_Depth_in_m_____________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  72 SunDisk1_Excess_Pressure_in_Pa__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  73 SunDisk1_Radius_a_in_m__________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  74 SunDisk2_Easting_in_m___________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  75 SunDisk2_Northing_in_m__________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  76 SunDisk2_Depth_in_m_____________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  77 SunDisk2_Excess_Pressure_in_Pa__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  78 SunDisk2_Radius_a_in_m__________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  79 Poisson_Ratio_dimless_drained___   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  80 Okada3_Length_in_m______________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  81 Okada3_Width_in_m_______________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  82 Okada3_Centroid_Depth_in_m______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  83 Okada3_Dip_in_deg_______________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  84 Okada3_Strike_CCW_from_N_in_deg_   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  85 Okada3_Easting_in_m_____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  86 Okada3_Northing_in_m____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  87 Okada3_RL_Strike_Slip_in_m______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  88 Okada3_Downdip_Slip_in_m________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  89 Okada3_Tensile_Opening_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  90 Rad_Vel_Center_Easting_in_m_____        0.0        NaN        0.0        NaN     NaN        0.0
+F#  91 Rad_Vel_Center_Northing_in_m____        0.0        NaN        0.0        NaN     NaN        0.0
+F#  92 Rad_Vel_Evel_in_m_per_yr________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  93 Rad_Vel_Nvel_in_m_per_yr________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  94 Rad_Vel_Uvel_in_m_per_yr________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  95 Rad_Vel_dVdR_in_inverse_yr______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+Number of free parameters MFREE = 10
+Wrote 12 fields for 95 parameters to file pst_in.pst
+Calling fitting function for first time to initialize.
+Resetting TST in fitting function fitfun = funfit28
+Calling fitting function for second time
+ans =
+   1.0e+06 *
+   0.002340000000000
+   0.002780000000000
+   0.003000000000000
+   0.000050000000000
+   0.000282000000000
+   0.507200000000000
+   3.802200000000000
+  -0.000000019900000
+  -0.000000563000000
+                   0
+PG(  1) =   2.34E+03
+PG(  2) =   2.78E+03
+PG(  3) =   3.00E+03
+PG(  4) =   5.00E+01
+PG(  5) =   2.82E+02
+PG(  6) =   5.07E+05
+PG(  7) =   3.80E+06
+PG(  8) =  -1.99E-02
+PG(  9) =  -5.63E-01
+PG( 10) =   0.00E+00
+STRIKE =
+   282
+DIP =
+    50
+LENGTH =
+        2340
+WIDTH =
+        2780
+SLIP =
+   0.563351586489290
+OPEN =
+     0
+Starting to calculate cost of null    estimate
+Starting to calculate cost of initial estimate
+ans =
+   1.0e+06 *
+   0.002340000000000
+   0.002780000000000
+   0.003000000000000
+   0.000050000000000
+   0.000282000000000
+   0.507200000000000
+   3.802200000000000
+  -0.000000019900000
+  -0.000000563000000
+                   0
+PG(  1) =   2.34E+03
+PG(  2) =   2.78E+03
+PG(  3) =   3.00E+03
+PG(  4) =   5.00E+01
+PG(  5) =   2.82E+02
+PG(  6) =   5.07E+05
+PG(  7) =   3.80E+06
+PG(  8) =  -1.99E-02
+PG(  9) =  -5.63E-01
+PG( 10) =   0.00E+00
+STRIKE =
+   282
+DIP =
+    50
+LENGTH =
+        2340
+WIDTH =
+        2780
+SLIP =
+   0.563351586489290
+OPEN =
+     0
+
+Total Average Cost of null     model = 0.2525 cycles per point for       1023 observations in data set for inversion
+Total Average Cost of initial  model = 0.2234 cycles per point for       1023 observations in data set for inversion
+Skipping Annealing
+
+
+I          Parameter_Name               P0(initial)     P1(final)     Adj   PlusMinusBnd
+F#   1 time_fn_@_epoch_001_in_years____  1992.6011  1992.6011     0.0000        NaN     NaN  1992.6011
+F#   2 time_fn_@_epoch_002_in_years____  1993.5589  1993.5589     0.0000        NaN     NaN  1993.5589
+E#   3 E_grad__@_epoch_001_dimless_____  -3.00e-06  -3.00e-06   0.00e+00        NaN     NaN  -3.00e-06
+F#   4 E_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+E#   5 N_grad__@_epoch_001_dimless_____  -5.50e-06  -5.50e-06   0.00e+00        NaN     NaN  -5.50e-06
+F#   6 N_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#   7 U_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#   8 U_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#   9 OrbitHoriz_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  10 OrbitHoriz_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  11 OrbitAlong_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  12 OrbitAlong_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  13 OrbitVerti_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  14 OrbitVerti_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  15 OrbitVelH__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  16 OrbitVelH__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  17 OrbitVelA__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  18 OrbitVelA__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  19 OrbitVelV__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  20 OrbitVelV__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  21 Offset__@_epoch_001_in_cycles___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+E#  22 Offset__@_epoch_002_in_cycles___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  23 Mogi1_Easting_in_m______________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  24 Mogi1_Northing_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  25 Mogi1_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  26 Mogi1_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  27 Mogi1_Volume_Increase_in_m3_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  28 Mogi2_Easting_in_m______________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  29 Mogi2_Northing_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  30 Mogi2_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  31 Mogi2_Volume_Increase_in_m3_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+E#  32 Okada1_Length_in_m______________  2340.0000  2340.0000     0.0000        NaN     NaN  2340.0000
+E#  33 Okada1_Width_in_m_______________  2780.0000  2780.0000     0.0000        NaN     NaN  2780.0000
+E#  34 Okada1_Centroid_Depth_in_m______  3000.0000  3000.0000     0.0000        NaN     NaN  3000.0000
+E#  35 Okada1_Dip_in_deg_______________    50.0000    50.0000     0.0000        NaN     NaN    50.0000
+E#  36 Okada1_Strike_CCW_from_N_in_deg_   282.0000   282.0000     0.0000        NaN     NaN   282.0000
+E#  37 Okada1_Easting_in_m_____________   507200.0   507200.0        0.0        NaN     NaN   507200.0
+E#  38 Okada1_Northing_in_m____________  3802200.0  3802200.0        0.0        NaN     NaN  3802200.0
+E#  39 Okada1_RL_Strike_Slip_in_m______  -1.99e-02  -1.99e-02   0.00e+00        NaN     NaN  -1.99e-02
+E#  40 Okada1_Downdip_Slip_in_m________    -0.5630    -0.5630     0.0000        NaN     NaN    -0.5630
+F#  41 Okada1_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  42 Okada2_Length_in_m______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  43 Okada2_Width_in_m_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  44 Okada2_Centroid_Depth_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  45 Okada2_Dip_in_deg_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  46 Okada2_Strike_CCW_from_N_in_deg_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  47 Okada2_Easting_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  48 Okada2_Northing_in_m____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  49 Okada2_RL_Strike_Slip_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  50 Okada2_Downdip_Slip_in_m________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  51 Okada2_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  52 YangPS_Easting_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  53 YangPS_Northing_in_m____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  54 YangPS_Depth_in_m_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  55 YangPS_Excess_Pressure_in_Pa____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  56 YangPS_semimajor_axis_a__m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  57 YangPS_semiminor_axis_b_in_m____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  58 YangPS_Azimuth_deg_CCW_from_N___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  59 YangPS_Plunge_in_degrees________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  60 YangPS_Empty1___________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  61 YangPS_Empty2___________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  62 Poisson_Ratio_dimless___________     0.2500     0.2500     0.0000        NaN     NaN     0.2500
+F#  63 Shear_Modulus_in_Pa_____________   3.00e+10   3.00e+10   0.00e+00        NaN     NaN   3.00e+10
+F#  64 Reference_Epoch_in_years________  1992.9235  1992.9235     0.0000        NaN     NaN  1992.9235
+F#  65 Young_s_Modulus_in_Pa_for_Pinel_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  66 Density_of_load_in_kg_per_m3____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  67 Grav_Acc_in_m_per_s_per_s_______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  68 Poisson_Ratio_dimless_for_Pinel_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  69 SunDisk1_Easting_in_m___________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  70 SunDisk1_Northing_in_m__________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  71 SunDisk1_Depth_in_m_____________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  72 SunDisk1_Excess_Pressure_in_Pa__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  73 SunDisk1_Radius_a_in_m__________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  74 SunDisk2_Easting_in_m___________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  75 SunDisk2_Northing_in_m__________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  76 SunDisk2_Depth_in_m_____________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  77 SunDisk2_Excess_Pressure_in_Pa__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  78 SunDisk2_Radius_a_in_m__________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  79 Poisson_Ratio_dimless_drained___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  80 Okada3_Length_in_m______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  81 Okada3_Width_in_m_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  82 Okada3_Centroid_Depth_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  83 Okada3_Dip_in_deg_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  84 Okada3_Strike_CCW_from_N_in_deg_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  85 Okada3_Easting_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  86 Okada3_Northing_in_m____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  87 Okada3_RL_Strike_Slip_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  88 Okada3_Downdip_Slip_in_m________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  89 Okada3_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  90 Rad_Vel_Center_Easting_in_m_____        0.0        0.0        0.0        NaN     NaN        0.0
+F#  91 Rad_Vel_Center_Northing_in_m____        0.0        0.0        0.0        NaN     NaN        0.0
+F#  92 Rad_Vel_Evel_in_m_per_yr________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  93 Rad_Vel_Nvel_in_m_per_yr________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  94 Rad_Vel_Uvel_in_m_per_yr________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  95 Rad_Vel_dVdR_in_inverse_yr______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+ans =
+   1.0e+06 *
+   0.002340000000000
+   0.002780000000000
+   0.003000000000000
+   0.000050000000000
+   0.000282000000000
+   0.507200000000000
+   3.802200000000000
+  -0.000000019900000
+  -0.000000563000000
+                   0
+PG(  1) =   2.34E+03
+PG(  2) =   2.78E+03
+PG(  3) =   3.00E+03
+PG(  4) =   5.00E+01
+PG(  5) =   2.82E+02
+PG(  6) =   5.07E+05
+PG(  7) =   3.80E+06
+PG(  8) =  -1.99E-02
+PG(  9) =  -5.63E-01
+PG( 10) =   0.00E+00
+STRIKE =
+   282
+DIP =
+    50
+LENGTH =
+        2340
+WIDTH =
+        2780
+SLIP =
+   0.563351586489290
+OPEN =
+     0
+
+Total Average Cost of null    model = 0.2525 cycles per datum for       1023 observations in data set for inversion
+Total Average Cost of initial model = 0.2234 cycles per datum for       1023 observations in data set for inversion
+Total Average Cost of final   model = 0.2234 cycles per datum for       1023 observations in data set for inversion
+
+Saving to: /Users/feigl/gipht/demoF2/matlab.mat
+
+
+
+----------------   GIPHT_STEP2 ended normally at 2015-04-19 15:14:51 ----------
+
+
+----------------   GIPHT_STEP3 begins at 2015-04-19 15:14:51 ----------
+
+Loading from: matlab.mat
+
+ans =
+   1.0e+06 *
+   0.002340000000000
+   0.002780000000000
+   0.003000000000000
+   0.000050000000000
+   0.000282000000000
+   0.507200000000000
+   3.802200000000000
+  -0.000000019900000
+  -0.000000563000000
+                   0
+PG(  1) =   2.34E+03
+PG(  2) =   2.78E+03
+PG(  3) =   3.00E+03
+PG(  4) =   5.00E+01
+PG(  5) =   2.82E+02
+PG(  6) =   5.07E+05
+PG(  7) =   3.80E+06
+PG(  8) =  -1.99E-02
+PG(  9) =  -5.63E-01
+PG( 10) =   0.00E+00
+STRIKE =
+   282
+DIP =
+    50
+LENGTH =
+        2340
+WIDTH =
+        2780
+SLIP =
+   0.563351586489290
+OPEN =
+     0
+ans =
+   1.0e+06 *
+   0.002340000000000
+   0.002780000000000
+   0.003000000000000
+   0.000050000000000
+   0.000282000000000
+   0.507200000000000
+   3.802200000000000
+  -0.000000019900000
+  -0.000000563000000
+                   0
+PG(  1) =   2.34E+03
+PG(  2) =   2.78E+03
+PG(  3) =   3.00E+03
+PG(  4) =   5.00E+01
+PG(  5) =   2.82E+02
+PG(  6) =   5.07E+05
+PG(  7) =   3.80E+06
+PG(  8) =  -1.99E-02
+PG(  9) =  -5.63E-01
+PG( 10) =   0.00E+00
+STRIKE =
+   282
+DIP =
+    50
+LENGTH =
+        2340
+WIDTH =
+        2780
+SLIP =
+   0.563351586489290
+OPEN =
+     0
+ans =
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+ans =
+   1.0e+06 *
+   0.002340000000000
+   0.002780000000000
+   0.003000000000000
+   0.000050000000000
+   0.000282000000000
+   0.507200000000000
+   3.802200000000000
+  -0.000000019900000
+  -0.000000563000000
+                   0
+PG(  1) =   2.34E+03
+PG(  2) =   2.78E+03
+PG(  3) =   3.00E+03
+PG(  4) =   5.00E+01
+PG(  5) =   2.82E+02
+PG(  6) =   5.07E+05
+PG(  7) =   3.80E+06
+PG(  8) =  -1.99E-02
+PG(  9) =  -5.63E-01
+PG( 10) =   0.00E+00
+STRIKE =
+   282
+DIP =
+    50
+LENGTH =
+        2340
+WIDTH =
+        2780
+SLIP =
+   0.563351586489290
+OPEN =
+     0
+ans =
+   1.0e+06 *
+   0.002340000000000
+   0.002780000000000
+   0.003000000000000
+   0.000050000000000
+   0.000282000000000
+   0.507200000000000
+   3.802200000000000
+  -0.000000019900000
+  -0.000000563000000
+                   0
+PG(  1) =   2.34E+03
+PG(  2) =   2.78E+03
+PG(  3) =   3.00E+03
+PG(  4) =   5.00E+01
+PG(  5) =   2.82E+02
+PG(  6) =   5.07E+05
+PG(  7) =   3.80E+06
+PG(  8) =  -1.99E-02
+PG(  9) =  -5.63E-01
+PG( 10) =   0.00E+00
+STRIKE =
+   282
+DIP =
+    50
+LENGTH =
+        2340
+WIDTH =
+        2780
+SLIP =
+   0.563351586489290
+OPEN =
+     0
+Cost  of null  model   = 0.2525125 cycles per datum for   1023 observations in inverted data set x_20150419_151443/x
+Cost  of initl model   = 0.2233535 cycles per datum for   1023 observations in inverted data set x_20150419_151443/x
+Cost  of final model   = 0.2233535 cycles per datum for   1023 observations in inverted data set x_20150419_151443/x
+Cost  improvement      = 0.0000000 cycles per datum for   1023 observations in inverted data set x_20150419_151443/x
+I          Name     P0(pre-fit)              P1(post-fit)     Adjust.   Sigma[0] Significance PlusMinusBound
+F#   1 time_fn_@_epoch_001_in_years____  1992.6011  1992.6011     0.0000        NaN     NaN     0.0000
+F#   2 time_fn_@_epoch_002_in_years____  1993.5589  1993.5589     0.0000        NaN     NaN     0.0000
+F#   3 E_grad__@_epoch_001_dimless_____  -3.00e-06  -3.00e-06   0.00e+00        NaN     NaN   0.00e+00
+F#   4 E_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#   5 N_grad__@_epoch_001_dimless_____  -5.50e-06  -5.50e-06   0.00e+00        NaN     NaN   0.00e+00
+F#   6 N_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#   7 U_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#   8 U_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#   9 OrbitHoriz_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  10 OrbitHoriz_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  11 OrbitAlong_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  12 OrbitAlong_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  13 OrbitVerti_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  14 OrbitVerti_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  15 OrbitVelH__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  16 OrbitVelH__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  17 OrbitVelA__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  18 OrbitVelA__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  19 OrbitVelV__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  20 OrbitVelV__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  21 Offset__@_epoch_001_in_cycles___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  22 Offset__@_epoch_002_in_cycles___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   5.00e-01
+F#  23 Mogi1_Easting_in_m______________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  24 Mogi1_Northing_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  25 Mogi1_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  26 Mogi1_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  27 Mogi1_Volume_Increase_in_m3_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  28 Mogi2_Easting_in_m______________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  29 Mogi2_Northing_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  30 Mogi2_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  31 Mogi2_Volume_Increase_in_m3_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  32 Okada1_Length_in_m______________  2340.0000  2340.0000     0.0000        NaN     NaN   500.0000
+F#  33 Okada1_Width_in_m_______________  2780.0000  2780.0000     0.0000        NaN     NaN   500.0000
+F#  34 Okada1_Centroid_Depth_in_m______  3000.0000  3000.0000     0.0000        NaN     NaN  1000.0000
+F#  35 Okada1_Dip_in_deg_______________    50.0000    50.0000     0.0000        NaN     NaN    10.0000
+F#  36 Okada1_Strike_CCW_from_N_in_deg_   282.0000   282.0000     0.0000        NaN     NaN    15.0000
+F#  37 Okada1_Easting_in_m_____________   507200.0   507200.0        0.0        NaN     NaN      300.0
+F#  38 Okada1_Northing_in_m____________  3802200.0  3802200.0        0.0        NaN     NaN      300.0
+F#  39 Okada1_RL_Strike_Slip_in_m______  -1.99e-02  -1.99e-02   0.00e+00        NaN     NaN   2.00e-02
+F#  40 Okada1_Downdip_Slip_in_m________    -0.5630    -0.5630     0.0000        NaN     NaN     0.0500
+F#  41 Okada1_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  42 Okada2_Length_in_m______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  43 Okada2_Width_in_m_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  44 Okada2_Centroid_Depth_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  45 Okada2_Dip_in_deg_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  46 Okada2_Strike_CCW_from_N_in_deg_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  47 Okada2_Easting_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  48 Okada2_Northing_in_m____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  49 Okada2_RL_Strike_Slip_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  50 Okada2_Downdip_Slip_in_m________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  51 Okada2_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  52 YangPS_Easting_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  53 YangPS_Northing_in_m____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  54 YangPS_Depth_in_m_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  55 YangPS_Excess_Pressure_in_Pa____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  56 YangPS_semimajor_axis_a__m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  57 YangPS_semiminor_axis_b_in_m____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  58 YangPS_Azimuth_deg_CCW_from_N___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  59 YangPS_Plunge_in_degrees________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  60 YangPS_Empty1___________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  61 YangPS_Empty2___________________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  62 Poisson_Ratio_dimless___________     0.2500     0.2500     0.0000        NaN     NaN     0.0000
+F#  63 Shear_Modulus_in_Pa_____________   3.00e+10   3.00e+10   0.00e+00        NaN     NaN   0.00e+00
+F#  64 Reference_Epoch_in_years________  1992.9235  1992.9235     0.0000        NaN     NaN     0.0000
+F#  65 Young_s_Modulus_in_Pa_for_Pinel_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  66 Density_of_load_in_kg_per_m3____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  67 Grav_Acc_in_m_per_s_per_s_______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  68 Poisson_Ratio_dimless_for_Pinel_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  69 SunDisk1_Easting_in_m___________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  70 SunDisk1_Northing_in_m__________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  71 SunDisk1_Depth_in_m_____________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  72 SunDisk1_Excess_Pressure_in_Pa__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  73 SunDisk1_Radius_a_in_m__________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  74 SunDisk2_Easting_in_m___________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  75 SunDisk2_Northing_in_m__________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  76 SunDisk2_Depth_in_m_____________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  77 SunDisk2_Excess_Pressure_in_Pa__   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  78 SunDisk2_Radius_a_in_m__________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  79 Poisson_Ratio_dimless_drained___   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  80 Okada3_Length_in_m______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  81 Okada3_Width_in_m_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  82 Okada3_Centroid_Depth_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  83 Okada3_Dip_in_deg_______________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  84 Okada3_Strike_CCW_from_N_in_deg_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  85 Okada3_Easting_in_m_____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  86 Okada3_Northing_in_m____________        0.0        0.0        0.0        NaN     NaN        0.0
+F#  87 Okada3_RL_Strike_Slip_in_m______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  88 Okada3_Downdip_Slip_in_m________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  89 Okada3_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  90 Rad_Vel_Center_Easting_in_m_____        0.0        0.0        0.0        NaN     NaN        0.0
+F#  91 Rad_Vel_Center_Northing_in_m____        0.0        0.0        0.0        NaN     NaN        0.0
+F#  92 Rad_Vel_Evel_in_m_per_yr________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  93 Rad_Vel_Nvel_in_m_per_yr________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  94 Rad_Vel_Uvel_in_m_per_yr________   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+F#  95 Rad_Vel_dVdR_in_inverse_yr______   0.00e+00   0.00e+00   0.00e+00        NaN     NaN   0.00e+00
+D#  96 Total_Net_Volume_Increase_in_m3_   0.00e+00   0.00e+00   0.00e+00        NaN     NaN        NaN
+D#  97 Okada1_Centroid_Easting_in_m____   507014.2   507014.2        0.0        NaN     NaN        NaN
+D#  98 Okada1_Centroid_Northing_in_m___  3801326.0  3801326.0        0.0        NaN     NaN        NaN
+D#  99 Okada1_Centroid_latitude__in_deg    34.3532    34.3532     0.0000        NaN     NaN        NaN
+D# 100 Okada1_Centroid_longitude_in_deg     3.0763     3.0763     0.0000        NaN     NaN        NaN
+D# 101 Okada1_Convt_strike_in_deg_CW_N_   282.0000   282.0000     0.0000        NaN     NaN        NaN
+D# 102 Derived_Okada1_rake_in_deg_CCW__   177.9756   177.9756     0.0000        NaN     NaN        NaN
+D# 103 Derived_Okada1_potency_in_m3____   3.66e+06   3.66e+06   0.00e+00        NaN     NaN        NaN
+D# 104 Derived_Okada1_moment_in_Nm_____   1.10e+17   1.10e+17   0.00e+00        NaN     NaN        NaN
+D# 105 Derived_Okada1_Mw_______________     5.3308     5.3308     0.0000        NaN     NaN        NaN
+Wrote 12 fields for 95 parameters to file PST.OUT
+
+Saving to: /Users/feigl/gipht/demoF2/matlab.mat
+
+
+
+----------------   GIPHT_STEP3 ended normally at 2015-04-19 15:14:51 ----------
+
+
+----------------   GIPHT_STEP4 begins at 2015-04-19 15:14:51 ----------
+
+Loading from: matlab.mat
+
+Skipping gipht_step4 because pselect = 5
+
+
+----------------   GIPHT_STEP5 begins at 2015-04-19 15:14:52 ----------
+
+Loading from: matlab.mat
+
+Making meshes
+Done making meshes
+Reading phase files....
+making figures for pair 001
+time_span =
+   0.957799999999907
+Starting, stopping indices j1,j2 1 1023
+Opened ../IN/psp_5565_10575_ort_121x81.pha
+Reshaping to 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+Read 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+Opened ../IN/qsp_5565_10575_ort_121x81.pha
+Reshaping to 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+Read 81 rows pha 121 columns = 9801 bytes as signed 1-byte integers
+In routine gipht_step5 matrix of coordinates bx    has dimensions 9801
+In routine gipht_step5 matrix of coordinates xyzm1 has dimensions 3 9801
+Zeroing latitudes and longitudes of pixel centers.
+Resetting TST in fitting function fitfun = funfit28
+Evaluating fitting function funfit28 for initial estimate at 9801 locations....
+ans =
+   1.0e+06 *
+   0.002340000000000
+   0.002780000000000
+   0.003000000000000
+   0.000050000000000
+   0.000282000000000
+   0.507200000000000
+   3.802200000000000
+  -0.000000019900000
+  -0.000000563000000
+                   0
+PG(  1) =   2.34E+03
+PG(  2) =   2.78E+03
+PG(  3) =   3.00E+03
+PG(  4) =   5.00E+01
+PG(  5) =   2.82E+02
+PG(  6) =   5.07E+05
+PG(  7) =   3.80E+06
+PG(  8) =  -1.99E-02
+PG(  9) =  -5.63E-01
+PG( 10) =   0.00E+00
+STRIKE =
+   282
+DIP =
+    50
+LENGTH =
+        2340
+WIDTH =
+        2780
+SLIP =
+   0.563351586489290
+OPEN =
+     0
+Evaluating fitting function funfit28 for final   estimate at 9801 locations....
+ans =
+   1.0e+06 *
+   0.002340000000000
+   0.002780000000000
+   0.003000000000000
+   0.000050000000000
+   0.000282000000000
+   0.507200000000000
+   3.802200000000000
+  -0.000000019900000
+  -0.000000563000000
+                   0
+PG(  1) =   2.34E+03
+PG(  2) =   2.78E+03
+PG(  3) =   3.00E+03
+PG(  4) =   5.00E+01
+PG(  5) =   2.82E+02
+PG(  6) =   5.07E+05
+PG(  7) =   3.80E+06
+PG(  8) =  -1.99E-02
+PG(  9) =  -5.63E-01
+PG( 10) =   0.00E+00
+STRIKE =
+   282
+DIP =
+    50
+LENGTH =
+        2340
+WIDTH =
+        2780
+SLIP =
+   0.563351586489290
+OPEN =
+     0
+Sm =
+  12.374239969889306
+VMnessString1 =
+Data are NOT compatible with Von Mises distribution because S = 12.3742 is greater than critical Chi^2(2,0.05)  = 5.99146 . (P = 2.06e-03)
+
+U2 =
+   0.107501974744554
+VMnessString2 =
+Data are NOT compatible with Von Mises distribution because U2 = 0.107502 is greater than critical value     0.0660
+
+Extreme values of mdl0  -8.0696e+00   1.1169e+01 
+Extreme values of mdl1  -8.0696e+00   1.1169e+01 
+Extreme values of wrm0  -3.1411e+00   3.1415e+00 
+Extreme values of wrm1  -3.1411e+00   3.1415e+00 
+Total L1 Norm Cost of null  model = 0.2493 cycles per datum for   9763 observations in sub-region
+Total L1 Norm Cost of initl model = 0.2221 cycles per datum for   9763 observations in sub-region
+Total L1 Norm Cost of final model = 0.2221 cycles per datum for   9763 observations in sub-region
+Wrote x_20150419_151443/x_001_OBSV.pha with     9801 pixels of 1 byte each with 81 lines by 121 columns.
+Wrote x_20150419_151443/x_001_MODL.pha with     9801 pixels of 1 byte each with 81 lines by 121 columns.
+Wrote x_20150419_151443/x_001_RESD.pha with     9801 pixels of 1 byte each with 81 lines by 121 columns.
+Wrote x_20150419_151443/x_001_COST.pha with     9801 pixels of 1 byte each with 81 lines by 121 columns.
+Wrote x_20150419_151443/x_001_QUAD.pha with     9801 pixels of 1 byte each with 81 lines by 121 columns.
+Opened x_20150419_151443/x_001_UOBS.i2 .Wrote       9801 elements of 2 bytes each for a total of      19602 bytes.
+Opened x_20150419_151443/x_001_UMOD.i2 .Wrote       9801 elements of 2 bytes each for a total of      19602 bytes.
+Opened x_20150419_151443/x_001_URES.i2 .Wrote       9801 elements of 2 bytes each for a total of      19602 bytes.
+Opened x_20150419_151443/x_001_UDEV.i2 .Wrote       9801 elements of 2 bytes each for a total of      19602 bytes.
+Opened x_20150419_151443/x_001_UOMR.i2 .Wrote          1 elements of 2 bytes each for a total of          2 bytes.
+Opened x_20150419_151443/x_001_UOMX.i2 .Wrote          1 elements of 2 bytes each for a total of          2 bytes.
+Opened x_20150419_151443/x_001_UOMY.i2 .Wrote          1 elements of 2 bytes each for a total of          2 bytes.
+Opened x_20150419_151443/x_001_UOMZ.i2 .Wrote          1 elements of 2 bytes each for a total of          2 bytes.
+Opened x_20150419_151443/x_001_UUMR.i2 .Wrote          1 elements of 2 bytes each for a total of          2 bytes.
+Opened x_20150419_151443/x_001_UUMX.i2 .Wrote          1 elements of 2 bytes each for a total of          2 bytes.
+Opened x_20150419_151443/x_001_UUMY.i2 .Wrote          1 elements of 2 bytes each for a total of          2 bytes.
+Opened x_20150419_151443/x_001_UUMZ.i2 .Wrote          1 elements of 2 bytes each for a total of          2 bytes.
+
+To plot binary phase files, consider following commands:
+autoigram.gmt x_20150419_151443/x_001_MODL.pha -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_RESD.pha -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_COST.pha -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_OBSV.pha -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_QUAD.pha -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_UOBS.i2  -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_UMOD.i2  -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_URES.i2  -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_UDEV.i2  -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_UOMX.i2  -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_UOMY.i2  -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_UOMZ.i2  -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_UUMX.i2  -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_UUMY.i2  -S -G -D gipht_subregion.dat
+autoigram.gmt x_20150419_151443/x_001_UUMZ.i2  -S -G -D gipht_subregion.dat
+[Warning: Scale ratio (    1.0842) is greater than 1.0
+] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('utmimage8landscape', '/Users/feigl/gipht/src/utmimage8landscape.m', 39)" style="font-weight:bold">utmimage8landscape</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/utmimage8landscape.m',39,0)">line 39</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht_step5', '/Users/feigl/gipht/src/gipht_step5.m', 857)" style="font-weight:bold">gipht_step5</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht_step5.m',857,0)">line 857</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht', '/Users/feigl/gipht/src/gipht.m', 129)" style="font-weight:bold">gipht</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht.m',129,0)">line 129</a>)] 
+Making E-W profile in range rate for Pair 001
+Making N-S profile in range rate for Pair 001
+D# 106 Pair_00001_MiniRange_m_MOD______  -3.65e-02  -3.65e-02   0.00e+00   2.34e-02     NaN        NaN
+D# 107 Pair_00001_MaxiRange_m_MOD______   5.05e-02   5.05e-02   0.00e+00   2.34e-02     NaN        NaN
+Initial UTM coordinates of 4 corners, upper center, and Centroid of Okada1
+LL  505684.0396 3800695.3563     870.3964
+UL  507972.9050 3800208.8429     870.3964
+UR  508344.4327 3801956.7433    3000.0000
+LR  506055.5673 3802443.2567    3000.0000
+UC  507200.0000 3802200.0000    3000.0000
+CC  507014.2361 3801326.0498    1935.1982
+Final   UTM coordinates of 4 corners, upper center, and Centroid of Okada1
+LL  505684.0396 3800695.3563     870.3964
+UL  507972.9050 3800208.8429     870.3964
+UR  508344.4327 3801956.7433    3000.0000
+LR  506055.5673 3802443.2567    3000.0000
+UC  507200.0000 3802200.0000    3000.0000
+CC  507014.2361 3801326.0498    1935.1982
+Initial Lon Lat of 4 corners, upper center, Centroid of Okada1
+LL       3.0618      34.3476     870.3964
+UL       3.0867      34.3432     870.3964
+UR       3.0907      34.3589    3000.0000
+LR       3.0659      34.3633    3000.0000
+UC       3.0783      34.3611    3000.0000
+CC       3.0763      34.3532    1935.1982
+Final   Lon Lat of 4 corners, upper center, Centroid of Okada1
+LL       3.0618      34.3476     870.3964
+UL       3.0867      34.3432     870.3964
+UR       3.0907      34.3589    3000.0000
+LR       3.0659      34.3633    3000.0000
+UC       3.0783      34.3611    3000.0000
+CC       3.0763      34.3532    1935.1982
+Wrote 12 fields for 107 parameters to file PST.OUT
+__________________________________________________________
+Parameter                         Estimate     Uncertainty
+__________________________________________________________
+__________________________________________________________
+
+
+----------------   GIPHT_STEP5 ended normally at 2015-04-19 15:14:58 ----------
+
+
+----------------   GIPHT ended normally at 2015-04-19 15:14:58 ----------
+----------------   Elapsed time: 15 seconds
