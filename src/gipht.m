@@ -8,7 +8,7 @@ close all; nf=0;format compact;
 echo off all
 
 %splashtext = sprintf('%80s\n',help('gipht.m'));
-versionnum = 2.8;
+versionnum = 2.9;
 D=dir(which('gipht'));
 versiondat = D.date;
 versionstr = sprintf('Development version %.1f of %s',versionnum,versiondat);
@@ -30,6 +30,7 @@ splashtext = char({' '...
 ,versionstr...
 ,' Source code:'...
 ,' Copyright (c) Kurt Feigl, Cliff Thurber, Lee Powell, Peter Sobol, Aaron Masters'...
+,' Elena Baluyut, S. Tabrez Ali'...
 ,' University of Wisconsin-Madison'});
 fprintf(1,'\n\n----------------   %s %s ----------\n',upper(mfilename),versionstr);
 fprintf(1,'\n\n----------------   %s begins at %s ----------\n',upper(mfilename),datestr(now,31));

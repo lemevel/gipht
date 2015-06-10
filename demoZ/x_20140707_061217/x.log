@@ -1,0 +1,61 @@
+
+
+----------------   GIPHT_STEP1 begins at 2014-07-07 06:12:19 ----------
+read_input_controls begin reading input control file named gipht.in...
+    1 xcenter  39.35466	      % X coordinate of center of sampled region
+    2 ycenter  38.36103 	      % Y coordinate of center of sampled region
+    3 halfwidth  130	        % half the east-west width of the sampled region in pixels
+    4 demdescfile  dem_descriptor.dat 
+    5 pselect  7        % select pixels of range gradient using quadtree
+    6 mpercy  0.0284 % meters for ENVISAT, ERS-1, and ERS-2
+    7 unitv_east   0.382192  % Eastward component
+    8 unitv_north  -0.081237  % Northward component
+    9 unitv_up   0.920500  % Upward component (must be positive)
+   10 txtinname  demoZ3.gin   % Two Okadas
+   11 objfun  funcostrarc         % mininum angle,  assumes zero mean, using arc function in radians 
+   12 fitfun  fitfun28 
+   13 surrogate  1       % use fast approximate version of fitting function (1st order Taylor series)
+   14 anneal  0  %     0 to skip Simulated Annealing (FAST for forward modeling, skip statistics)
+   15 anneal  2  %     2 to run S.A. with recording (BEST)
+   16 figopt  010 % simple for demo
+   17 printfun  printpdf  % make figures in PDF
+             xcenter = 39.354660
+             ycenter = 38.361030
+           halfwidth = 130.000000
+             pselect = 7.000000
+          unitv_east = 0.382192
+         unitv_north = -0.081237
+            unitv_up = 0.920500
+              anneal = 0.000000
+              anneal = 2.000000
+              mpercy = 0.028400
+              figopt = 00000010
+           surrogate = 1.000000
+              objfun = funcostrarc
+              fitfun = fitfun28
+           txtinname = demoZ3.gin
+         demdescfile = dem_descriptor.dat
+            printfun = printpdf
+WARNING: No orbit file named in gipht.in. Assuming constant look vector.
+demoZ3.gin
+dem_descriptor.dat
+file_names.dat
+cmds = 
+    'fitfun28'    'printpdf'    'funcostrarc'
+Using "exist" command to search for function named fitfun28
+{Error using <a href="matlab:helpUtils.errorDocCallback('read_input_controls', '/Users/feigl/Documents/GIPhT2.8/src/read_input_controls.m', 347)" style="font-weight:bold">read_input_controls</a> (<a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/read_input_controls.m',347,0)">line 347</a>)
+Command "which" failed while looking for function named fitfun28
+
+Error in <a href="matlab:helpUtils.errorDocCallback('gipht_step1', '/Users/feigl/Documents/GIPhT2.8/src/gipht_step1.m', 14)" style="font-weight:bold">gipht_step1</a> (<a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht_step1.m',14,0)">line 14</a>)
+[xcenter, ycenter, halfwidth, halfheight, npix, pselect, tquake...
+Error in <a href="matlab:helpUtils.errorDocCallback('gipht', '/Users/feigl/Documents/GIPhT2.8/src/gipht.m', 125)" style="font-weight:bold">gipht</a> (<a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht.m',125,0)">line 125</a>)
+gipht_step1; % read in phase files, select pixels} 
+gipht
+
+
+----------------   GIPHT Development version 2.8 of 15-May-2014 12:59:37 ----------
+
+
+----------------   GIPHT begins at 2014-07-07 06:12:57 ----------
+runname =
+20140707_061258

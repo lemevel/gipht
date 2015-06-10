@@ -1,0 +1,536 @@
+plotbp begins at 2010-07-30 11:05:33
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-07-30 11:05:34
+plotbp begins at 2010-07-30 07:49:23
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-07-30 07:49:25
+plotbp begins at 2010-07-30 07:50:25
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-07-30 07:50:26
+plotbp begins at 2010-07-30 07:50:57
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-07-30 07:50:58
+plotbp begins at 2010-08-02 10:11:19
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-08-02 10:11:21
+plotbp begins at 2010-08-02 10:12:52
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-08-02 10:12:53
+plotbp begins at 2010-08-02 10:13:23
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-08-02 10:13:24
+plotbp begins at 2010-08-02 10:37:49
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-08-02 10:37:50
+plotbp begins at 2010-08-02 10:59:40
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-08-02 10:59:41
+plotbp begins at 2010-08-02 11:26:06
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-08-02 11:26:06
+plotbp begins at 2010-08-02 11:40:59
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-08-02 11:41:00
+plotbp begins at 2010-08-02 11:52:03
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-08-02 11:52:03
+plotbp begins at 2010-08-06 13:54:50
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2010-08-06 13:54:50
+plotbp begins at 2011-07-19 09:59:24
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-19 09:59:26
+plotbp begins at 2011-07-19 10:08:18
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-19 10:08:19
+plotbp begins at 2011-07-19 10:09:04
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-19 10:09:05
+plotbp begins at 2011-07-19 10:12:57
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-19 10:12:57
+plotbp begins at 2011-07-19 10:28:56
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-19 10:28:57
+plotbp begins at 2011-07-19 10:32:50
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-19 10:32:50
+plotbp begins at 2011-07-19 10:43:53
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-19 10:43:53
+plotbp begins at 2011-07-19 13:22:25
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-19 13:22:26
+plotbp begins at 2011-07-20 09:03:04
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-20 09:03:05
+plotbp begins at 2011-07-20 11:06:56
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-20 11:06:56
+plotbp begins at 2011-07-20 12:31:25
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-20 12:31:26
+plotbp begins at 2011-07-24 16:00:22
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-24 16:00:23
+plotbp begins at 2011-07-24 16:18:52
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-24 16:18:52
+plotbp begins at 2011-07-26 21:59:59
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-26 22:00:00
+plotbp begins at 2011-07-27 17:45:55
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-27 17:45:55
+plotbp begins at 2011-10-04 14:29:09
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-10-04 14:29:10
+plotbp begins at 2011-10-06 07:19:17
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-10-06 07:19:18
+plotbp begins at 2011-10-06 19:53:14
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-10-06 19:53:15
+plotbp begins at 2011-10-11 12:49:52
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-10-11 12:49:53
+plotbp begins at 2011-12-07 10:31:29
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-12-07 10:31:31
+plotbp begins at 2011-12-07 10:54:27
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-12-07 10:54:28
+plotbp begins at 2011-12-08 18:24:21
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-12-08 18:24:22
+plotbp begins at 2012-01-04 20:42:21
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2012-01-04 20:42:22
+plotbp begins at 2012-01-09 09:53:11
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2012-01-09 09:53:12
+plotbp begins at 2012-02-09 11:55:06
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2012-02-09 11:55:07
+plotbp begins at 2012-02-17 16:55:00
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2012-02-17 16:55:00
+plotbp begins at 2013-01-16 09:03:09
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-16 09:03:11
+plotbp begins at 2013-01-16 14:37:11
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-16 14:37:12
+plotbp begins at 2013-01-16 14:38:49
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-16 14:38:50
+plotbp begins at 2013-01-16 14:40:07
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-16 14:40:08
+plotbp begins at 2013-01-17 07:32:25
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 07:32:26
+plotbp begins at 2013-01-17 07:42:35
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 07:42:36
+plotbp begins at 2013-01-17 07:44:41
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 07:44:42
+plotbp begins at 2013-01-17 07:46:18
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 07:46:19
+plotbp begins at 2013-01-17 07:48:02
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 07:48:03
+plotbp begins at 2013-01-17 07:49:09
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 07:49:09
+plotbp begins at 2013-01-17 07:50:04
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 07:50:05
+plotbp begins at 2013-01-17 07:51:17
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 07:51:17
+plotbp begins at 2013-01-17 07:52:35
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 07:52:36
+plotbp begins at 2013-01-17 07:55:47
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 07:55:48
+plotbp begins at 2013-01-17 08:01:48
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 08:01:49
+plotbp begins at 2013-01-17 08:11:06
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 08:11:07
+plotbp begins at 2013-01-17 08:31:30
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 08:31:31
+plotbp begins at 2013-01-17 08:38:58
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 08:38:59
+plotbp begins at 2013-01-17 18:23:17
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-17 18:23:17
+plotbp begins at 2013-01-18 20:44:55
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-18 20:44:56
+plotbp begins at 2013-01-22 14:19:11
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-22 14:19:12
+plotbp begins at 2013-01-22 14:22:38
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-22 14:22:38
+plotbp begins at 2013-01-22 14:23:28
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-22 14:23:29
+plotbp begins at 2013-01-22 14:24:43
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-22 14:24:44
+plotbp begins at 2013-01-22 14:25:56
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-22 14:25:57
+plotbp begins at 2013-01-22 14:27:14
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-01-22 14:27:15
+plotbp begins at 2013-05-14 13:07:03
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-05-14 13:07:04
+plotbp begins at 2013-05-14 13:07:45
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2013-05-14 13:07:46
+plotbp begins at 2014-01-06 16:25:40
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-06 16:25:41
+plotbp begins at 2014-01-06 16:33:47
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-06 16:33:48
+plotbp begins at 2014-01-06 16:35:55
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-06 16:35:56
+plotbp begins at 2014-01-06 16:37:49
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-06 16:37:50
+plotbp begins at 2014-01-06 16:38:27
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-06 16:38:27
+plotbp begins at 2014-01-06 16:46:15
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-06 16:46:15
+plotbp begins at 2014-01-06 17:07:08
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-06 17:07:09
+plotbp begins at 2014-01-06 17:09:21
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-06 17:09:21
+plotbp begins at 2014-01-06 17:20:17
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-06 17:20:17
+plotbp begins at 2014-01-06 17:28:29
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-06 17:28:29
+plotbp begins at 2014-01-07 14:28:23
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-07 14:28:24
+plotbp begins at 2014-01-07 14:29:23
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-07 14:29:24
+plotbp begins at 2014-01-07 14:39:31
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-07 14:39:32
+plotbp begins at 2014-01-08 14:22:00
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 14:22:01
+plotbp begins at 2014-01-08 14:35:39
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 14:35:40
+plotbp begins at 2014-01-08 14:41:15
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 14:41:16
+plotbp begins at 2014-01-08 17:04:49
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 17:04:50
+plotbp begins at 2014-01-08 17:39:27
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 17:39:28
+plotbp begins at 2014-01-08 19:01:27
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 19:01:28
+plotbp begins at 2014-01-08 19:05:30
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 19:05:31
+plotbp begins at 2014-01-08 19:11:05
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 19:11:05
+plotbp begins at 2014-01-08 19:14:59
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 19:15:00
+plotbp begins at 2014-01-08 19:36:46
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 19:36:47
+plotbp begins at 2014-01-08 20:06:30
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 20:06:30
+plotbp begins at 2014-01-08 20:10:04
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 20:10:05
+plotbp begins at 2014-01-08 20:12:41
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 20:12:42
+plotbp begins at 2014-01-08 21:02:45
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 21:02:46
+plotbp begins at 2014-01-08 21:28:08
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-08 21:28:09
+plotbp begins at 2014-01-13 15:01:04
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-13 15:01:04
+plotbp begins at 2014-01-13 15:01:40
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-13 15:01:40
+plotbp begins at 2014-01-13 16:04:20
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-13 16:04:21
+plotbp begins at 2014-01-13 16:05:39
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-13 16:05:39
+plotbp begins at 2014-01-13 17:23:11
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-13 17:23:12
+plotbp begins at 2014-01-13 21:04:11
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-13 21:04:12
+plotbp begins at 2014-01-13 21:15:52
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-13 21:15:53
+plotbp begins at 2014-01-13 21:17:33
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-13 21:17:34
+plotbp begins at 2014-01-13 21:19:21
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-13 21:19:22
+plotbp begins at 2014-01-14 00:05:01
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-14 00:05:02
+plotbp begins at 2014-01-14 09:36:51
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-14 09:36:52
+plotbp begins at 2014-01-14 09:38:28
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-14 09:38:29
+plotbp begins at 2014-01-14 09:38:54
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-14 09:38:54
+plotbp begins at 2014-01-14 09:44:30
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-14 09:44:31
+plotbp begins at 2014-01-16 17:30:37
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-16 17:30:38
+plotbp begins at 2014-01-29 13:15:21
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-29 13:15:22
+plotbp begins at 2014-01-29 13:15:31
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-01-29 13:15:32
+plotbp begins at 2014-02-24 03:26:34
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-02-24 03:26:35
+plotbp begins at 2014-02-24 03:55:53
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-02-24 03:55:54
+plotbp begins at 2014-02-24 05:52:19
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-02-24 05:52:20
+plotbp begins at 2014-03-16 03:15:46
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 03:15:48
+plotbp begins at 2014-03-16 03:25:42
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 03:25:43
+plotbp begins at 2014-03-16 03:40:50
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 03:40:51
+plotbp begins at 2014-03-16 03:47:14
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 03:47:15
+plotbp begins at 2014-03-16 03:55:55
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 03:55:55
+plotbp begins at 2014-03-16 03:58:31
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 03:58:32
+plotbp begins at 2014-03-16 03:59:47
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 03:59:48
+plotbp begins at 2014-03-16 04:01:22
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 04:01:23
+plotbp begins at 2014-03-16 04:04:47
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 04:04:47
+plotbp begins at 2014-03-16 04:08:24
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 04:08:25
+plotbp begins at 2014-03-16 06:38:56
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 06:38:57
+plotbp begins at 2014-03-16 06:46:08
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 06:46:09
+plotbp begins at 2014-03-16 06:47:08
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 06:47:09
+plotbp begins at 2014-03-16 06:48:42
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 06:48:43
+plotbp begins at 2014-03-16 06:52:54
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 06:52:54
+plotbp begins at 2014-03-16 07:01:34
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 07:01:35
+plotbp begins at 2014-03-16 07:23:04
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 07:23:04
+plotbp begins at 2014-03-16 07:29:50
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 07:29:51
+plotbp begins at 2014-03-16 07:32:59
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 07:33:00
+plotbp begins at 2014-03-16 07:34:58
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 07:34:59
+plotbp begins at 2014-03-16 07:37:36
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 07:37:37
+plotbp begins at 2014-03-16 07:41:26
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 07:41:27
+plotbp begins at 2014-03-16 07:53:17
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 07:53:18
+plotbp begins at 2014-03-16 08:04:49
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 08:04:49
+plotbp begins at 2014-03-16 08:12:25
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 08:12:26
+plotbp begins at 2014-03-16 08:24:19
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 08:24:20
+plotbp begins at 2014-03-16 08:36:13
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 08:36:13
+plotbp begins at 2014-03-16 08:57:43
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 08:57:43
+plotbp begins at 2014-03-16 09:09:08
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 09:09:09
+plotbp begins at 2014-03-16 10:11:55
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 10:11:56
+plotbp begins at 2014-03-16 10:16:32
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 10:16:33
+plotbp begins at 2014-03-16 10:20:46
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 10:20:46
+plotbp begins at 2014-03-16 10:23:51
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 10:23:51
+plotbp begins at 2014-03-16 10:43:07
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 10:43:07
+plotbp begins at 2014-03-16 10:43:52
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 10:43:53
+plotbp begins at 2014-03-16 10:48:32
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-16 10:48:33
+plotbp begins at 2014-03-27 13:03:14
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-03-27 13:03:15
+plotbp begins at 2014-05-02 16:51:36
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-05-02 16:51:37
+plotbp begins at 2014-07-07 06:08:53
+plotbp begins at 2014-07-07 06:09:43
+plotbp begins at 2014-07-07 06:11:09
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-07-07 06:11:10
+plotbp begins at 2014-07-07 06:12:59
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-07-07 06:13:00
+plotbp begins at 2015-06-09 18:09:08
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:09:09
+plotbp begins at 2015-06-09 18:11:44
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:11:44
+plotbp begins at 2015-06-09 18:21:30
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:21:31
+plotbp begins at 2015-06-09 18:23:23
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:23:24
+plotbp begins at 2015-06-09 18:26:26
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:26:27
+plotbp begins at 2015-06-09 18:31:27
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:31:28
+plotbp begins at 2015-06-09 18:33:50
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:33:51
+plotbp begins at 2015-06-09 18:35:31
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:35:32
+plotbp begins at 2015-06-09 18:38:05
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:38:05
+plotbp begins at 2015-06-09 18:39:05
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:39:06
+plotbp begins at 2015-06-09 18:43:00
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:43:01
+plotbp begins at 2015-06-09 18:44:15
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:44:15
+plotbp begins at 2015-06-09 18:46:32
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:46:33
+plotbp begins at 2015-06-09 18:47:30
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:47:30
+plotbp begins at 2015-06-09 18:48:46
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:48:47
+plotbp begins at 2015-06-09 18:51:09
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 18:51:09
+plotbp begins at 2015-06-09 19:13:00
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 19:13:01
+plotbp begins at 2015-06-09 19:43:40
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 19:43:41
+plotbp begins at 2015-06-09 20:00:06
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 20:00:06
+plotbp begins at 2015-06-09 20:08:24
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 20:08:25
+plotbp begins at 2015-06-09 20:11:49
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 20:11:50
+plotbp begins at 2015-06-09 20:25:04
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 20:25:05
+plotbp begins at 2015-06-09 20:39:19
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 20:39:19

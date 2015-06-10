@@ -97,15 +97,15 @@ for j=1:mparam
     % overwrite with valid elements
     ptlcol(iok) = der1(iok);
     
-    figure;hold on;
-    set(gcf,'DefaultTextInterpreter','none');
-    plot(rng1,'b');
-    plot(rng2,'r');
-    plot(der1,'k-');
-    xlabel('index');
-    ylabel('partial derivative');
-    legend('rng1','rng2','der1');
-    title(sprintf('parameter %d %s\n',j,char(pnames{j})));
+%     figure;hold on;
+%     set(gcf,'DefaultTextInterpreter','none');
+%     plot(rng1,'b');
+%     plot(rng2,'r');
+%     plot(der1,'k-');
+%     xlabel('index');
+%     ylabel('partial derivative');
+%     legend('rng1','rng2','der1');
+%     title(sprintf('parameter %d %s\n',j,char(pnames{j})));
     
     % count bad elements
     nbad = ndata - numel(iok);

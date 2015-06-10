@@ -15,7 +15,7 @@ fprintf(1,'\n\n----------------   %s begins at %s ----------\n',upper(mfilename)
     , unitv0, ithresh, maxcmd, pixinpatch, maxpix, ianneal, nprocessors, interpcell ...
     , ilist, txtinname, txtoutname, objfun, fitfun, demdescfile, orbfile, cohfile...
     , mpercy, datafilename, nsaruns, parmfilename, saopt6, figopt, printfun, orbopt...
-    , pha2qlsname, phaseprefix, surrogate]...
+    , pha2qlsname, phaseprefix, surrogate, verbose]...
     = read_input_controls('gipht.in',runname);
 
 % record fitting function
@@ -1515,7 +1515,8 @@ for i = 1:np
         ,'k+-');
     xlabel('Easting (km)');ylabel('Northing (km)');
     title(titlestr);
-    colorbar;%cmapblackzero;
+    colorbar;
+    cmapblackzero;
     feval(printfun,sprintf('%s_obs_P%02d',runname,i));
     
     %     %plot wrapped phase in histogram

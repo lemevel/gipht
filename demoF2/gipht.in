@@ -59,7 +59,7 @@ unitv_up     =   0.963077275115714  % Upward component (must be positive)
 % CHOOSE ALGORITHM FOR INVERSION
 % anneal = 0  %     0 to skip Simulated Annealing
 % anneal = 1  %     1 to run Simulated Annealing [DEFAULT]
- anneal = 2  %     2 to run S.A. with recording 
+% anneal = 2  %     2 to run S.A. with recording 
 % anneal = 6  %     6 to use Markov Chain Monte Carlo (MCMC)
 
 % nsaruns = 3 % number of runs through Simulated Annealing

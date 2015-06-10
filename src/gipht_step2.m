@@ -416,39 +416,44 @@ if surrogate == 1
         TSTP.partial_wrt_1param(ibad,jbad) = 0;
     end
     
-    %     % evaluate at randomly perturbed estimate of parameters  within bounds
-    %     PST1 = PST;
-    %     PST1.p1 = PST1.p0 + (rand(size(PST1.p0))-0.5*ones(size(PST1.p0))) .* (ub-lb);
-    %     %         for i=1:mparam
-    %     %            fprintf(1,'%3d %s %10.3g\n',i,char(pnames{i}),PST1.p1(i)-PST1.p0(i));
-    %     %         end
-    %     % evaluate exactly
-    %     mdl1e = feval(fitfun,DST,PST1,TST);
+    % evaluate at randomly perturbed estimate of parameters  within bounds
+    if verbose == 2
+        PST1 = PST;
+        PST1.p1 = PST1.p0 + (rand(size(PST1.p0))-0.5*ones(size(PST1.p0))) .* (ub-lb);
+        %         for i=1:mparam
+        %            fprintf(1,'%3d %s %10.3g\n',i,char(pnames{i}),PST1.p1(i)-PST1.p0(i));
+        %         end
+        % evaluate exactly
+        mdl1e = feval(fitfun,DST,PST1,TST);
+    end
     %
     % now use the Taylor Expansion to the Fitting function
     fitfun = 'funtaylor1';
     PST.fitfun = 'funtaylor1';
     TST = TSTP;
     clear TSTP;
-    %
-%     % now evaluate approximately
-%     mdl1p = feval(fitfun,DST,PST1,TST);
-%     clear PST1;
-%     
-%     % figure comparing Exact vs. Aprox
-%     nf=nf+1;h(nf)=figure;subplot(2,1,1);
-%     plot(mdl1e/2./pi,'b-'); hold on;
-%     plot(mdl1p/2./pi,'r-');
-%     ylabel('model phase value (cycles)');
-%     legend('exact fitting function','1st order Taylor expansion','location','best');
-%     subplot(2,1,2);
-%     plot((mdl1p-mdl1e)/2./pi,'g-');
-%     xlabel('index');ylabel('phase value (cycles)');legend('aprox error','location','best');
-%     title(sprintf('standard deviation = %.4f cycles\n',nanstd(mdl1p-mdl1e)/2./pi));
-%     feval(printfun,sprintf('%s_Taylor1Check',runname));
+    
+    if verbose == 2
+        % now evaluate approximately
+        mdl1p = feval(fitfun,DST,PST1,TST);
+        clear PST1;
+        
+        % figure comparing Exact vs. Aprox
+        nf=nf+1;h(nf)=figure;subplot(2,1,1);
+        plot(mdl1e/2./pi,'b-'); hold on;
+        plot(mdl1p/2./pi,'r-');
+        ylabel('model phase value (cycles)');
+        legend('exact fitting function','1st order Taylor expansion','location','best');
+        subplot(2,1,2);
+        plot((mdl1p-mdl1e)/2./pi,'g-');
+        xlabel('index');ylabel('phase value (cycles)');legend('aprox error','location','best');
+        title(sprintf('standard deviation = %.4f cycles\n',nanstd(mdl1p-mdl1e)/2./pi));
+        feval(printfun,sprintf('%s_Taylor1Check',runname));
+        clear mdl1p, mdl1e;
+    end
 end
 
-%error('Stopping here to debug on 20140515\n');
+%error('Stopping here to debug on 20150609\n');
 
 
 % Calculate costs of null and initial models

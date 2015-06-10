@@ -2,7 +2,7 @@ function [xcenter, ycenter, halfwidth, halfheight, npix, pselect, tquake...
    , unitv, ithresh, maxcmd, pixinpatch, maxpix, ianneal, nprocessors, interpcell ...
    , ilist, txtinname, txtoutname, objfun, fitfun, demdescfile, orbfile, cohfile...
    , mpercy, datafilename, nsaruns, parmfilename, saopt6, figopt, printfun, orbopt ...
-   , pha2qlsname, phaseprefix, surrogate]...
+   , pha2qlsname, phaseprefix, surrogate, verbose]...
    = read_input_controls(fname,runname)
 % Read a subregion descriptor file to get the region of interest and pixel selection
 
@@ -134,6 +134,7 @@ saopt6       = getval2(keys,vals,'saopt6','f',nv);
 figopt       = getval2(keys,vals,'figopt','b',nv);
 orbopt       = getval2(keys,vals,'orbopt','f',nv);
 surrogate    = getval2(keys,vals,'surrogate','f',nv);
+verbose      = getval2(keys,vals,'verbose','f',nv);
 
 % New string items 2009-JUL-14
 objfun       = getval2(keys,vals,'objfun','s',nv);
@@ -250,6 +251,9 @@ if numel(phaseprefix) == 0
 end
 if numel(surrogate) == 0
    surrogate = 0; % use exact (rather than approximate) version of fitting function
+end
+if numel(verbose) == 0
+   verbose = 0; % be quiet
 end
 
 % orbit file
@@ -421,13 +425,18 @@ end
 % In Matlab version 8.5.0.197613 (R2015a)
 %  matlabpool has been removed. Use PARPOOL instead.
 
-if nprocessors > 0 
+if nprocessors > 1 
     if numel(which('parpool')) > 0
         current_parpool = gcp('nocreate');
         if numel(current_parpool) > 0
             warning('Deleting current pool...');
             delete(gcp);
         end
+        %     pool = parpool(numWorkers) creates and returns a pool with the
+        %     specified number of workers. numWorkers can be a positive integer or
+        %     a range specified as a 2-element vector of integers. If numWorkers is
+        %     a range, the resulting pool has size as large as possible in the
+        %     range requested.
         current_parpool= parpool([1,nprocessors]);
     else
         error(sprintf('Request is for nprocessors = %d BUT matlab distributed tool kit not installed.\n',nprocessors));

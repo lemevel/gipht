@@ -1,0 +1,82 @@
+% sub_region.dat
+% Variables to control how GIPhT selects pixels
+%
+% This file is for SAR data for the Sivrice earthquake
+%
+% parameter name must start in column 1 with the parameter value the second word
+% parameter names must be lower case
+%
+% COORDINATES
+xcenter = 39.35466	      % X coordinate of center of sampled region
+                        %   UTM easting in meters, OR
+                        %   Geographic Longitude in decimal degrees (positive East) 
+ycenter = 38.36103 	      % Y coordinate of center of sampled region
+                        %   UTM northing in meters, OR
+                        %   Geographic Latitude in decimal degrees (positive North)
+                        % Note on coordinates: 
+                        %       These values should be specified in the same system as the DEM,
+                        %       as described in the dem_descriptor.dat file
+% DIMENSIONS            %
+halfwidth = 130	        % half the east-west width of the sampled region in pixels
+%halfheight = 75	        % half the north-south height of the sampled region in pixels
+%halfheight = 120	        % half the north-south height of the sampled region in pixels
+
+% File describing Digital Elevation Model (contains metadata)
+ demdescfile = dem_descriptor.dat 
+
+% SELECTING THE DATA
+%pselect = 1	            % Randomly select pixels from subregion
+%npix = 1000	            % number of pixels to include in inversion - not enough to consistently get same answer
+
+%pselect     = 3        % select pixels of phase using quadtree
+ pselect     = 7        % select pixels of gradient using quadtree
+
+ pixinpatch  = 4        % mininum number of valid (nonzero) pixels in a patch
+ ithresh =    32        % minimum misfit (circular mean deviation) to mean ( 1 DN is 1 / 256 pixel)
+ maxcmd  =    16        % minimum misfit (circular mean deviation) to ramp ( 1 DN is 1 / 256 pixel)
+
+% UNIT VECTOR FROM TARGET TO SATELLITE
+% assumed constant over scene
+unitv_east   =  0.382192  % Eastward component
+unitv_north  = -0.081237  % Northward component
+unitv_up     = 0.920500  % Upward component (must be positive)
+
+%txtinname = demoZ.gin    % same as above, but updated X,Y
+txtinname = demoZ2.gin    % same as above, but updated X,Y
+
+% objective function to calculate cost
+objfun = funcostrarc   % mininum angle,  assumes zero mean, using arc function in radians 
+
+% fitting function to caluculate range change values from model parameters
+fitfun = funseparable20 % 2 Mogi + 2 Okada + 1 Pinel including new TST structure
+
+%nprocessors = 2     % number of processors to use in Distributed Computing Toolbox 
+%nprocessors = 4     % number of processors to use in Distributed Computing Toolbox 
+
+% CHOOSE ALGORITHM FOR INVERSION
+% anneal = 0  %     0 to skip Simulated Annealing
+  anneal = 1  %     1 to run Simulated Annealing [DEFAULT]
+% anneal = 2  %     2 to run S.A. with recording (very slow)
+% anneal = 3  %     3 to using SIMANN
+
+
+% nprocessors = 4     % number of processors to use in Distributed Computing Toolbox 
+% nsaruns     = 3     % number of runs through Simulated Annealing
+
+% flag that tells the algorithm whether to try improve the solution:
+% saopt6 = 0 % not try to improve (default)
+% saopt6 = 1 % try the Nelder-Mead simplex method using
+%            %'fminsearch' function in MATLAB optimization toolbox
+  saopt6 = 2 % try the Constrained optimization method using
+%            % 'fmincon' function with in MATLAB optimization toolbox
+%            % and 'interior-point' algorithm
+
+% How to interpolate values for 8-panel plots
+figopt = 0 % interpolate sampled values
+%figopt = 1 % re-run full model for all pixels (slow)
+
+printfun = printpdf
+%printfun = printnull
+figopt = 1
+
+

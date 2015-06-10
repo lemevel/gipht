@@ -520,3 +520,6 @@ plotbp ended at 2015-04-19 19:14:48
 plotbp begins at 2015-04-19 19:21:48
 Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
 plotbp ended at 2015-04-19 19:21:48
+plotbp begins at 2015-06-09 17:49:07
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 17:49:08

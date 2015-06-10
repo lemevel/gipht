@@ -1,0 +1,1350 @@
+
+
+----------------   GIPHT_STEP1 begins at 2011-07-19 13:22:25 ----------
+read_input_controls begin reading input control file named gipht.in...
+    1 xcenter  39.35466	      % X coordinate of center of sampled region
+    2 ycenter  38.36103 	      % Y coordinate of center of sampled region
+    3 halfwidth  130	        % half the east-west width of the sampled region in pixels
+    4 demdescfile  dem_descriptor.dat 
+    5 pselect  7        % select pixels of gradient using quadtree
+    6 pixinpatch  4        % mininum number of valid (nonzero) pixels in a patch
+    7 ithresh     32        % minimum misfit (circular mean deviation) to mean ( 1 DN is 1 / 256 pixel)
+    8 maxcmd     16        % minimum misfit (circular mean deviation) to ramp ( 1 DN is 1 / 256 pixel)
+    9 unitv_east   0.382192  % Eastward component
+   10 unitv_north  -0.081237  % Northward component
+   11 unitv_up  0.920500  % Upward component (must be positive)
+   12 txtinname  demoZ2.gin    % same as above, but updated X,Y
+   13 objfun  funcostrarc   % mininum angle,  assumes zero mean, using arc function in radians 
+   14 fitfun  funseparable20 % 2 Mogi + 2 Okada + 1 Pinel including new TST structure
+   15 anneal  1  %     1 to run Simulated Annealing [DEFAULT]
+   16 saopt6  2 % try the Constrained optimization method using
+   17 figopt  0 % interpolate sampled values
+   18 printfun  printpdf
+   19 figopt  1
+             xcenter = 39.354660
+             ycenter = 38.361030
+           halfwidth = 130.000000
+             pselect = 7.000000
+          unitv_east = 0.382192
+         unitv_north = -0.081237
+            unitv_up = 0.920500
+             ithresh = 32.000000
+              anneal = 1.000000
+          pixinpatch = 4.000000
+              maxcmd = 16.000000
+              saopt6 = 2.000000
+              figopt = 0.000000
+              figopt = 1.000000
+              objfun = funcostrarc
+              fitfun = funseparable20
+           txtinname = demoZ2.gin
+         demdescfile = dem_descriptor.dat
+            printfun = printpdf
+WARNING: No orbit file named in gipht.in. Assuming constant look vector.
+demoZ2.gin
+dem_descriptor.dat
+file_names.dat
+cmds = 
+    'funseparable20'    'printpdf'    'funcostrarc'
+Using "which" command to search for function named funseparable20
+result =
+/usr1/feigl/GIPhT2.1/src/funseparable20.m
+Found fitting function named funseparable20 /usr1/feigl/GIPhT2.1/src/funseparable20.m
+Using "which" command to search for function named printpdf
+result =
+/usr1/feigl/GIPhT2.1/src/printpdf.m
+Found fitting function named printpdf /usr1/feigl/GIPhT2.1/src/printpdf.m
+Using "which" command to search for function named funcostrarc
+result =
+/usr1/feigl/GIPhT2.1/src/funcostrarc.m
+Found fitting function named funcostrarc /usr1/feigl/GIPhT2.1/src/funcostrarc.m
+read_input_controls completed reading input controls.
+Scale factor for phase in DN per cycle:
+DNPC =
+    6.2832
+Name of list of phase files
+read_file_names begins ...
+Read    1 pairs of phase files 
+Number of interferogram files (pairs) to adjust
+np =
+     1
+Number of distinct epochs overall
+me =
+     2
+Number of species overall
+mfam =
+     1
+Species A:     1     2
+Species A Member  1 Pair   1 M   1001 S   1002                                                          psp_16851_28374_ort.pha
+Species A Member  2 Pair   1 M   1001 S   1002                                                          psp_16851_28374_ort.pha
+adjustbp begins ...
+Length of data vector, including constraints
+md =
+     1     2
+Dimensons of design matrix, including constraints
+nmdd2 =
+     2     2
+Rank defiency, including constraints
+rd =
+     0
+Begin least squares adjustment...
+index orbnum date     species yr Dopp/PRF
+    1    1001 PAIR001-MAST A  2005.3836     0.0000
+    2    1002 PAIR001-SLAV A  2007.5890  1000.0000
+plotbp begins at 2011-07-19 13:22:25
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2011-07-19 13:22:26
+read_dem_descriptor begins ...
+DEM Descriptor specifies entire file.
+Reached end of DEM descriptor file
+number of columns in each interferogram
+ncols =
+        1878
+number of lines in each interferogram 
+nrows =
+        1419
+Maximum number of pixels to be selected for inversion = 2664882
+Location                  X            Y
+DEM pixel 1             39           39
+DEM extract 1           39           39
+DEM extract N           40           38
+Center                  39           38
+Subregion contains NRSUB = 201 rows and NCSUB = 261 columns
+dx =
+   71.8146
+dy =
+  -92.8561
+xcenter1 =
+   5.3094e+05
+ycenter1 =
+   4.2460e+06
+utmzone0 =
+37 S
+xcenter2 =
+   5.3028e+05
+ycenter2 =
+   4.2458e+06
+xcenter3 =
+   5.3024e+05
+ycenter3 =
+   4.2458e+06
+{Warning: WARNING: problem with UTM coordinates for center point.} 
+> In gipht_step1 at 476
+  In gipht at 93
+xcenter1 =
+     530941.60
+xcenter2 =
+     530281.50
+diffx =
+       -660.10
+ycenter2 =
+    4245752.53
+ycenter1 =
+    4246003.26
+diffy =
+       -250.73
+xcenter =
+     530281.50
+ycenter =
+    4245752.53
+Opened sivrice_dem.i2. Read 2 x 1419 rows x 1878 columns = 5329764 bytes WITHOUT FLIPPING as int16 
+I2DEM has 1419 rows and 1878 columns
+izl2 =
+       1419.00
+izc2 =
+       1878.00
+Nrows, Ncols of Extracted Region in DEM.
+ans =
+       1419.00       1878.00
+Choosing pixels using pha2qls. Values are range gradient.
+Extrema of coordinates of images (extracted area)
+    Location            X            Y
+        Min        458137      4169682
+         Max       592933      4301351
+       Diff        134796       131670
+      Center       530282      4245753
+Extrema of coordinates of subregion
+    Location   Easting(m)  Northing(m)
+     Min           520903      4236538
+     Max           539575      4255109
+     Diff           18672        18571
+     Center        530282      4245753
+     Center1       530942      4246003
+     Center2       530282      4245753
+     Center3       530239      4245823
+     Max-Cen         9293         9357
+     Cen-Min         9378         9215
+write_dem_descriptor begins ...
+DEM Descriptor specifies entire file.
+Reached end of DEM descriptor file
+Wrote DEM descriptor for subregion to file named gipht_subregion.dat
+Opened   psp_16851_28374_ort.pha
+Reshaping to 1419 rows x 1878 columns = 2664882 bytes as signed 1-byte integers
+Read 1419 rows x 1878 columns = 2664882 bytes as signed 1-byte integers
+exename =
+pha2qls.a64
+Using "which" command to search for for executable named pha2qls.a64
+cmd1 =
+/usr1/feigl/GIPhT2.1/src/pha2qls.a64
+Found executable named pha2qls.a64 /usr1/feigl/GIPhT2.1/src/pha2qls.a64
+Starting pha2qls with command line:
+/usr1/feigl/GIPhT2.1/src/pha2qls.a64 psp_16851_28374_ort.pha 1878 1419 -V -P qsp_16851_28374_ort.pha -X grx_16851_28374_ort.i2 -Y gry_16851_28374_ort.i2 -L 32 -N 4 -M 16
+pha2qls successful.
+Opened   qsp_16851_28374_ort.pha
+Reshaping to 1419 rows x 1878 columns = 2664882 bytes as signed 1-byte integers
+Read 1419 rows x 1878 columns = 2664882 bytes as signed 1-byte integers
+Opened grx_16851_28374_ort.i2. Read 2 x 1419 rows x 1878 columns = 5329764 bytes WITHOUT FLIPPING as int16 
+Opened gry_16851_28374_ort.i2. Read 2 x 1419 rows x 1878 columns = 5329764 bytes WITHOUT FLIPPING as int16 
+Opened psp_16851_28374_ort.qls. Read 2 x 163924 rows x 6 columns = 1967088 bytes WITHOUT FLIPPING as int16 
+zstr =
+Cycles/pixel
+Number of good pixels in this pair: 6037
+Number of observations so far: 6037
+Minimal values in meters         for xyzm   520974.9  4236630.7      973.0 
+Maximal values in meters         for xyzm   539503.1  4255201.9     2339.0 
+Minimal values in degrees for lon, lat          39.2       38.3        
+Maximal values in degrees for lon, lat          39.5       38.4        
+Assuming constant unit vector [E,N,U]     0.3822    -0.0812     0.9205
+Saving orbit information for future use in file named orbits.mat
+Successfully read the following phase files:                                                         psp_16851_28374_ort.pha
+Number of pairs with data
+np =
+          1.00
+Number of data
+ndata =
+       6037.00
+Number of data
+ndata1 =
+       6037.00
+Wrote meta data for 6037 pixels to file dst_sample.dst
+Field    nr nc n(NaN) min max mean std
+  1                    i  6037     1        0   1.000000e+00   6.037000e+03   3.019000e+03   1.742876e+03
+  2            idatatype  6037     1        0  -1.000000e+00  -1.000000e+00  -1.000000e+00   0.000000e+00
+  3                    k  6037     1        0   1.000000e+00   1.000000e+00   1.000000e+00   0.000000e+00
+  4                kmast  6037     1        0   1.000000e+00   1.000000e+00   1.000000e+00   0.000000e+00
+  5                kslav  6037     1        0   2.000000e+00   2.000000e+00   2.000000e+00   0.000000e+00
+  6               phaobs  6037     1        0  -1.595340e+00   1.595340e+00   8.141761e-03   3.037861e-01
+  7               phamod  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+  8                tmast  6037     1        0   2.005384e+03   2.005384e+03   2.005384e+03   1.634952e-10
+  9                tslav  6037     1        0   2.007589e+03   2.007589e+03   2.007589e+03   1.839605e-10
+ 10                    x  6037     1        0   5.209749e+05   5.395031e+05   5.302160e+05   5.336386e+03
+ 11                    y  6037     1        0   4.236631e+06   4.255202e+06   4.245582e+06   5.252893e+03
+ 12                    z  6037     1        0   9.730000e+02   2.339000e+03   1.575483e+03   2.428858e+02
+ 13                  uvx  6037     1        0   3.821920e-01   3.821920e-01   3.821920e-01   2.231733e-14
+ 14                  uvy  6037     1        0  -8.123700e-02  -8.123700e-02  -8.123700e-02   9.007430e-15
+ 15                  uvz  6037     1        0   9.205000e-01   9.205000e-01   9.205000e-01   9.604225e-14
+ 16               mpercy  6037     1        0   2.840000e-02   2.840000e-02   2.840000e-02   2.741090e-15
+ 17                bmast  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 18                bslav  6037     1        0   1.000000e+03   1.000000e+03   1.000000e+03   0.000000e+00
+ 19                dmast  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 20                dslav  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 21                   x0  6037     1        0  -9.241096e+03   9.287062e+03  -6.400452e-09   5.336386e+03
+ 22                   y0  6037     1        0  -8.951389e+03   9.619824e+03  -1.150848e-09   5.252893e+03
+ 23                   z0  6037     1        0  -6.024834e+02   7.635166e+02  -2.454596e-12   2.428858e+02
+ 24                   dx  6037     1        0   7.181457e+01   7.181457e+01   7.181457e+01   0.000000e+00
+ 25                   dy  6037     1        0  -9.285607e+01  -9.285607e+01  -9.285607e+01   0.000000e+00
+ 26                   dz  6037     1        0  -6.900000e+01   5.600000e+01  -7.992380e-01   1.721990e+01
+ 27                alond  6037     1        0   3.924750e+01   3.946250e+01   3.935473e+01   6.192321e-02
+ 28                alatd  6037     1        0   3.827833e+01   3.844500e+01   3.835867e+01   4.714189e-02
+ 29                orbm1  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 30                orbm2  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 31                orbm3  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 32                orbm4  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 33                orbm5  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 34                orbm6  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 35                orbs1  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 36                orbs2  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 37                orbs3  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 38                orbs4  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 39                orbs5  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 40                orbs6  6037     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+
+Saving to: matlab.mat
+
+
+
+----------------   GIPHT_STEP1 ended normally at 2011-07-19 13:22:41 ----------
+
+
+----------------   GIPHT_STEP2 begins at 2011-07-19 13:22:41 ----------
+
+Loading from: matlab.mat
+
+fidtxtout =
+          1.00
+ndata =
+       6037.00
+ndata1 =
+       6037.00
+Naming parameters in fitting function fitfun = funseparable20
+Number of parameters
+Opened file named demoZ2.gin to read initial estimates of parameters.
+
+ Done reading parameters
+Zeroing  initial value and bounds on OrbitHoriz_@_epoch_001_in_m_____                0                0                0
+Zeroing  initial value and bounds on OrbitAlong_@_epoch_001_in_m_____                0                0                0
+Zeroing  initial value and bounds on OrbitVerti_@_epoch_001_in_m_____                0                0                0
+Zeroing  initial value and bounds on OrbitVelH__@_epoch_001_m_per_s__                0                0                0
+Zeroing  initial value and bounds on OrbitVelA__@_epoch_001_m_per_s__                0                0                0
+Zeroing  initial value and bounds on OrbitVelV__@_epoch_001_m_per_s__                0                0                0
+Updating                       bounds on OrbitHoriz_@_epoch_002_in_m_____                0                0                0
+Updating                       bounds on OrbitAlong_@_epoch_002_in_m_____                0                0                0
+Updating                       bounds on OrbitVerti_@_epoch_002_in_m_____                0                0                0
+Updating                       bounds on OrbitVelH__@_epoch_002_m_per_s__                0                0                0
+Updating                       bounds on OrbitVelA__@_epoch_002_m_per_s__                0                0                0
+Updating                       bounds on OrbitVelV__@_epoch_002_m_per_s__                0                0                0
+
+
+   I          Name      P0(pre-fit)              LowerBound UpperBound
+  1 time_fn_@_epoch_001_in_years____   2005.384   2005.384   2005.384    fixed
+  2 time_fn_@_epoch_002_in_years____   2007.589   2007.589   2007.589    fixed
+  3 E_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00   0.00e+00    fixed
+  4 E_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00    fixed
+  5 N_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00   0.00e+00    fixed
+  6 N_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00    fixed
+  7 U_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00   0.00e+00    fixed
+  8 U_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00    fixed
+  9 OrbitHoriz_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 10 OrbitHoriz_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 11 OrbitAlong_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 12 OrbitAlong_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 13 OrbitVerti_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 14 OrbitVerti_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 15 OrbitVelH__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00    fixed
+ 16 OrbitVelH__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00    fixed
+ 17 OrbitVelA__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00    fixed
+ 18 OrbitVelA__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00    fixed
+ 19 OrbitVelV__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00    fixed
+ 20 OrbitVelV__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00    fixed
+ 21 Offset__@_epoch_001_in_cycles___   0.00e+00   0.00e+00   0.00e+00    fixed
+ 22 Offset__@_epoch_002_in_cycles___   0.00e+00   0.00e+00   0.00e+00    fixed
+ 23 Mogi1_Easting_in_m______________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 24 Mogi1_Northing_in_m_____________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 25 Mogi1_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 26 Mogi1_Volume_Increase_in_m3_____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 27 Mogi2_Easting_in_m______________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 28 Mogi2_Northing_in_m_____________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 29 Mogi2_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 30 Mogi2_Volume_Increase_in_m3_____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 31 Okada1_Length_in_m______________   8000.000   3000.000  13000.000    free 
+ 32 Okada1_Width_in_m_______________   9000.000   4000.000  14000.000    free 
+ 33 Okada1_Depth_in_m_______________   4700.000   -300.000   9700.000    free 
+ 34 Okada1_Negative_Dip_in_deg______    -60.000    -70.000    -50.000    free 
+ 35 Okada1_Strike_CCW_from_N_in_deg_     25.000     15.000     35.000    free 
+ 36 Okada1_Easting_in_m_____________   5.35e+05   5.30e+05   5.40e+05    free 
+WARNING: initial estimate of easting coordinate outside subregion.
+WARNING: lower bound on easting coordinate outside subregion.
+WARNING: upper bound on easting coordinate outside subregion.
+ 37 Okada1_Northing_in_m____________   4.25e+06   4.24e+06   4.25e+06    free 
+WARNING: initial estimate of northing coordinate outside subregion.
+WARNING: lower bound on easting coordinate outside subregion.
+WARNING: upper bound on northing coordinate outside subregion.
+ 38 Okada1_RL_Strike_Slip_in_m______      0.120      0.020      0.220    free 
+ 39 Okada1_Downdip_Slip_in_m________      0.220      0.120      0.320    free 
+ 40 Okada1_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 41 Okada2_Length_in_m______________   8000.000   3000.000  13000.000    free 
+ 42 Okada2_Width_in_m_______________   9000.000   4000.000  14000.000    free 
+ 43 Okada2_Depth_in_m_______________   1000.000      1.000   1999.000    free 
+ 44 Okada2_Negative_Dip_in_deg______    -60.000    -70.000    -50.000    free 
+ 45 Okada2_Strike_CCW_from_N_in_deg_     25.000     15.000     35.000    free 
+ 46 Okada2_Easting_in_m_____________   5.35e+05   5.30e+05   5.40e+05    free 
+WARNING: initial estimate of easting coordinate outside subregion.
+WARNING: lower bound on easting coordinate outside subregion.
+WARNING: upper bound on easting coordinate outside subregion.
+ 47 Okada2_Northing_in_m____________   4.25e+06   4.24e+06   4.25e+06    free 
+WARNING: initial estimate of northing coordinate outside subregion.
+WARNING: lower bound on easting coordinate outside subregion.
+WARNING: upper bound on northing coordinate outside subregion.
+ 48 Okada2_RL_Strike_Slip_in_m______      0.120      0.020      0.220    free 
+ 49 Okada2_Downdip_Slip_in_m________      0.220      0.120      0.320    free 
+ 50 Okada2_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 51 YangPS_Easting_in_m_____________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 52 YangPS_Northing_in_m____________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 53 YangPS_Depth_in_m_______________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 54 YangPS_Excess_Pressure_in_Pa____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 55 YangPS_semimajor_axis_a__m______   0.00e+00   0.00e+00   0.00e+00    fixed
+ 56 YangPS_semiminor_axis_b_in_m____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 57 YangPS_Azimuth_deg_CCW_from_N___   0.00e+00   0.00e+00   0.00e+00    fixed
+ 58 YangPS_Plunge_in_degrees________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 59 YangPS_Empty1___________________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 60 YangPS_Empty2___________________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 61 Poisson_Ratio_dimless___________      0.250      0.250      0.250    fixed
+ 62 Shear_Modulus_in_Pa_____________   3.00e+10   3.00e+10   3.00e+10    fixed
+ 63 Reference_Epoch_in_years________   2007.140   2007.140   2007.140    fixed
+ 64 Young_s_Modulus_in_Pa___________   0.00e+00   0.00e+00   0.00e+00    fixed
+ 65 Density_of_ice_in_kg_per_m3_____   0.00e+00   0.00e+00   0.00e+00    fixed
+ 66 Grav_Acc_in_m_per_s_per_s_______   0.00e+00   0.00e+00   0.00e+00    fixed
+Number of free parameters MFREE = 18
+Wrote names, initial, lb, ub in 66 fields for 11 parameters to file pst_in.pst
+Bscale (incidence angle in degrees) min, max, mean:    22.9994    22.9994    22.9994
+
+Total Average Cost of null     model = 0.0307 cycles per point for       6037 observations in data set for inversion
+Total Average Cost of initial  model = 0.0363 cycles per point for       6037 observations in data set for inversion
+
+Starting anneal4 without recording...
+anneal4 initializing random number generator.
+Starting 100 evaluations of objective function to get tc from ts(k) 3.000000
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+Time in seconds per evaluation is      0.04089
+
+
+Beginning run #01. Critical temperature at  3.69125e-05.
+--------------------------------------------------------
+
+f-Calls		Temperature	Minimum f-Value	Dimension NM
+--------------------------------------------------------
+   1319		0.00020757		0.029213	6
+   2819		0.00011673		0.029004	8
+   4304		6.5641e-05		0.028909	6
+   5811		6.5641e-05		0.028834	9
+   7274		6.5641e-05		0.028689	6
+   8767		3.6913e-05		0.028689	7
+  10180		3.6913e-05		0.028689	5
+  11607		3.6913e-05		0.028689	7
+  13043		3.6913e-05		0.028689	7
+  14505		2.0757e-05		0.028657	8
+  15918		2.0757e-05		0.028630	8
+  17344		1.1673e-05		0.028454	6
+  18706		1.1673e-05		0.028397	7
+  20069		6.5641e-06		0.028341	5
+
+Starting Constrained method FMINCON.
+
+
+Initial point is a local minimum that satisfies the constraints.
+
+Optimization completed because at the initial point, the objective function is non-decreasing 
+in feasible directions to within the default value of the function tolerance, and 
+constraints were satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Annealing ended after             811 seconds
+x_20110719_132225/x_demoZ2.out x_20110719_132225/x
+
+
+I          Parameter_Name               P0(initial)     P1(final)     Sigma   LowBnd UpBnd
+  1 time_fn_@_epoch_001_in_years____   2005.384   2005.384          0   2005.384   2005.384
+  2 time_fn_@_epoch_002_in_years____   2007.589   2007.589          0   2007.589   2007.589
+  3 E_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+  4 E_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+  5 N_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+  6 N_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+  7 U_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+  8 U_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+  9 OrbitHoriz_@_epoch_001_in_m_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 10 OrbitHoriz_@_epoch_002_in_m_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 11 OrbitAlong_@_epoch_001_in_m_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 12 OrbitAlong_@_epoch_002_in_m_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 13 OrbitVerti_@_epoch_001_in_m_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 14 OrbitVerti_@_epoch_002_in_m_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 15 OrbitVelH__@_epoch_001_m_per_s__   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 16 OrbitVelH__@_epoch_002_m_per_s__   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 17 OrbitVelA__@_epoch_001_m_per_s__   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 18 OrbitVelA__@_epoch_002_m_per_s__   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 19 OrbitVelV__@_epoch_001_m_per_s__   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 20 OrbitVelV__@_epoch_002_m_per_s__   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 21 Offset__@_epoch_001_in_cycles___   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 22 Offset__@_epoch_002_in_cycles___   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 23 Mogi1_Easting_in_m______________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 24 Mogi1_Northing_in_m_____________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 25 Mogi1_Depth_in_m________________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 26 Mogi1_Volume_Increase_in_m3_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 27 Mogi2_Easting_in_m______________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 28 Mogi2_Northing_in_m_____________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 29 Mogi2_Depth_in_m________________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 30 Mogi2_Volume_Increase_in_m3_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 31 Okada1_Length_in_m______________   8.00e+03   6.14e+03        -23   3.00e+03   1.30e+04
+ 32 Okada1_Width_in_m_______________   9.00e+03   4.14e+03        -54   4.00e+03   1.40e+04
+ 33 Okada1_Depth_in_m_______________   4.70e+03   4.34e+03         -8  -3.00e+02   9.70e+03
+ 34 Okada1_Negative_Dip_in_deg______  -6.00e+01  -5.01e+01        -17  -7.00e+01  -5.00e+01
+ 35 Okada1_Strike_CCW_from_N_in_deg_   2.50e+01   2.42e+01         -3   1.50e+01   3.50e+01
+ 36 Okada1_Easting_in_m_____________   5.35e+05   5.31e+05         -1   5.30e+05   5.40e+05
+ 37 Okada1_Northing_in_m____________   4.25e+06   4.25e+06          0   4.24e+06   4.25e+06
+ 38 Okada1_RL_Strike_Slip_in_m______   1.20e-01   6.89e-02        -43   2.00e-02   2.20e-01
+ 39 Okada1_Downdip_Slip_in_m________   2.20e-01   3.00e-01         36   1.20e-01   3.20e-01
+ 40 Okada1_Tensile_Opening_in_m_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 41 Okada2_Length_in_m______________   8.00e+03   4.78e+03        -40   3.00e+03   1.30e+04
+ 42 Okada2_Width_in_m_______________   9.00e+03   5.08e+03        -44   4.00e+03   1.40e+04
+ 43 Okada2_Depth_in_m_______________   1.00e+03   1.98e+03         98   1.00e+00   2.00e+03
+ 44 Okada2_Negative_Dip_in_deg______  -6.00e+01  -5.06e+01        -16  -7.00e+01  -5.00e+01
+ 45 Okada2_Strike_CCW_from_N_in_deg_   2.50e+01   1.71e+01        -31   1.50e+01   3.50e+01
+ 46 Okada2_Easting_in_m_____________   5.35e+05   5.34e+05         -0   5.30e+05   5.40e+05
+ 47 Okada2_Northing_in_m____________   4.25e+06   4.25e+06          0   4.24e+06   4.25e+06
+ 48 Okada2_RL_Strike_Slip_in_m______   1.20e-01   1.16e-01         -3   2.00e-02   2.20e-01
+ 49 Okada2_Downdip_Slip_in_m________   2.20e-01   1.22e-01        -45   1.20e-01   3.20e-01
+ 50 Okada2_Tensile_Opening_in_m_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 51 YangPS_Easting_in_m_____________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 52 YangPS_Northing_in_m____________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 53 YangPS_Depth_in_m_______________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 54 YangPS_Excess_Pressure_in_Pa____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 55 YangPS_semimajor_axis_a__m______   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 56 YangPS_semiminor_axis_b_in_m____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 57 YangPS_Azimuth_deg_CCW_from_N___   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 58 YangPS_Plunge_in_degrees________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 59 YangPS_Empty1___________________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 60 YangPS_Empty2___________________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 61 Poisson_Ratio_dimless___________   2.50e-01   2.50e-01          0   2.50e-01   2.50e-01
+ 62 Shear_Modulus_in_Pa_____________   3.00e+10   3.00e+10          0   3.00e+10   3.00e+10
+ 63 Reference_Epoch_in_years________   2.01e+03   2.01e+03          0   2.01e+03   2.01e+03
+ 64 Young_s_Modulus_in_Pa___________   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 65 Density_of_ice_in_kg_per_m3_____   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+ 66 Grav_Acc_in_m_per_s_per_s_______   0.00e+00   0.00e+00        NaN   0.00e+00   0.00e+00
+
+Total Average Cost of null    model = 0.0307 cycles per datum for       6037 observations in data set for inversion
+Total Average Cost of initial model = 0.0363 cycles per datum for       6037 observations in data set for inversion
+Total Average Cost of final   model = 0.0283 cycles per datum for       6037 observations in data set for inversion
+
+Total Average Cost of null    model = 0.0307 cycles per datum for       6037 observations in data set for inversion
+Total Average Cost of initial model = 0.0363 cycles per datum for       6037 observations in data set for inversion
+Total Average Cost of final   model = 0.0283 cycles per datum for       6037 observations in data set for inversion
+
+Saving to: matlab.mat
+
+
+
+----------------   GIPHT_STEP2 ended normally at 2011-07-19 13:36:16 ----------
+
+
+----------------   GIPHT_STEP3 begins at 2011-07-19 13:36:16 ----------
+
+Loading from: matlab.mat
+
+Evaluating Generalized Pareto distribution for deviations
+phat =
+   0.308216175621159   0.019984549028418
+gpmean =
+   0.028888430639966
+gpvariance =
+   0.002175734652135
+Testing the null hypothesis that the data are random sample from a generalized pareto distribution
+
+The Null Hypothesis can be rejected at the 5 percent significance level.
+QQ plot for generalized pareto distribution cor =    NaN  0.308216 0.0199845 NaN 
+Assumption of Generalized Pareto Distribution is NOT valid. ISTATCODE = -2
+Null     Value of Cost = 0.0307 cycles per datum for   6037 observations at 69 percent confidence
+Initial  Value of Cost = 0.0363 cycles per datum for   6037 observations at 69 percent confidence
+Final    Value of Cost = 0.0283 cycles per datum for   6037 observations at 69 percent confidence
+Critical Value of Cost = 0.0303 cycles per datum for   6037 observations at 69 percent confidence
+Varying parameter: Okada1_Length_in_m______________
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+Varying parameter: Okada1_Width_in_m_______________
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+Varying parameter: Okada1_Depth_in_m_______________
+FOUND    20 2441.152360 0.030479 0.030317
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+Varying parameter: Okada1_Negative_Dip_in_deg______
+Varying parameter: Okada1_Strike_CCW_from_N_in_deg_
+Varying parameter: Okada1_Easting_in_m_____________
+FOUND    28 528297.745258 0.030392 0.030317
+FOUND    32 534097.745258 0.030326 0.030317
+Varying parameter: Okada1_Northing_in_m____________
+Varying parameter: Okada1_RL_Strike_Slip_in_m______
+Varying parameter: Okada1_Downdip_Slip_in_m________
+Varying parameter: Okada2_Length_in_m______________
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+Varying parameter: Okada2_Width_in_m_______________
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+Varying parameter: Okada2_Depth_in_m_______________
+FOUND    74 516.485632 0.030358 0.030317
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+{Warning: Unphysical model.} 
+Varying parameter: Okada2_Negative_Dip_in_deg______
+Varying parameter: Okada2_Strike_CCW_from_N_in_deg_
+Varying parameter: Okada2_Easting_in_m_____________
+FOUND    33 530577.931733 0.030318 0.030317
+Varying parameter: Okada2_Northing_in_m____________
+Varying parameter: Okada2_RL_Strike_Slip_in_m______
+Varying parameter: Okada2_Downdip_Slip_in_m________
+FOUND    92 -0.060235 0.030349 0.030317
+FOUND    94 0.307765 0.030320 0.030317
+I          Name     P0(pre-fit)              P1(post-fit)     Adjust. Sigma[-2]   Significance PlusMinusBound
+F#   1 time_fn_@_epoch_001_in_years____  2005.3836  2005.3836     0.0000     0.0000     NaN     0.0000
+F#   2 time_fn_@_epoch_002_in_years____  2007.5890  2007.5890     0.0000     0.0000     NaN     0.0000
+F#   3 E_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#   4 E_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#   5 N_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#   6 N_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#   7 U_grad__@_epoch_001_dimless_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#   8 U_grad__@_epoch_002_dimless_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#   9 OrbitHoriz_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  10 OrbitHoriz_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  11 OrbitAlong_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  12 OrbitAlong_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  13 OrbitVerti_@_epoch_001_in_m_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  14 OrbitVerti_@_epoch_002_in_m_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  15 OrbitVelH__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  16 OrbitVelH__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  17 OrbitVelA__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  18 OrbitVelA__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  19 OrbitVelV__@_epoch_001_m_per_s__   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  20 OrbitVelV__@_epoch_002_m_per_s__   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  21 Offset__@_epoch_001_in_cycles___   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  22 Offset__@_epoch_002_in_cycles___   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  23 Mogi1_Easting_in_m______________        0.0        0.0        0.0        0.0     NaN        0.0
+F#  24 Mogi1_Northing_in_m_____________        0.0        0.0        0.0        0.0     NaN        0.0
+F#  25 Mogi1_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  26 Mogi1_Volume_Increase_in_m3_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  27 Mogi2_Easting_in_m______________        0.0        0.0        0.0        0.0     NaN        0.0
+F#  28 Mogi2_Northing_in_m_____________        0.0        0.0        0.0        0.0     NaN        0.0
+F#  29 Mogi2_Depth_in_m________________   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  30 Mogi2_Volume_Increase_in_m3_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+E#  31 Okada1_Length_in_m______________  8000.0000  6136.8005 -1863.1995  5000.0000    0.37  5000.0000
+E#  32 Okada1_Width_in_m_______________  9000.0000  4142.9668 -4857.0332  5000.0000    0.97  5000.0000
+E#  33 Okada1_Depth_in_m_______________  4700.0000  4341.1524  -358.8476  3629.4238    0.10  5000.0000
+E#  34 Okada1_Negative_Dip_in_deg______   -60.0000   -50.0706     9.9294    10.0000    0.99    10.0000
+E#  35 Okada1_Strike_CCW_from_N_in_deg_    25.0000    24.1765    -0.8235    10.0000    0.08    10.0000
+E#  36 Okada1_Easting_in_m_____________   534743.0   530997.7    -3745.3     2900.0    1.29     5000.0
+E#  37 Okada1_Northing_in_m____________  4245640.0  4245785.0      145.0     5000.0    0.03     5000.0
+E#  38 Okada1_RL_Strike_Slip_in_m______   1.20e-01   6.89e-02  -5.11e-02   1.00e-01    0.51   1.00e-01
+E#  39 Okada1_Downdip_Slip_in_m________     0.2200     0.2997     0.0797     0.1000    0.80     0.1000
+F#  40 Okada1_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+E#  41 Okada2_Length_in_m______________  8000.0000  4783.8857 -3216.1143  5000.0000    0.64  5000.0000
+E#  42 Okada2_Width_in_m_______________  9000.0000  5083.4048 -3916.5952  5000.0000    0.78  5000.0000
+E#  43 Okada2_Depth_in_m_______________  1000.0000  1975.0256   975.0256   741.2572    1.32   999.0000
+E#  44 Okada2_Negative_Dip_in_deg______   -60.0000   -50.6132     9.3868    10.0000    0.94    10.0000
+E#  45 Okada2_Strike_CCW_from_N_in_deg_    25.0000    17.1270    -7.8730    10.0000    0.79    10.0000
+E#  46 Okada2_Easting_in_m_____________   534743.0   533777.9     -965.1     4582.5    0.21     5000.0
+E#  47 Okada2_Northing_in_m____________  4245640.0  4245658.8       18.8     5000.0    0.00     5000.0
+E#  48 Okada2_RL_Strike_Slip_in_m______     0.1200     0.1160    -0.0040     0.1000    0.04     0.1000
+E#  49 Okada2_Downdip_Slip_in_m________     0.2200     0.1218    -0.0982     0.1840    0.53     0.1000
+F#  50 Okada2_Tensile_Opening_in_m_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  51 YangPS_Easting_in_m_____________        0.0        0.0        0.0        0.0     NaN        0.0
+F#  52 YangPS_Northing_in_m____________        0.0        0.0        0.0        0.0     NaN        0.0
+F#  53 YangPS_Depth_in_m_______________   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  54 YangPS_Excess_Pressure_in_Pa____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  55 YangPS_semimajor_axis_a__m______   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  56 YangPS_semiminor_axis_b_in_m____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  57 YangPS_Azimuth_deg_CCW_from_N___   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  58 YangPS_Plunge_in_degrees________   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  59 YangPS_Empty1___________________   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  60 YangPS_Empty2___________________   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  61 Poisson_Ratio_dimless___________     0.2500     0.2500     0.0000     0.0000     NaN     0.0000
+F#  62 Shear_Modulus_in_Pa_____________   3.00e+10   3.00e+10   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  63 Reference_Epoch_in_years________  2007.1397  2007.1397     0.0000     0.0000     NaN     0.0000
+F#  64 Young_s_Modulus_in_Pa___________   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  65 Density_of_ice_in_kg_per_m3_____   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+F#  66 Grav_Acc_in_m_per_s_per_s_______   0.00e+00   0.00e+00   0.00e+00   0.00e+00     NaN   0.00e+00
+D#   1 Derived_Okada_rake_in_deg_CCW___   -28.6105   -12.9560    15.6544        NaN     NaN     0.0000
+D#   2 Derived_Okada_potency_in_m3_____   1.80e+07   7.82e+06  -1.02e+07        NaN     NaN   0.00e+00
+D#   3 Derived_Okada_moment_in_Nm______   5.41e+17   2.35e+17  -3.07e+17        NaN     NaN   0.00e+00
+D#   4 Derived_Okada_Mw________________     5.7923     5.5501    -0.2422        NaN     NaN     0.0000
+Cost  of null  model   = 0.0307 cycles per datum for   6037 observations in inverted data set
+Cost  of initl model   = 0.0363 cycles per datum for   6037 observations in inverted data set
+Cost  of final model   = 0.0283 cycles per datum for   6037 observations in inverted data set
+Critical value of cost = 0.0303 cycles per datum for   6037 observations in inverted data set
+Mean direction of residuals from null     model              = 0.0231 cycles
+Mean direction of residuals from initial  model              = 0.9926 cycles
+Mean direction of residuals from final    model              = 0.0145 cycles
+Circular standard deviation of residuals from final    model = 0.0454 cycles
+Mean Resultant Length for residuals for NULL  model Rbar00   =     0.9567
+Mean Resultant Length for residuals for initl model Rbar0    =     0.9386
+Mean Resultant Length for residuals for final model Rbar1    =     0.9601
+P-value of Test Statistic P00                                =        NaN
+P-value of Test Statistic P0                                 =        NaN
+Test Statistic for mean direction of residuals En00          =        NaN
+Test Statistic for mean direction of residuals En0           =        NaN
+Test Statistic for mean direction of residuals En1           =        NaN
+Pair   1 orbs    1001    1002 years 2005.4 to 2007.6 Dt = 2.2054 yr Cost0 = 0.0363 Cost1=0.0283 psp_16851_28374_ort.pha
+Wrote names, initial, lb, ub in 66 fields for 11 parameters to file PST.OUT
+
+Saving to: matlab.mat
+
+
+
+----------------   GIPHT_STEP3 ended normally at 2011-07-19 13:38:54 ----------
+
+
+----------------   GIPHT_STEP4 begins at 2011-07-19 13:38:54 ----------
+
+Loading from: matlab.mat
+
+histeq2 replaced 836555 zeros with NaNs
+Making gradient figures for pair 001
+
+
+----------------   GIPHT_STEP4 ended normally at 2011-07-19 13:39:05 ----------
+
+
+----------------   GIPHT_STEP5 begins at 2011-07-19 13:39:05 ----------
+
+Loading from: matlab.mat
+
+Making meshes
+Done making meshes
+Reading phase files....
+making figures for pair 001
+Starting, stopping indices j1,j2 1 6037
+Opened   psp_16851_28374_ort.pha
+Reshaping to 1419 rows x 1878 columns = 2664882 bytes as signed 1-byte integers
+Read 1419 rows x 1878 columns = 2664882 bytes as signed 1-byte integers
+Opened   qsp_16851_28374_ort.pha
+Reshaping to 1419 rows x 1878 columns = 2664882 bytes as signed 1-byte integers
+Read 1419 rows x 1878 columns = 2664882 bytes as signed 1-byte integers
+In routine gipht_step5 matrix of coordinates bx    has dimensions 52461
+In routine gipht_step5 matrix of coordinates xyzm1 has dimensions 3 52461
+Zeroing latitudes and longitudes of pixel centers.
+Bscale (incidence angle in degrees) min, max, mean:    22.9994    22.9994    22.9994
+Evaluating fitting function funseparable20 for initial estimate at 52461 locations....
+Evaluating fitting function funseparable20 for final   estimate at 52461 locations....
+Extreme values of mdl0  -7.8590e+00   2.9825e+01 
+Extreme values of mdl1  -2.3012e+00   1.3550e+01 
+Extreme values of wrm0  -3.1416e+00   3.1415e+00 
+Extreme values of wrm1  -3.1415e+00   3.1407e+00 
+phao
+ans =
+   201   261
+mdl0
+ans =
+   201   261
+Total L1 Norm Cost of null  model = 0.2410 cycles per datum for  52461 observations in sub-region
+Total L1 Norm Cost of initl model = 0.2736 cycles per datum for  52461 observations in sub-region
+Total L1 Norm Cost of final model = 0.2394 cycles per datum for  52461 observations in sub-region
+Wrote x_20110719_132225/x_001_OBSV.pha with    52461 pixels of 1 byte each with 201 lines by 261 columns.
+Wrote x_20110719_132225/x_001_MODL.pha with    52461 pixels of 1 byte each with 201 lines by 261 columns.
+Wrote x_20110719_132225/x_001_RESD.pha with    52461 pixels of 1 byte each with 201 lines by 261 columns.
+Wrote x_20110719_132225/x_001_COST.pha with    52461 pixels of 1 byte each with 201 lines by 261 columns.
+Wrote x_20110719_132225/x_001_QUAD.pha with    52461 pixels of 1 byte each with 201 lines by 261 columns.
+
+To plot binary phase files, consider following commands:
+autoigram.gmt x_20110719_132225/x_001_OBSV.pha -S -G -D gipht_subregion.dat
+autoigram.gmt x_20110719_132225/x_001_MODL.pha -S -G -D gipht_subregion.dat
+autoigram.gmt x_20110719_132225/x_001_RESD.pha -S -G -D gipht_subregion.dat
+autoigram.gmt x_20110719_132225/x_001_COST.pha -S -G -D gipht_subregion.dat
+autoigram.gmt x_20110719_132225/x_001_QUAD.pha -S -G -D gipht_subregion.dat
+Making E-W profile for Pair 001
+Making N-S profile for Pair 001
+
+
+----------------   GIPHT_STEP5 ended normally at 2011-07-19 13:39:09 ----------
+
+
+----------------   GIPHT ended normally at 2011-07-19 13:39:11 ----------
+----------------   Elapsed time: 1006 seconds

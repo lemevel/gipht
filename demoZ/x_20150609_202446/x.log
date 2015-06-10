@@ -1,0 +1,540 @@
+
+
+----------------   GIPHT_STEP1 begins at 2015-06-09 20:24:46 ----------
+read_input_controls begin reading input control file named gipht.in...
+    1 xcenter  39.35466	      % X coordinate of center of sampled region
+    2 ycenter  38.36103 	      % Y coordinate of center of sampled region
+    3 halfwidth  130	        % half the east-west width of the sampled region in pixels
+    4 demdescfile  dem_descriptor.dat 
+    5 pselect  5        % select pixels of phase using quadtree
+    6 pixinpatch  4        % mininum number of valid (nonzero) pixels in a patch
+    7 ithresh      16        % minimum misfit (circular mean deviation) to mean ( 1 DN is 1 / 256 pixel)
+    8 maxcmd      8        % minimum misfit (circular mean deviation) to ramp ( 1 DN is 1 / 256 pixel)
+    9 mpercy  0.0284 % meters for ENVISAT, ERS-1, and ERS-2
+   10 unitv_east   0.382192  % Eastward component
+   11 unitv_north  -0.081237  % Northward component
+   12 unitv_up   0.920500  % Upward component (must be positive)
+   13 txtinname  demoZ5.gin   % Two Okadas with with new format for Beauducel parameterization
+   14 objfun  funcostrarc         % mininum angle,  assumes zero mean, using arc function in radians 
+   15 fitfun  funfit28 
+   16 surrogate  1       % use fast approximate version of fitting function (1st order Taylor series)
+   17 nprocessors  16     % number of processors to use in Distributed Computing Toolbox 
+   18 anneal  2  %     2 to run S.A. with recording (BEST)
+   19 figopt  001 % good for trial and error
+   20 printfun  printnull % do not write figures to files (fast)
+             xcenter = 39.354660
+             ycenter = 38.361030
+           halfwidth = 130.000000
+             pselect = 5.000000
+          unitv_east = 0.382192
+         unitv_north = -0.081237
+            unitv_up = 0.920500
+             ithresh = 16.000000
+              anneal = 2.000000
+          pixinpatch = 4.000000
+         nprocessors = 16.000000
+              mpercy = 0.028400
+              maxcmd = 8.000000
+              figopt = 00000001
+           surrogate = 1.000000
+              objfun = funcostrarc
+              fitfun = funfit28
+           txtinname = demoZ5.gin
+         demdescfile = dem_descriptor.dat
+            printfun = printnull
+WARNING: No orbit file named in gipht.in. Assuming constant look vector.
+demoZ5.gin
+dem_descriptor.dat
+file_names.dat
+cmds = 
+    'funfit28'    'printnull'    'funcostrarc'
+Using "exist" command to search for function named funfit28
+Found function named funfit28 2
+Using "exist" command to search for function named printnull
+Found function named printnull 2
+Using "exist" command to search for function named funcostrarc
+Found function named funcostrarc 2
+[Warning: Deleting current pool...] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('read_input_controls', '/Users/feigl/gipht/src/read_input_controls.m', 428)" style="font-weight:bold">read_input_controls</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/read_input_controls.m',428,0)">line 428</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht_step1', '/Users/feigl/gipht/src/gipht_step1.m', 14)" style="font-weight:bold">gipht_step1</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht_step1.m',14,0)">line 14</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht', '/Users/feigl/gipht/src/gipht.m', 126)" style="font-weight:bold">gipht</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht.m',126,0)">line 126</a>)] 
+Parallel pool using the 'local' profile is shutting down.
+Starting parallel pool (parpool) using the 'local' profile ... connected to 4 workers.
+read_input_controls completed reading input controls.
+Scale factor for phase in DN per cycle:
+DNPC =
+          6.28
+Name of list of phase files
+read_file_names begins ...
+Read    1 pairs of phase files 
+Number of interferogram files (pairs) to adjust
+np =
+          1.00
+Number of distinct epochs overall
+me =
+          2.00
+Number of species overall
+mfam =
+          1.00
+Species A:     1     2
+Species A Member  1 Pair   1 M   1001 S   1002                                                          psp_16851_28374_ort.pha
+Species A Member  2 Pair   1 M   1001 S   1002                                                          psp_16851_28374_ort.pha
+adjustbp begins ...
+Length of data vector, including constraints
+md =
+          1.00          2.00
+Dimensons of design matrix, including constraints
+nmdd2 =
+          2.00          2.00
+Rank defiency, including constraints
+rd =
+             0
+Begin least squares adjustment...
+index orbnum date     species yr Dopp/PRF
+    1    1001 PAIR001-MAST A  2005.3836     0.0000
+    2    1002 PAIR001-SLAV A  2007.5890  1000.0000
+plotbp begins at 2015-06-09 20:25:04
+titl1 =
+Selected pairs
+Pair trees Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2015-06-09 20:25:05
+read_dem_descriptor begins ...
+DEM Descriptor specifies entire file.
+Reached end of DEM descriptor file
+number of columns in each interferogram
+ncols =
+       1878.00
+number of lines in each interferogram 
+nrows =
+       1419.00
+Maximum number of pixels to be selected for inversion = 2664882
+Location                  X            Y
+DEM pixel 1             39           39
+DEM extract 1           39           39
+DEM extract N           40           38
+Center                  39           38
+icenter = 598 jcenter = 1004
+Subregion contains NRSUB = 201 rows and NCSUB = 261 columns
+dx =
+         71.81
+dy =
+        -92.86
+xcenter1 =
+     530868.44
+ycenter1 =
+    4246095.45
+utmzone0 =
+37 S
+xcenter2 =
+     530281.50
+ycenter2 =
+    4245752.53
+xcenter3 =
+     530167.17
+ycenter3 =
+    4245916.33
+[Warning: WARNING: problem with UTM coordinates for center point.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht_step1', '/Users/feigl/gipht/src/gipht_step1.m', 607)" style="font-weight:bold">gipht_step1</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht_step1.m',607,0)">line 607</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht', '/Users/feigl/gipht/src/gipht.m', 126)" style="font-weight:bold">gipht</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht.m',126,0)">line 126</a>)] 
+xcenter1 =
+     530868.44
+xcenter2 =
+     530281.50
+diffx =
+       -586.94
+ycenter2 =
+    4245752.53
+ycenter1 =
+    4246095.45
+diffy =
+       -342.92
+xcenter =
+     530281.50
+ycenter =
+    4245752.53
+Opened sivrice_dem.i2. Read 2 x 1419 rows x 1878 columns = 5329764 bytes WITHOUT FLIPPING as int16 
+I2DEM has 1419 rows and 1878 columns
+jzl2 =
+       1419.00
+jzc2 =
+       1878.00
+Nrows, Ncols of Extracted Region in DEM.
+ans =
+       1419.00       1878.00
+Selecting pixels using pha2qls resampling.
+Extrema of coordinates of images (extracted area)
+    Location            X            Y
+        Min        458137      4169682
+         Max       592933      4301351
+       Diff        134796       131670
+      Center       530282      4245753
+Extrema of coordinates of subregion
+    Location   Easting(m)  Northing(m)
+     Min           520831      4236631
+     Max           539503      4255202
+     Diff           18672        18571
+     Center        530282      4245753
+     Center1       530868      4246095
+     Center2       530282      4245753
+     Center3       530167      4245916
+    Max-Cen          9222         9449
+    Cen -Min         9450         9122
+    Max-Cen3         9336         9286
+    Cen3-Min         9336         9286
+write_dem_descriptor begins ...
+Reached end of DEM descriptor file
+Wrote DEM descriptor for subregion to file named gipht_subregion.dat
+Opened   psp_16851_28374_ort.pha
+Reshaping to 1419 rows pha 1878 columns = 2664882 bytes as signed 1-byte integers
+Read 1419 rows pha 1878 columns = 2664882 bytes as signed 1-byte integers
+Opened   qsp_16851_28374_ort.pha
+Reshaping to 1419 rows pha 1878 columns = 2664882 bytes as signed 1-byte integers
+Read 1419 rows pha 1878 columns = 2664882 bytes as signed 1-byte integers
+Opened grx_16851_28374_ort.i2. Read 2 x 1419 rows x 1878 columns = 5329764 bytes WITHOUT FLIPPING as int16 
+Opened gry_16851_28374_ort.i2. Read 2 x 1419 rows x 1878 columns = 5329764 bytes WITHOUT FLIPPING as int16 
+Opened psp_16851_28374_ort.qls. Read 2 x 214691 rows x 6 columns = 2576292 bytes WITHOUT FLIPPING as int16 
+zstr =
+cycles
+Number of good pixels in this pair: 7419
+Number of observations so far: 7419
+Minimal values in meters         for xyzm   520903.1  4236723.6      951.0 
+Maximal values in meters         for xyzm   539503.1  4255109.1     2339.0 
+Minimal values in degrees for lon, lat          39.2       38.3        
+Maximal values in degrees for lon, lat          39.5       38.4        
+Assuming constant unit vector [E,N,U]     0.3822    -0.0812     0.9205
+Saving orbit information for future use in file named orbits.mat
+Successfully read the following phase files:                                                         psp_16851_28374_ort.pha
+Number of pairs with data
+np =
+          1.00
+Number of data
+ndata =
+       7419.00
+Number of data
+ndata1 =
+       7419.00
+ncols =
+         48.00
+Wrote meta data for 7419 pixels to file dst_sample.dst
+Field    nr nc n(NaN) min max mean std
+  1                    i  7419     1        0   1.000000e+00   7.419000e+03   3.710000e+03   2.141825e+03
+  2            idatatype  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+  3                    k  7419     1        0   1.000000e+00   1.000000e+00   1.000000e+00   0.000000e+00
+  4                kmast  7419     1        0   1.000000e+00   1.000000e+00   1.000000e+00   0.000000e+00
+  5                kslav  7419     1        0   2.000000e+00   2.000000e+00   2.000000e+00   0.000000e+00
+  6               phaobs  7419     1        0  -3.141593e+00   3.117049e+00  -2.100720e-01   1.761234e+00
+  7               phamod  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+  8                tmast  7419     1        0   2.005384e+03   2.005384e+03   2.005384e+03   1.875959e-10
+  9                tslav  7419     1        0   2.007589e+03   2.007589e+03   2.007589e+03   2.078335e-10
+ 10                    x  7419     1        0   5.209031e+05   5.395031e+05   5.302095e+05   5.238870e+03
+ 11                    y  7419     1        0   4.236724e+06   4.255109e+06   4.245999e+06   5.334792e+03
+ 12                    z  7419     1        0   9.510000e+02   2.339000e+03   1.580534e+03   2.364785e+02
+ 13                  uvx  7419     1        0   3.821920e-01   3.821920e-01   3.821920e-01   2.409346e-14
+ 14                  uvy  7419     1        0  -8.123700e-02  -8.123700e-02  -8.123700e-02   9.687349e-15
+ 15                  uvz  7419     1        0   9.205000e-01   9.205000e-01   9.205000e-01   1.106967e-13
+ 16               mpercy  7419     1        0   2.840000e-02   2.840000e-02   2.840000e-02   3.136591e-15
+ 17                bmast  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 18                bslav  7419     1        0   1.000000e+03   1.000000e+03   1.000000e+03   0.000000e+00
+ 19                dmast  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 20                dslav  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 21                   x0  7419     1        0  -9.306380e+03   9.293593e+03   3.720143e-09   5.238870e+03
+ 22                   y0  7419     1        0  -9.275832e+03   9.109669e+03  -8.130462e-09   5.334792e+03
+ 23                   z0  7419     1        0  -6.295336e+02   7.584664e+02   4.854316e-12   2.364785e+02
+ 24                   dx  7419     1        0   7.181457e+01   7.181457e+01   7.181457e+01   9.379796e-13
+ 25                   dy  7419     1        0  -9.285607e+01  -9.285607e+01  -9.285607e+01   0.000000e+00
+ 26                   dz  7419     1        0  -6.400000e+01   5.600000e+01  -7.598059e-01   1.637516e+01
+ 27                alond  7419     1        0   3.924583e+01   3.946167e+01   3.935382e+01   6.079163e-02
+ 28                alatd  7419     1        0   3.828000e+01   3.844500e+01   3.836325e+01   4.787689e-02
+ 29                orbm1  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 30                orbm2  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 31                orbm3  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 32                orbm4  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 33                orbm5  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 34                orbm6  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 35                orbs1  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 36                orbs2  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 37                orbs3  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 38                orbs4  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 39                orbs5  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 40                orbs6  7419     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 41                   mx  7419     1     7419            NaN            NaN            NaN            NaN
+ 42                   my  7419     1     7419            NaN            NaN            NaN            NaN
+ 43                   mz  7419     1     7419            NaN            NaN            NaN            NaN
+ 44                 qii1  7419     1        0   8.730000e+02   1.131000e+03   1.002516e+03   7.295040e+01
+ 45                 qii2  7419     1        0   8.740000e+02   1.136000e+03   1.003662e+03   7.295061e+01
+ 46                 qjj1  7419     1        0   4.970000e+02   6.950000e+02   5.950321e+02   5.746929e+01
+ 47                 qjj2  7419     1        0   4.980000e+02   6.960000e+02   5.961785e+02   5.743664e+01
+ 48               phasig  7419     1        0   6.250000e-02   5.000000e-01   4.822837e-01   6.463267e-02
+
+Saving to: /Users/feigl/gipht/demoZ/matlab.mat
+
+
+
+----------------   GIPHT_STEP1 ended normally at 2015-06-09 20:25:10 ----------
+
+
+----------------   GIPHT_STEP2 begins at 2015-06-09 20:25:10 ----------
+
+Loading from: matlab.mat
+
+ndata =
+       7419.00
+ndata1 =
+       7419.00
+Naming parameters in fitting function fitfun = funfit28
+Number of parameters
+mparam =
+         95.00
+Opened file named demoZ5.gin to read initial estimates of parameters.
+
+ Done reading parameters
+Fixing bounds to initial estimate on E_grad__@_epoch_001_dimless_____                0                0                0
+Fixing bounds to initial estimate on N_grad__@_epoch_001_dimless_____                0                0                0
+Fixing bounds to initial estimate on U_grad__@_epoch_001_dimless_____           -1e-05           -1e-05           -1e-05
+Fixing bounds to initial estimate on OrbitHoriz_@_epoch_001_in_m_____                0                0                0
+Fixing bounds to initial estimate on OrbitAlong_@_epoch_001_in_m_____                0                0                0
+Fixing bounds to initial estimate on OrbitVerti_@_epoch_001_in_m_____                0                0                0
+Fixing bounds to initial estimate on OrbitVelH__@_epoch_001_m_per_s__                0                0                0
+Fixing bounds to initial estimate on OrbitVelA__@_epoch_001_m_per_s__                0                0                0
+Fixing bounds to initial estimate on OrbitVelV__@_epoch_001_m_per_s__                0                0                0
+Fixing bounds to initial estimate on Offset__@_epoch_001_in_cycles___                0                0                0
+Updating                       bounds on E_grad__@_epoch_002_dimless_____                0                0                0
+Updating                       bounds on N_grad__@_epoch_002_dimless_____                0                0                0
+Updating                       bounds on U_grad__@_epoch_002_dimless_____           -1e-05           -3e-05           -1e-05
+Updating                       bounds on OrbitHoriz_@_epoch_002_in_m_____                0                0                0
+Updating                       bounds on OrbitAlong_@_epoch_002_in_m_____                0                0                0
+Updating                       bounds on OrbitVerti_@_epoch_002_in_m_____                0                0                0
+Updating                       bounds on OrbitVelH__@_epoch_002_m_per_s__                0                0                0
+Updating                       bounds on OrbitVelA__@_epoch_002_m_per_s__                0                0                0
+Updating                       bounds on OrbitVelV__@_epoch_002_m_per_s__                0                0                0
+Updating                       bounds on Offset__@_epoch_002_in_cycles___                0             -0.5              0.5
+I          Name     P0(pre-fit)              P1(post-fit)     Adjust.   Sigma[0] Significance PlusMinusBound
+F#   1 time_fn_@_epoch_001_in_years____  2005.3836        NaN     0.0000        NaN     NaN     0.0000
+F#   2 time_fn_@_epoch_002_in_years____  2007.5890        NaN     0.0000        NaN     NaN     0.0000
+F#   3 E_grad__@_epoch_001_dimless_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#   4 E_grad__@_epoch_002_dimless_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#   5 N_grad__@_epoch_001_dimless_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#   6 N_grad__@_epoch_002_dimless_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+E#   7 U_grad__@_epoch_001_dimless_____  -1.00e-05        NaN   0.00e+00        NaN     NaN   0.00e+00
+E#   8 U_grad__@_epoch_002_dimless_____  -1.00e-05        NaN   0.00e+00        NaN     NaN   1.00e-05
+F#   9 OrbitHoriz_@_epoch_001_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  10 OrbitHoriz_@_epoch_002_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  11 OrbitAlong_@_epoch_001_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  12 OrbitAlong_@_epoch_002_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  13 OrbitVerti_@_epoch_001_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  14 OrbitVerti_@_epoch_002_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  15 OrbitVelH__@_epoch_001_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  16 OrbitVelH__@_epoch_002_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  17 OrbitVelA__@_epoch_001_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  18 OrbitVelA__@_epoch_002_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  19 OrbitVelV__@_epoch_001_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  20 OrbitVelV__@_epoch_002_m_per_s__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  21 Offset__@_epoch_001_in_cycles___   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+E#  22 Offset__@_epoch_002_in_cycles___   0.00e+00        NaN   0.00e+00        NaN     NaN   5.00e-01
+F#  23 Mogi1_Easting_in_m______________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  24 Mogi1_Northing_in_m_____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  25 Mogi1_Depth_in_m________________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  26 Mogi1_Depth_in_m________________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  27 Mogi1_Volume_Increase_in_m3_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  28 Mogi2_Easting_in_m______________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  29 Mogi2_Northing_in_m_____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  30 Mogi2_Depth_in_m________________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  31 Mogi2_Volume_Increase_in_m3_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+E#  32 Okada1_Length_in_m______________  4308.0738        NaN     0.0000        NaN     NaN   424.3164
+E#  33 Okada1_Width_in_m_______________  5035.3854        NaN     0.0000        NaN     NaN   314.9414
+E#  34 Okada1_Centroid_Depth_in_m______  5999.9760        NaN     0.0000        NaN     NaN    82.5195
+E#  35 Okada1_Dip_in_deg_______________    65.9941        NaN     0.0000        NaN     NaN     4.1699
+E#  36 Okada1_Strike_CW_from_N_in_deg__   206.0934        NaN     0.0000        NaN     NaN     7.1875
+E#  37 Okada1_Centroid_Easting_in_m____   530996.9        NaN        0.0        NaN     NaN      183.6
+E#  38 Okada1_Centroid_Northing_in_m___  4242682.7        NaN        0.0        NaN     NaN      431.2
+E#  39 Okada1_Coplanar_slip_in_m_______     0.2919        NaN     0.0000        NaN     NaN     0.0447
+E#  40 Okada1_Rake_in_deg_CCW__________   -28.7569        NaN     0.0000        NaN     NaN     4.8975
+F#  41 Okada1_Tensile_Opening_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+E#  42 Okada2_Length_in_m______________  4308.0738        NaN     0.0000        NaN     NaN   424.3164
+E#  43 Okada2_Width_in_m_______________  5035.3854        NaN     0.0000        NaN     NaN   314.9414
+E#  44 Okada2_Centroid_Depth_in_m______  1000.0000        NaN     0.0000        NaN     NaN    82.5195
+E#  45 Okada2_Dip_in_deg_______________    65.9941        NaN     0.0000        NaN     NaN     4.1699
+E#  46 Okada2_Strike_CW_from_N_in_deg__   206.0934        NaN     0.0000        NaN     NaN     7.1875
+E#  47 Okada2_Centroid_Easting_in_m____   530996.9        NaN        0.0        NaN     NaN      183.6
+E#  48 Okada2_Centroid_Northing_in_m___  4242682.7        NaN        0.0        NaN     NaN      431.2
+E#  49 Okada2_Coplanar_slip_in_m_______     0.2919        NaN     0.0000        NaN     NaN     0.0447
+E#  50 Okada2_Rake_in_deg_CCW__________   -28.7569        NaN     0.0000        NaN     NaN     4.8975
+F#  51 Okada2_Tensile_Opening_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  52 YangPS_Easting_in_m_____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  53 YangPS_Northing_in_m____________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  54 YangPS_Depth_in_m_______________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  55 YangPS_Excess_Pressure_in_Pa____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  56 YangPS_semimajor_axis_a__m______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  57 YangPS_semiminor_axis_b_in_m____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  58 YangPS_Azimuth_deg_CCW_from_N___   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  59 YangPS_Plunge_in_degrees________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  60 YangPS_Empty1___________________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  61 YangPS_Empty2___________________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+E#  62 Poisson_Ratio_dimless___________     0.2500        NaN     0.0000        NaN     NaN     0.0200
+F#  63 Shear_Modulus_in_Pa_____________   3.00e+10        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  64 Reference_Epoch_in_years________  2007.1397        NaN     0.0000        NaN     NaN     0.0000
+F#  65 Young_s_Modulus_in_Pa_for_Pinel_   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  66 Density_of_load_in_kg_per_m3____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  67 Grav_Acc_in_m_per_s_per_s_______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  68 Poisson_Ratio_dimless_for_Pinel_   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  69 SunDisk1_Easting_in_m___________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  70 SunDisk1_Northing_in_m__________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  71 SunDisk1_Depth_in_m_____________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  72 SunDisk1_Excess_Pressure_in_Pa__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  73 SunDisk1_Radius_a_in_m__________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  74 SunDisk2_Easting_in_m___________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  75 SunDisk2_Northing_in_m__________        0.0        NaN        0.0        NaN     NaN        0.0
+F#  76 SunDisk2_Depth_in_m_____________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  77 SunDisk2_Excess_Pressure_in_Pa__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  78 SunDisk2_Radius_a_in_m__________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  79 Poisson_Ratio_dimless_drained___   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  80 Okada3_Length_in_m______________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  81 Okada3_Width_in_m_______________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  82 Okada3_Centroid_Depth_in_m______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  83 Okada3_Dip_in_deg_______________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  84 Okada3_Strike_CW_from_N_in_deg__   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  85 Okada3_Centroid_Easting_in_m____        0.0        NaN        0.0        NaN     NaN        0.0
+F#  86 Okada3_Centroid_Northing_in_m___        0.0        NaN        0.0        NaN     NaN        0.0
+F#  87 Okada3_Coplanar_slip_in_m_______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  88 Okada3_Rake_in_deg_CCW__________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  89 Okada3_Tensile_Opening_in_m_____   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  90 Rad_Vel_Center_Easting_in_m_____        0.0        NaN        0.0        NaN     NaN        0.0
+F#  91 Rad_Vel_Center_Northing_in_m____        0.0        NaN        0.0        NaN     NaN        0.0
+F#  92 Rad_Vel_Evel_in_m_per_yr________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  93 Rad_Vel_Nvel_in_m_per_yr________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  94 Rad_Vel_Uvel_in_m_per_yr________   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+F#  95 Rad_Vel_dVdR_in_inverse_yr______   0.00e+00        NaN   0.00e+00        NaN     NaN   0.00e+00
+Number of free parameters MFREE = 21
+Wrote 12 fields for 95 parameters to file pst_in.pst
+Calling fitting function for first time to initialize.
+Resetting TST in fitting function fitfun = funfit28
+Calling fitting function for second time
+Generating partial derivatives for 1st-order Taylor expansion
+
+
+----------------   GENERATE_PARTIALS begins at 2015-06-09 20:25:11 ----------
+--- Calculating partial derivatives for parameter     8 (of    95) U_grad__@_epoch_002_dimless_____   2.0000e-07
+--- Calculating partial derivatives for parameter    22 (of    95) Offset__@_epoch_002_in_cycles___   1.0000e-02
+--- Calculating partial derivatives for parameter    32 (of    95) Okada1_Length_in_m______________   8.4863e+00
+--- Calculating partial derivatives for parameter    33 (of    95) Okada1_Width_in_m_______________   6.2988e+00
+--- Calculating partial derivatives for parameter    34 (of    95) Okada1_Centroid_Depth_in_m______   1.6504e+00
+--- Calculating partial derivatives for parameter    35 (of    95) Okada1_Dip_in_deg_______________   8.3398e-02
+--- Calculating partial derivatives for parameter    36 (of    95) Okada1_Strike_CW_from_N_in_deg__   1.4375e-01
+--- Calculating partial derivatives for parameter    37 (of    95) Okada1_Centroid_Easting_in_m____   3.6720e+00
+--- Calculating partial derivatives for parameter    38 (of    95) Okada1_Centroid_Northing_in_m___   8.6240e+00
+--- Calculating partial derivatives for parameter    39 (of    95) Okada1_Coplanar_slip_in_m_______   8.9400e-04
+--- Calculating partial derivatives for parameter    40 (of    95) Okada1_Rake_in_deg_CCW__________   9.7950e-02
+--- Calculating partial derivatives for parameter    42 (of    95) Okada2_Length_in_m______________   8.4863e+00
+--- Calculating partial derivatives for parameter    43 (of    95) Okada2_Width_in_m_______________   6.2988e+00
+--- Calculating partial derivatives for parameter    44 (of    95) Okada2_Centroid_Depth_in_m______   1.6504e+00
+--- Calculating partial derivatives for parameter    45 (of    95) Okada2_Dip_in_deg_______________   8.3398e-02
+--- Calculating partial derivatives for parameter    46 (of    95) Okada2_Strike_CW_from_N_in_deg__   1.4375e-01
+--- Calculating partial derivatives for parameter    47 (of    95) Okada2_Centroid_Easting_in_m____   3.6720e+00
+--- Calculating partial derivatives for parameter    48 (of    95) Okada2_Centroid_Northing_in_m___   8.6240e+00
+--- Calculating partial derivatives for parameter    49 (of    95) Okada2_Coplanar_slip_in_m_______   8.9400e-04
+--- Calculating partial derivatives for parameter    50 (of    95) Okada2_Rake_in_deg_CCW__________   9.7950e-02
+--- Calculating partial derivatives for parameter    62 (of    95) Poisson_Ratio_dimless___________   4.0000e-04
+
+Finished generating partial derivatives for 21 free parameters
+
+
+----------------   GENERATE_PARTIALS ends   at 2015-06-09 20:25:13 ----------
+ans =
+       7419.00         95.00
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht_step2', '/Users/feigl/gipht/src/gipht_step2.m', 451)" style="font-weight:bold">gipht_step2</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht_step2.m',451,0)">line 451</a>)
+Stopping here to debug on 20150609\n
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gipht', '/Users/feigl/gipht/src/gipht.m', 127)" style="font-weight:bold">gipht</a> (<a href="matlab: opentoline('/Users/feigl/gipht/src/gipht.m',127,0)">line 127</a>)
+gipht_step2; % set bounds on parameters, run simulated annealing} 
+which gipht
+/Users/feigl/gipht/src/gipht.m
+help parpool
+ <strong>parpool</strong> Create a parallel pool of workers on a cluster and return a pool object
+    pool = <strong>parpool</strong> creates and returns a pool on the default cluster with its
+    NumWorkers in the range [1, preferredNumWorkers] for running parallel
+    language features (parfor, parfeval, parfevalOnAll, spmd, and distributed).
+    preferredNumWorkers is the value defined in your parallel preferences. Use
+    delete(pool) to shut down the parallel pool.
+ 
+    pool = <strong>parpool</strong>(numWorkers) creates and returns a pool with the
+    specified number of workers. numWorkers can be a positive integer or a
+    range specified as a 2-element vector of integers. If numWorkers is a
+    range, the resulting pool has size as large as possible in the range
+    requested.
+ 
+    pool = <strong>parpool</strong>(cluster) creates and returns a pool on the specified
+    cluster object.
+ 
+    pool = <strong>parpool</strong>(profile) creates and returns a pool on the cluster
+    defined in the specified parallel profile.
+ 
+    pool = <strong>parpool</strong>(profileOrCluster, numWorkers) creates and returns a pool
+    on the specified cluster or profile with the specified number of
+    workers.
+ 
+    pool = <strong>parpool</strong>(..., P1, V1, ..., Pn, Vn) allows additional
+    parameter-value pairs that specify further properties of the created
+    pool. The accepted parameters are:
+ 
+    - 'AttachedFiles' - a string or a cell array of strings specifying
+    files to be attached to the pool at the time of its creation. Attach
+    files to the pool to allow them to be used by the workers.
+ 
+    - 'SpmdEnabled' - a logical value (true or false) that enables the use
+    of the SPMD language construct. By default 'SpmdEnabled' is set to
+    true. If SpmdEnabled is set to false then you will not be able to use
+    the SPMD language construct, however the parallel pool created should be
+    more robust against workers crashing.
+ 
+    - 'IdleTimeout' - an integer greater than zero that sets the time in
+    minutes after which the pool will automatically shut itself down if it
+    is idle. A pool is idle if it is not running code on the workers. By
+    default 'IdleTimeout' is the same as the value in your parallel preferences.
+ 
+    Examples:
+    % Create a pool which uses all the default settings.
+    myPool = parpool();
+ 
+    % Create a pool using the profile named 'MyProfile'.
+    myPool = parpool('MyProfile')
+ 
+    % Create a pool using the cluster myCluster.
+    % First create myCluster using 'parcluster'.
+    myCluster  = parcluster();
+    % Now create the pool.
+    myPool = parpool(myCluster);
+ 
+    % Create a pool with 2 workers.
+    myPool = parpool(2);
+ 
+    % Create a pool using default settings and attach the file 'myFunction.m'
+    % to it.
+    myPool = parpool('AttachedFiles', {'myFunction.m'});
+ 
+    % Create a pool using default settings and disable the use of SPMD.
+    myPool = parpool('SpmdEnabled', false);
+ 
+    % Create a pool using default settings and an IdleTimeout of 2 hours.
+    myPool = parpool('IdleTimeout', 120);
+ 
+    See also <a href="matlab:help gcp">gcp</a>, <a href="matlab:help parfor">parfor</a>, <a href="matlab:help spmd">spmd</a>, <a href="matlab:help parfeval">parfeval</a>, <a href="matlab:help parfevalOnAll">parfevalOnAll</a>,
+             <a href="matlab:help parcluster">parcluster</a>, <a href="matlab:help parallel.Cluster/parpool">parallel.Cluster/parpool</a>, <a href="matlab:help batch">batch</a>,
+             <a href="matlab:help parallel.Pool/addAttachedFiles">parallel.Pool/addAttachedFiles</a>,
+             <a href="matlab:help parallel.Pool/updateAttachedFiles">parallel.Pool/updateAttachedFiles</a>,
+             <a href="matlab:help parallel.Pool/listAutoAttachedFiles">parallel.Pool/listAutoAttachedFiles</a>,
+             <a href="matlab:help parallel.Pool/delete">parallel.Pool/delete</a>.
+
+    <a href="matlab:matlab.internal.language.introspective.displayOverloads('parpool')">Other functions named parpool</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc parpool">doc parpool</a>
+
+profile on
+gipht
+
+
+----------------   GIPHT Development version 2.9 of 09-Jun-2015 17:48:14 ----------
+
+
+----------------   GIPHT begins at 2015-06-09 20:38:58 ----------
+runname =
+20150609_203859

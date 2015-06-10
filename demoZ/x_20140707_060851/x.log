@@ -1,0 +1,104 @@
+
+
+----------------   GIPHT_STEP1 begins at 2014-07-07 06:08:52 ----------
+read_input_controls begin reading input control file named gipht.in...
+    1 xcenter  39.35466	      % X coordinate of center of sampled region
+    2 ycenter  38.36103 	      % Y coordinate of center of sampled region
+    3 halfwidth  130	        % half the east-west width of the sampled region in pixels
+    4 demdescfile  dem_descriptor.dat 
+    5 pselect  7        % select pixels of range gradient using quadtree
+    6 mpercy  0.0284 % meters for ENVISAT, ERS-1, and ERS-2
+    7 unitv_east   0.382192  % Eastward component
+    8 unitv_north  -0.081237  % Northward component
+    9 unitv_up   0.920500  % Upward component (must be positive)
+   10 txtinname  demoZ3.gin   % Two Okadas
+   11 objfun  funcostrarc         % mininum angle,  assumes zero mean, using arc function in radians 
+   12 fitfun  funseparable27 % 2 Mogi + 2 Okada + 1 Pinel including new TST structure
+   13 surrogate  1       % use fast approximate version of fitting function (1st order Taylor series)
+   14 anneal  0  %     0 to skip Simulated Annealing (FAST for forward modeling, skip statistics)
+   15 anneal  2  %     2 to run S.A. with recording (BEST)
+   16 figopt  010 % simple for demo
+   17 printfun  printpdf  % make figures in PDF
+             xcenter = 39.354660
+             ycenter = 38.361030
+           halfwidth = 130.000000
+             pselect = 7.000000
+          unitv_east = 0.382192
+         unitv_north = -0.081237
+            unitv_up = 0.920500
+              anneal = 0.000000
+              anneal = 2.000000
+              mpercy = 0.028400
+              figopt = 00000010
+           surrogate = 1.000000
+              objfun = funcostrarc
+              fitfun = funseparable27
+           txtinname = demoZ3.gin
+         demdescfile = dem_descriptor.dat
+            printfun = printpdf
+WARNING: No orbit file named in gipht.in. Assuming constant look vector.
+demoZ3.gin
+dem_descriptor.dat
+file_names.dat
+cmds = 
+    'funseparable27'    'printpdf'    'funcostrarc'
+Using "exist" command to search for function named funseparable27
+Found function named funseparable27 2
+Using "exist" command to search for function named printpdf
+Found function named printpdf 2
+Using "exist" command to search for function named funcostrarc
+Found function named funcostrarc 2
+[Warning: matlabpoolsize is 0
+] 
+[> In <a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/read_input_controls.m',414,1)">read_input_controls at 414</a>
+  In <a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht_step1.m',14,1)">gipht_step1 at 14</a>
+  In <a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht.m',125,1)">gipht at 125</a>] 
+read_input_controls completed reading input controls.
+Scale factor for phase in DN per cycle:
+DNPC =
+    6.2832
+Name of list of phase files
+read_file_names begins ...
+Read    1 pairs of phase files 
+Number of interferogram files (pairs) to adjust
+np =
+     1
+Number of distinct epochs overall
+me =
+     2
+Number of species overall
+mfam =
+     1
+Species A:     1     2
+Species A Member  1 Pair   1 M   1001 S   1002                                                          psp_16851_28374_ort.pha
+Species A Member  2 Pair   1 M   1001 S   1002                                                          psp_16851_28374_ort.pha
+adjustbp begins ...
+Length of data vector, including constraints
+md =
+     1     2
+Dimensons of design matrix, including constraints
+nmdd2 =
+     2     2
+Rank defiency, including constraints
+rd =
+     0
+Begin least squares adjustment...
+index orbnum date     species yr Dopp/PRF
+    1    1001 PAIR001-MAST A  2005.3836     0.0000
+    2    1002 PAIR001-SLAV A  2007.5890  1000.0000
+plotbp begins at 2014-07-07 06:08:53
+{Error using <a href="matlab:helpUtils.errorDocCallback('plotbp', '/Users/feigl/Documents/GIPhT2.8/src/plotbp.m', 61)" style="font-weight:bold">plotbp</a> (<a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/plotbp.m',61,0)">line 61</a>)
+Not enough input arguments.
+Error in <a href="matlab:helpUtils.errorDocCallback('gipht_step1', '/Users/feigl/Documents/GIPhT2.8/src/gipht_step1.m', 259)" style="font-weight:bold">gipht_step1</a> (<a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht_step1.m',259,0)">line 259</a>)
+plotbp(tepochs, bpest, DD, species, iuniqorbs, uniqdates, 0);
+Error in <a href="matlab:helpUtils.errorDocCallback('gipht', '/Users/feigl/Documents/GIPhT2.8/src/gipht.m', 125)" style="font-weight:bold">gipht</a> (<a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht.m',125,0)">line 125</a>)
+gipht_step1; % read in phase files, select pixels} 
+gipht
+
+
+----------------   GIPHT Development version 2.8 of 15-May-2014 12:59:37 ----------
+
+
+----------------   GIPHT begins at 2014-07-07 06:09:42 ----------
+runname =
+20140707_060942

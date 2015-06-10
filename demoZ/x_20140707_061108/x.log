@@ -1,0 +1,293 @@
+
+
+----------------   GIPHT_STEP1 begins at 2014-07-07 06:11:09 ----------
+read_input_controls begin reading input control file named gipht.in...
+    1 xcenter  39.35466	      % X coordinate of center of sampled region
+    2 ycenter  38.36103 	      % Y coordinate of center of sampled region
+    3 halfwidth  130	        % half the east-west width of the sampled region in pixels
+    4 demdescfile  dem_descriptor.dat 
+    5 pselect  7        % select pixels of range gradient using quadtree
+    6 mpercy  0.0284 % meters for ENVISAT, ERS-1, and ERS-2
+    7 unitv_east   0.382192  % Eastward component
+    8 unitv_north  -0.081237  % Northward component
+    9 unitv_up   0.920500  % Upward component (must be positive)
+   10 txtinname  demoZ3.gin   % Two Okadas
+   11 objfun  funcostrarc         % mininum angle,  assumes zero mean, using arc function in radians 
+   12 fitfun  funseparable27 % 2 Mogi + 2 Okada + 1 Pinel including new TST structure
+   13 surrogate  1       % use fast approximate version of fitting function (1st order Taylor series)
+   14 anneal  0  %     0 to skip Simulated Annealing (FAST for forward modeling, skip statistics)
+   15 anneal  2  %     2 to run S.A. with recording (BEST)
+   16 figopt  010 % simple for demo
+   17 printfun  printpdf  % make figures in PDF
+             xcenter = 39.354660
+             ycenter = 38.361030
+           halfwidth = 130.000000
+             pselect = 7.000000
+          unitv_east = 0.382192
+         unitv_north = -0.081237
+            unitv_up = 0.920500
+              anneal = 0.000000
+              anneal = 2.000000
+              mpercy = 0.028400
+              figopt = 00000010
+           surrogate = 1.000000
+              objfun = funcostrarc
+              fitfun = funseparable27
+           txtinname = demoZ3.gin
+         demdescfile = dem_descriptor.dat
+            printfun = printpdf
+WARNING: No orbit file named in gipht.in. Assuming constant look vector.
+demoZ3.gin
+dem_descriptor.dat
+file_names.dat
+cmds = 
+    'funseparable27'    'printpdf'    'funcostrarc'
+Using "exist" command to search for function named funseparable27
+Found function named funseparable27 2
+Using "exist" command to search for function named printpdf
+Found function named printpdf 2
+Using "exist" command to search for function named funcostrarc
+Found function named funcostrarc 2
+[Warning: matlabpoolsize is 0
+] 
+[> In <a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/read_input_controls.m',414,1)">read_input_controls at 414</a>
+  In <a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht_step1.m',14,1)">gipht_step1 at 14</a>
+  In <a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht.m',125,1)">gipht at 125</a>] 
+read_input_controls completed reading input controls.
+Scale factor for phase in DN per cycle:
+DNPC =
+    6.2832
+Name of list of phase files
+read_file_names begins ...
+Read    1 pairs of phase files 
+Number of interferogram files (pairs) to adjust
+np =
+     1
+Number of distinct epochs overall
+me =
+     2
+Number of species overall
+mfam =
+     1
+Species A:     1     2
+Species A Member  1 Pair   1 M   1001 S   1002                                                          psp_16851_28374_ort.pha
+Species A Member  2 Pair   1 M   1001 S   1002                                                          psp_16851_28374_ort.pha
+adjustbp begins ...
+Length of data vector, including constraints
+md =
+     1     2
+Dimensons of design matrix, including constraints
+nmdd2 =
+     2     2
+Rank defiency, including constraints
+rd =
+     0
+Begin least squares adjustment...
+index orbnum date     species yr Dopp/PRF
+    1    1001 PAIR001-MAST A  2005.3836     0.0000
+    2    1002 PAIR001-SLAV A  2007.5890  1000.0000
+plotbp begins at 2014-07-07 06:11:09
+Pair Species Member0 Member1 orbn0 orbn1 year0 year1 year Bperp (m)
+plotbp ended at 2014-07-07 06:11:10
+read_dem_descriptor begins ...
+DEM Descriptor specifies entire file.
+Reached end of DEM descriptor file
+number of columns in each interferogram
+ncols =
+        1878
+number of lines in each interferogram 
+nrows =
+        1419
+Maximum number of pixels to be selected for inversion = 2664882
+Location                  X            Y
+DEM pixel 1             39           39
+DEM extract 1           39           39
+DEM extract N           40           38
+Center                  39           38
+icenter = 598 jcenter = 1004
+Subregion contains NRSUB = 201 rows and NCSUB = 261 columns
+dx =
+   71.8146
+dy =
+  -92.8561
+xcenter1 =
+   5.3087e+05
+ycenter1 =
+   4.2461e+06
+utmzone0 =
+37 S
+xcenter2 =
+   5.3028e+05
+ycenter2 =
+   4.2458e+06
+xcenter3 =
+   5.3017e+05
+ycenter3 =
+   4.2459e+06
+[Warning: WARNING: problem with UTM coordinates for center point.] 
+[> In <a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht_step1.m',607,1)">gipht_step1 at 607</a>
+  In <a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht.m',125,1)">gipht at 125</a>] 
+xcenter1 =
+     530868.44
+xcenter2 =
+     530281.50
+diffx =
+       -586.94
+ycenter2 =
+    4245752.53
+ycenter1 =
+    4246095.45
+diffy =
+       -342.92
+xcenter =
+     530281.50
+ycenter =
+    4245752.53
+Opened sivrice_dem.i2. Read 2 x 1419 rows x 1878 columns = 5329764 bytes WITHOUT FLIPPING as int16 
+I2DEM has 1419 rows and 1878 columns
+jzl2 =
+       1419.00
+jzc2 =
+       1878.00
+Nrows, Ncols of Extracted Region in DEM.
+ans =
+       1419.00       1878.00
+Selecting pixels using pha2qls. Values are range gradient.
+Extrema of coordinates of images (extracted area)
+    Location            X            Y
+        Min        458137      4169682
+         Max       592933      4301351
+       Diff        134796       131670
+      Center       530282      4245753
+Extrema of coordinates of subregion
+    Location   Easting(m)  Northing(m)
+     Min           520831      4236631
+     Max           539503      4255202
+     Diff           18672        18571
+     Center        530282      4245753
+     Center1       530868      4246095
+     Center2       530282      4245753
+     Center3       530167      4245916
+    Max-Cen          9222         9449
+    Cen -Min         9450         9122
+    Max-Cen3         9336         9286
+    Cen3-Min         9336         9286
+write_dem_descriptor begins ...
+Reached end of DEM descriptor file
+Wrote DEM descriptor for subregion to file named gipht_subregion.dat
+Opened   psp_16851_28374_ort.pha
+Reshaping to 1419 rows pha 1878 columns = 2664882 bytes as signed 1-byte integers
+Read 1419 rows pha 1878 columns = 2664882 bytes as signed 1-byte integers
+Starting pha2qls with command line:
+/Users/feigl/Documents/GIPhT2.8/src/pha2qls.maci64 psp_16851_28374_ort.pha 1878 1419 -V -P qsp_16851_28374_ort.pha -X grx_16851_28374_ort.i2 -Y gry_16851_28374_ort.i2 -L 8 -N 16 -M 16 -Q 16
+pha2qls successful.
+Opened   qsp_16851_28374_ort.pha
+Reshaping to 1419 rows pha 1878 columns = 2664882 bytes as signed 1-byte integers
+Read 1419 rows pha 1878 columns = 2664882 bytes as signed 1-byte integers
+Opened grx_16851_28374_ort.i2. Read 2 x 1419 rows x 1878 columns = 5329764 bytes WITHOUT FLIPPING as int16 
+Opened gry_16851_28374_ort.i2. Read 2 x 1419 rows x 1878 columns = 5329764 bytes WITHOUT FLIPPING as int16 
+Opened psp_16851_28374_ort.qls. Read 2 x 35390 rows x 6 columns = 424680 bytes WITHOUT FLIPPING as int16 
+zstr =
+Cycles/pixel
+Number of good pixels in this pair: 287
+Number of observations so far: 287
+Minimal values in meters         for xyzm   520974.9  4236816.4     1040.0 
+Maximal values in meters         for xyzm   539503.1  4255016.2     2218.0 
+Minimal values in degrees for lon, lat          39.2       38.3        
+Maximal values in degrees for lon, lat          39.5       38.4        
+Assuming constant unit vector [E,N,U]     0.3822    -0.0812     0.9205
+Saving orbit information for future use in file named orbits.mat
+Successfully read the following phase files:                                                         psp_16851_28374_ort.pha
+Number of pairs with data
+np =
+          1.00
+Number of data
+ndata =
+        287.00
+Number of data
+ndata1 =
+        287.00
+ncols =
+         48.00
+Wrote meta data for 287 pixels to file dst_sample.dst
+Field    nr nc n(NaN) min max mean std
+  1                    i   287     1        0   1.000000e+00   2.870000e+02   1.440000e+02   8.299398e+01
+  2            idatatype   287     1        0  -1.000000e+00  -1.000000e+00  -1.000000e+00   0.000000e+00
+  3                    k   287     1        0   1.000000e+00   1.000000e+00   1.000000e+00   0.000000e+00
+  4                kmast   287     1        0   1.000000e+00   1.000000e+00   1.000000e+00   0.000000e+00
+  5                kslav   287     1        0   2.000000e+00   2.000000e+00   2.000000e+00   0.000000e+00
+  6               phaobs   287     1        0  -1.759284e-01   2.106347e-01   1.241916e-02   6.966873e-02
+  7               phamod   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+  8                tmast   287     1        0   2.005384e+03   2.005384e+03   2.005384e+03   4.327646e-12
+  9                tslav   287     1        0   2.007589e+03   2.007589e+03   2.007589e+03   4.099875e-12
+ 10                    x   287     1        0   5.209749e+05   5.395031e+05   5.302092e+05   5.874491e+03
+ 11                    y   287     1        0   4.236816e+06   4.255016e+06   4.247417e+06   6.010012e+03
+ 12                    z   287     1        0   1.040000e+03   2.218000e+03   1.558408e+03   2.308667e+02
+ 13                  uvx   287     1        0   3.821920e-01   3.821920e-01   3.821920e-01   2.391149e-15
+ 14                  uvy   287     1        0  -8.123700e-02  -8.123700e-02  -8.123700e-02   3.475507e-16
+ 15                  uvz   287     1        0   9.205000e-01   9.205000e-01   9.205000e-01   2.780406e-15
+ 16               mpercy   287     1        0   2.840000e-02   2.840000e-02   2.840000e-02   1.911529e-16
+ 17                bmast   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 18                bslav   287     1        0   1.000000e+03   1.000000e+03   1.000000e+03   0.000000e+00
+ 19                dmast   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 20                dslav   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 21                   x0   287     1        0  -9.234302e+03   9.293856e+03   1.618457e-10   5.874491e+03
+ 22                   y0   287     1        0  -1.060047e+04   7.599315e+03  -9.079584e-09   6.010012e+03
+ 23                   z0   287     1        0  -5.184077e+02   6.595923e+02  -2.479720e-13   2.308667e+02
+ 24                   dx   287     1        0   7.181457e+01   7.181457e+01   7.181457e+01   0.000000e+00
+ 25                   dy   287     1        0  -9.285607e+01  -9.285607e+01  -9.285607e+01   0.000000e+00
+ 26                   dz   287     1        0  -4.400000e+01   4.400000e+01  -1.756098e+00   1.471488e+01
+ 27                alond   287     1        0   3.924667e+01   3.946167e+01   3.935382e+01   6.816736e-02
+ 28                alatd   287     1        0   3.828083e+01   3.844417e+01   3.837597e+01   5.393663e-02
+ 29                orbm1   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 30                orbm2   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 31                orbm3   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 32                orbm4   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 33                orbm5   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 34                orbm6   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 35                orbs1   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 36                orbs2   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 37                orbs3   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 38                orbs4   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 39                orbs5   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 40                orbs6   287     1        0   0.000000e+00   0.000000e+00   0.000000e+00   0.000000e+00
+ 41                   mx   287     1      287            NaN            NaN            NaN            NaN
+ 42                   my   287     1      287            NaN            NaN            NaN            NaN
+ 43                   mz   287     1      287            NaN            NaN            NaN            NaN
+ 44                 qii1   287     1        0   8.730000e+02   1.129000e+03   1.001321e+03   8.173680e+01
+ 45                 qii2   287     1        0   8.760000e+02   1.136000e+03   1.004850e+03   8.187455e+01
+ 46                 qjj1   287     1        0   4.970000e+02   6.930000e+02   5.785749e+02   6.485293e+01
+ 47                 qjj2   287     1        0   5.000000e+02   6.960000e+02   5.821045e+02   6.460707e+01
+ 48               phasig   287     1        0   6.250000e-02   2.500000e-01   2.360627e-01   4.143939e-02
+
+Saving to: /Users/feigl/Documents/GIPhT2.8/demoZ/matlab.mat
+
+
+
+----------------   GIPHT_STEP1 ended normally at 2014-07-07 06:11:24 ----------
+
+
+----------------   GIPHT_STEP2 begins at 2014-07-07 06:11:24 ----------
+
+Loading from: matlab.mat
+
+ndata =
+        287.00
+ndata1 =
+        287.00
+{Error using <a href="matlab:helpUtils.errorDocCallback('funseparable27', '/Users/feigl/Documents/GIPhT2.8/src/funseparable27.m', 951)" style="font-weight:bold">funseparable27</a> (<a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/funseparable27.m',951,0)">line 951</a>)
+ERROR: nin = 2 and nout = 2 fitting function named funseparable27
+
+Error in <a href="matlab:helpUtils.errorDocCallback('gipht_step2', '/Users/feigl/Documents/GIPhT2.8/src/gipht_step2.m', 41)" style="font-weight:bold">gipht_step2</a> (<a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht_step2.m',41,0)">line 41</a>)
+[pnames,pscl] = feval(fitfun,me,datafilename);
+Error in <a href="matlab:helpUtils.errorDocCallback('gipht', '/Users/feigl/Documents/GIPhT2.8/src/gipht.m', 126)" style="font-weight:bold">gipht</a> (<a href="matlab: opentoline('/Users/feigl/Documents/GIPhT2.8/src/gipht.m',126,0)">line 126</a>)
+gipht_step2; % set bounds on parameters, run simulated annealing} 
+gipht
+
+
+----------------   GIPHT Development version 2.8 of 15-May-2014 12:59:37 ----------
+
+
+----------------   GIPHT begins at 2014-07-07 06:12:17 ----------
+runname =
+20140707_061217
